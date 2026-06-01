@@ -1,0 +1,22 @@
+[
+  {
+    "file": "Thông tư số 80-2021-TT-BTC.md",
+    "entries": [
+      {
+        "line": 2926,
+        "reasons": [
+          "likely_ocr_vietnamese_accent_error"
+        ],
+        "text": "b.1) Sử dụng 02 thông tin không mâu thuẫn nhau bao gồm một thông tin liên quan đến việc thanh toán của tổ chức (cá nhân) tại Việt Nam và một thông tin về tình trạng cư trú hoặc thông tin về truy cập của tổ chức, cá nhân tại Việt Nam nêu trên."
+      },
+      {
+        "line": 2928,
+        "reasons": [
+          "likely_ocr_vietnamese_accent_error"
+        ],
+        "text": "b.2) Trong trường hợp liên quan đến việc thanh toán của tổ chức, cá nhân không thu thập được hoặc mâu thuẫn với thông tin còn lại, nhà cung cấp ở nước ngoài được phép sử dụng 02 thông tin không mâu thuẫn nhau bao gồm một thông tin về tình trạng cư trú và một thông tin về truy cập của tổ chức, cá nhân tại Việt Nam."
+      }
+    ],
+    "omitted_after_limit": 0
+  }
+]

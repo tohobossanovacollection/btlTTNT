@@ -849,11 +849,11 @@ def build_accent_review(markdown: str, output_name: str) -> dict:
 
 def output_stem(path: Path) -> str:
     stem = normalize_unicode(path.stem).strip()
-    stem = stem.replace("+", "_")
-    stem = re.sub(r"\s+", "_", stem)
-    stem = re.sub(r"[()]+", "", stem)
-    stem = re.sub(r"[^0-9A-Za-zÀ-Ỵà-ỵĐđ_.\-]+", "_", stem)
-    stem = re.sub(r"_+", "_", stem).strip("._-")
+    stem = stem.replace("+", " + ")
+    stem = re.sub(r'[<>:"/\\|?*]+', " ", stem)
+    stem = re.sub(r"\s+", " ", stem)
+    stem = re.sub(r"\s+([,.;])", r"\1", stem)
+    stem = stem.strip(" ._-")
     return stem or "document"
 
 
@@ -1000,7 +1000,9 @@ def main() -> int:
         markdown = doc._markdown  # type: ignore[attr-defined]
         headings = doc._headings  # type: ignore[attr-defined]
         out_path = out_dir / f"{output_stem(doc.source)}.md"
-        markdown, corrections = apply_contextual_ocr_fixes(markdown, out_path.name)
+        corrections: list[dict] = []
+        if doc.extractor == "pdftotext-layout":
+            markdown, corrections = apply_contextual_ocr_fixes(markdown, out_path.name)
         ocr_corrections.extend(corrections)
         out_path.write_text(markdown, encoding="utf-8", newline="\n")
         processed_count += 1
