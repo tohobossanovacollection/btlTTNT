@@ -1,15 +1,15 @@
-{
+﻿{
   "raw_dir": "data\\raw",
-  "out_dir": "data\\processed",
-  "raw_file_count": 23,
-  "processed_markdown_count": 22,
+  "out_dir": "data\\proccesed",
+  "raw_file_count": 22,
+  "processed_markdown_count": 21,
   "duplicate_hash_group_count": 1,
   "metadata_duplicate_skipped_count": 0,
-  "ocr_correction_count": 5125,
+  "ocr_correction_count": 1148,
   "entries": [
     {
       "source": "data\\raw\\03_VBHN-BTC_695334.docx",
-      "output": "data\\processed\\03_VBHN-BTC_695334.md",
+      "output": "data\\proccesed\\Nghị định số 181-2025-NĐ-CP về thuế GTGT.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "181/2025/NĐ-CP",
@@ -36,7 +36,7 @@
     },
     {
       "source": "data\\raw\\06-vbhn-btc.pdf",
-      "output": "data\\processed\\06-vbhn-btc.md",
+      "output": "data\\proccesed\\Thông tư số 86-2024-TT-BTC về đăng ký thuế.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
       "doc_number": "86/2024/TT-BTC",
@@ -63,7 +63,7 @@
     },
     {
       "source": "data\\raw\\06_VBHN-BTC_511234.docx",
-      "output": "data\\processed\\06_VBHN-BTC_511234.md",
+      "output": "data\\proccesed\\Nghị định số 134-2016-NĐ-CP về thuế xuất nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "134/2016/NĐ-CP",
@@ -90,7 +90,7 @@
     },
     {
       "source": "data\\raw\\07_VBHN-BTC_654520.docx",
-      "output": "data\\processed\\07_VBHN-BTC_654520.md",
+      "output": "data\\proccesed\\Nghị định số 26-2023-NĐ-CP biểu thuế xuất nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "26/2023/NĐ-CP",
@@ -124,7 +124,7 @@
     },
     {
       "source": "data\\raw\\09_2026_QH16_703956.docx",
-      "output": "data\\processed\\09_2026_QH16_703956.md",
+      "output": "data\\proccesed\\Luật số 09-2026-QH16 sửa đổi luật thuế.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "203/2025/QH15",
@@ -145,7 +145,7 @@
     },
     {
       "source": "data\\raw\\108_2025_QH15_675268.docx",
-      "output": "data\\processed\\108_2025_QH15_675268.md",
+      "output": "data\\proccesed\\Luật Quản lý thuế.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "203/2025/QH15",
@@ -172,7 +172,7 @@
     },
     {
       "source": "data\\raw\\109_2025_QH15_665870.docx",
-      "output": "data\\processed\\109_2025_QH15_665870.md",
+      "output": "data\\proccesed\\Luật Thuế thu nhập cá nhân.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "203/2025/QH15",
@@ -199,7 +199,7 @@
     },
     {
       "source": "data\\raw\\111_VBHN-VPQH_706725.docx",
-      "output": "data\\processed\\111_VBHN-VPQH_706725.md",
+      "output": "data\\proccesed\\Luật Thuế tiêu thụ đặc biệt.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "66/2025/QH15",
@@ -226,7 +226,7 @@
     },
     {
       "source": "data\\raw\\113-vbhn-vpqh-1.pdf",
-      "output": "data\\processed\\113-vbhn-vpqh-1.md",
+      "output": "data\\proccesed\\Luật Thuế thu nhập doanh nghiệp hợp nhất.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
       "doc_number": "67/2025/QH15",
@@ -253,7 +253,7 @@
     },
     {
       "source": "data\\raw\\123_2020_ND-CP_445980.docx",
-      "output": "data\\processed\\123_2020_ND-CP_445980.md",
+      "output": "data\\proccesed\\Nghị định số 123-2020-NĐ-CP về hóa đơn chứng từ.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "123/2020/NĐ-CP",
@@ -280,7 +280,7 @@
     },
     {
       "source": "data\\raw\\12_VBHN-VPQH_694824.docx",
-      "output": "data\\processed\\12_VBHN-VPQH_694824.md",
+      "output": "data\\proccesed\\Luật Thuế giá trị gia tăng.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "48/2024/QH15",
@@ -306,35 +306,8 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\14-vbhn-btc.pdf",
-      "output": "data\\processed\\14-vbhn-btc.md",
-      "status": "processed",
-      "extractor": "pdftotext-layout",
-      "doc_number": "126/2020/NĐ-CP",
-      "title": "THÔNG TƯ' Hướng dẫn thi hành một số điều của Luật Quản lý thuê và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Quản lý thuế",
-      "line_count": 18573,
-      "char_count": 1362415,
-      "heading_count": 272,
-      "ocr_correction_count": 2136,
-      "headings_sample": [
-        "THÔNG TƯ' Hướng dẫn thi hành một số điều của Luật Quản lý thuê và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Quản lý thuế",
-        "Chương I. NHỮNG QUY ĐỊNH CHUNG",
-        "Điều 1. Phạm vi điều chỉnh?",
-        "Điều 2. Đối tượng áp dụng",
-        "Điều 3. Giải thích từ ngữ",
-        "Điều 4. Đồng tiền khai thuế, nộp thuế bằng ngoại tệ tự do chuyên đổi",
-        "Điều 5. „Trách nhiệm quản lý thuê của cơ quan thuế quần lý trực tiếp,",
-        "Chương II. HỘI ĐÒNG TƯ VĂN THUÊ XÃ, PHƯỜNG, THỊ TRÁN",
-        "Điều 6. Thành phần Hội đồng tư vấn thuê xã, phường, thị trần",
-        "Điều 7. Thành lập Hội đồng tư vấn thuê",
-        "Điều 9. Quan hệ công tác giữa Hội đồng tư vấn thuế với cơ quan thuế",
-        "Điều 10. Quyền hạn của Hội đồng tư vấn thuế"
-      ],
-      "warnings": []
-    },
-    {
       "source": "data\\raw\\141_2026_ND-CP_703882.docx",
-      "output": "data\\processed\\141_2026_ND-CP_703882.md",
+      "output": "data\\proccesed\\Nghị định số 141-2026-NĐ-CP sửa đổi thuế hộ kinh doanh và TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "63/2025/QH15",
@@ -355,7 +328,7 @@
     },
     {
       "source": "data\\raw\\15-vbhn-btc.pdf",
-      "output": "data\\processed\\15-vbhn-btc.md",
+      "output": "data\\proccesed\\Nghị định số 125-2020-NĐ-CP xử phạt thuế hóa đơn.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
       "doc_number": "125/2020/NĐ-CP",
@@ -382,7 +355,7 @@
     },
     {
       "source": "data\\raw\\2017_575 + 576_19-VBHN-BTC.pdf",
-      "output": "data\\processed\\2017_575_576_19-VBHN-BTC.md",
+      "output": "data\\proccesed\\Thông tư số 45-2013-TT-BTC khấu hao tài sản cố định.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
       "doc_number": "45/2013/TT-BTC",
@@ -409,7 +382,7 @@
     },
     {
       "source": "data\\raw\\20_2026_TT-BTC_672539.docx",
-      "output": "data\\processed\\20_2026_TT-BTC_672539.md",
+      "output": "data\\proccesed\\Thông tư số 20-2026-TT-BTC hướng dẫn thuế TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "67/2025/QH15",
@@ -435,7 +408,7 @@
     },
     {
       "source": "data\\raw\\320_2025_ND-CP_665051.docx",
-      "output": "data\\processed\\320_2025_ND-CP_665051.md",
+      "output": "data\\proccesed\\Nghị định số 320-2025-NĐ-CP hướng dẫn thuế TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "63/2025/QH15",
@@ -462,7 +435,7 @@
     },
     {
       "source": "data\\raw\\67_2025_QH15_580594.docx",
-      "output": "data\\processed\\67_2025_QH15_580594.md",
+      "output": "data\\proccesed\\Luật Thuế thu nhập doanh nghiệp.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "67/2025/QH",
@@ -489,7 +462,7 @@
     },
     {
       "source": "data\\raw\\69_2025_TT-BTC_663356.docx",
-      "output": "data\\processed\\69_2025_TT-BTC_663356.md",
+      "output": "data\\proccesed\\Thông tư số 69-2025-TT-BTC hướng dẫn thuế GTGT.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "181/2025/NĐ-CP",
@@ -515,35 +488,35 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\704416.pdf",
-      "output": "data\\processed\\704416.md",
+      "source": "data\\raw\\80_2021_TT-BTC_466716.docx",
+      "output": "data\\proccesed\\Thông tư số 80-2021-TT-BTC.md",
       "status": "processed",
-      "extractor": "pdftotext-layout",
+      "extractor": "docx-ooxml",
       "doc_number": "126/2020/NĐ-CP",
-      "title": "THÔNG TƯ Hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điêu của Luật Quản lý thuê",
-      "line_count": 19685,
-      "char_count": 1360894,
-      "heading_count": 275,
-      "ocr_correction_count": 1841,
+      "title": "THÔNG TƯ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA LUẬT QUẢN LÝ THUẾ VÀ NGHỊ ĐỊNH SỐ 126/2020/NĐ-CP NGÀY 19 THÁNG 10 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH CHI TIẾT MỘT SỐ ĐIỀU CỦA LUẬT QUẢN LÝ THUẾ",
+      "line_count": 3428,
+      "char_count": 359007,
+      "heading_count": 106,
+      "ocr_correction_count": 0,
       "headings_sample": [
-        "THÔNG TƯ Hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị định số 126/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định chi tiết một số điêu của Luật Quản lý thuê",
+        "THÔNG TƯ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA LUẬT QUẢN LÝ THUẾ VÀ NGHỊ ĐỊNH SỐ 126/2020/NĐ-CP NGÀY 19 THÁNG 10 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH CHI TIẾT MỘT SỐ ĐIỀU CỦA LUẬT QUẢN LÝ THUẾ",
         "Chương I. NHỮNG QUY ĐỊNH CHUNG",
-        "Điều 1. Phạm vi điều chính?",
+        "Điều 1. Phạm vi điều chỉnh",
         "Điều 2. Đối tượng áp dụng",
         "Điều 3. Giải thích từ ngữ",
-        "Điều 5.,Trách nhiệm quản lý thuế của cơ quan thuế quản lý trực tiếp,",
-        "Chương II. HỘI ĐÒNG TƯ VÁN THUÉ XÃ, PHƯỜNG, THỊ TRÁN",
-        "Điều 6. Thành phân Hội đồng tư vấn thuế xã, phường, thị trần",
+        "Điều 4. Đồng tiền khai thuế, nộp thuế bằng ngoại tệ tự do chuyển đổi và tỷ giá giao dịch thực tế",
+        "Điều 5. Trách nhiệm quản lý thuế của cơ quan thuế quản lý trực tiếp, cơ quan thuế quản lý địa bàn nhận phân bổ và cơ quan thuế quản lý khoản thu ngân sách nhà nước",
+        "Chương II. HỘI ĐỒNG TƯ VẤN THUẾ XÃ, PHƯỜNG, THỊ TRẤN",
+        "Điều 6. Thành phần Hội đồng tư vấn thuế xã, phường, thị trấn",
         "Điều 7. Thành lập Hội đồng tư vấn thuế",
-        "Điều 8. Nguyên tắc và chế độ làm việc của Hội đồng tư vẫn thuế",
-        "Điều 9. Quan hệ công tác giữa Hội đồng tư vấn thuế với cơ quan thuế",
-        "Điều 10. Quyền hạn của Hội đồng tư vẫn thuế"
+        "Điều 8. Nguyên tắc và chế độ làm việc của Hội đồng tư vấn thuế",
+        "Điều 9. Quan hệ công tác giữa Hội đồng tư vấn thuế với cơ quan thuế"
       ],
       "warnings": []
     },
     {
       "source": "data\\raw\\92-vbhn-vpqh.pdf",
-      "output": "data\\processed\\92-vbhn-vpqh.md",
+      "output": "data\\proccesed\\Luật Phí và lệ phí.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
       "doc_number": "97/2015/QH13",
@@ -570,7 +543,7 @@
     },
     {
       "source": "data\\raw\\96_VBHN-VPQH_699728.docx",
-      "output": "data\\processed\\96_VBHN-VPQH_699728.md",
+      "output": "data\\proccesed\\Luật Thuế xuất khẩu, thuế nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
       "doc_number": "107/2016/QH13",
