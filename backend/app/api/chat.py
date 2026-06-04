@@ -18,7 +18,7 @@ class RatingRequest(BaseModel):
 def chat(req: ChatRequest):
     try:
         # 1. Tìm kiếm luật
-        laws = retrieve_laws_semantic(req.question)
+        laws = retrieve_laws_semantic(req.question, top_k = 5)
 
         # 2. Xử lý khi không thấy luật
         if not laws:

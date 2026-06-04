@@ -2,7 +2,9 @@ fastapi
 uvicorn
 python-dotenv
 pydantic-settings
-google-generativeai
+# google-generativeai
+# Thêm dòng:
+google-genai
 sentence-transformers
 numpy
 streamlit
