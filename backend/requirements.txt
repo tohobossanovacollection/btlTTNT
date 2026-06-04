@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic-settings
+google-generativeai
+sentence-transformers
+numpy
+streamlit
+requests
