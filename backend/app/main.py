@@ -9,7 +9,7 @@ from app.api.sample_api import router as sample_router
 
 app = FastAPI(
     title="Clean FastAPI Boilerplate",
-    description="Hệ thống Backend đã được refactor sạch sẽ, sẵn sàng phát triển RAG",
+    description="Hệ thống Backend đã được refactor, sẵn sàng phát triển RAG",
     version="1.0.0"
 )
 
