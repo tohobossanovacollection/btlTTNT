@@ -2,6 +2,7 @@ import os
 from google import genai
 from google.genai.errors import APIError
 from app.config import settings
+from app.prompts.legal_prompt import build_prompt
 
 # Khởi tạo client theo chuẩn SDK mới nhất của Google
 if not settings.GOOGLE_API_KEY:
@@ -9,45 +10,16 @@ if not settings.GOOGLE_API_KEY:
 
 client = genai.Client(api_key=settings.GOOGLE_API_KEY)
 
-def ask_gemini(question: str, laws: list) -> str:
+def ask_gemini(question: str, laws: list, history_context: str = "") -> str:
     """
-    laws: list các dict luật đã retrieve
+    laws: list các dict luật đã retrieve từ vector search
+    history_context: chuỗi lịch sử chat gộp từ các câu thoại cũ
     """
-    if not laws:
-        return "Không tìm thấy căn cứ pháp lý trong dữ liệu hiện có."
-
     try:
-        # ===== BUILD CONTEXT =====
-        context_blocks = []
-        for law in laws:
-            context_blocks.append(
-                f"Luật: {law.get('law_name', 'Luật HNGĐ 2014')}\n"
-                f"Điều: {law.get('article', '')}\n"
-                f"Tiêu đề: {law.get('title', '')}\n"
-                f"Nội dung: {law.get('content', '')}\n"
-            )
+        # Gọi sang tầng prompt để lấy cấu trúc Prompt Thuế hoàn chỉnh
+        prompt = build_prompt(question, laws, history_context)
 
-        context = "\n---\n".join(context_blocks)
-
-        prompt = f"""
-Bạn là trợ lý pháp luật Việt Nam chuyên về Luật Hôn nhân và Gia đình.
-
-❗ NGUYÊN TẮC BẮT BUỘC:
-- CHỈ sử dụng thông tin trong DỮ LIỆU PHÁP LUẬT bên dưới
-- TUYỆT ĐỐI KHÔNG bổ sung kiến thức bên ngoài
-- Nếu dữ liệu chưa đủ chi tiết → phải nói rõ
-
-=== DỮ LIỆU PHÁP LUẬT ===
-{context}
-
-=== CÂU HỎI ===
-{question}
-
-=== TRẢ LỜI ===
-"""
-
-        # Cú pháp chuẩn của thư viện mới: client.models.generate_content
-        # Sử dụng gemini-2.5-flash là bản mới nhất, miễn phí và phản hồi siêu nhanh
+        # Sử dụng mô hình gemini-2.5-flash theo cú pháp chuẩn của bạn
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt,

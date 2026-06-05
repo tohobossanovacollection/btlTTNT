@@ -29,14 +29,14 @@ def send_email_otp(receiver_email, otp_code):
     try:
         # Tạo nội dung email
         msg = MIMEMultipart()
-        msg['From'] = f"Galaxy AI Law Support <{SENDER_EMAIL}>"
+        msg['From'] = f"Hỗ trợ Chatbot Luật Thuế <{SENDER_EMAIL}>"
         msg['To'] = receiver_email
         msg['Subject'] = f"Mã xác thực OTP: {otp_code}"
 
         body = f"""
         <html>
             <body style="font-family: Arial, sans-serif; background-color: #0f0c29; color: white; padding: 20px;">
-                <h2 style="color: #00d2ff;">Galaxy AI Law</h2>
+                <h2 style="color: #00d2ff;">Hệ thống Tra cứu Luật Thuế Việt Nam</h2>
                 <p>Chào bạn,</p>
                 <p>Bạn đã yêu cầu khôi phục mật khẩu. Mã OTP của bạn là:</p>
                 <h1 style="background: #1a1a2e; padding: 10px; border: 1px solid #00d2ff; text-align: center; color: #92fe9d;">

@@ -28,14 +28,16 @@ def chat(req: ChatRequest):
             for c in old_chats[-4:]:
                 history_context += f"{c.get('role')}: {c.get('text')}\n"
 
-        # --- ĐẦU VIỆC 2: ROUTER PHÂN LOẠI CÂU HỎI (Ý TƯỞNG SKILL-RAG) ---
-        casual_words = ["chào", "hello", "hi", "tạm biệt", "bạn là ai", "thời tiết"]
-        is_casual = any(word in req.question.lower() for word in casual_words) and len(req.question.split()) < 5
+        # --- ĐẦU VIỆC 2: ROUTER PHÂN LOẠI CÂU HỎI (CẢI TIẾN) ---
+        # Danh sách từ khóa xã giao mở rộng, tăng giới hạn lên < 8 
+        casual_words = ["chào", "hello", "hi", "tạm biệt", "bạn là ai", "ai đấy", "thời tiết", "khỏe không"]
+        is_casual = any(word in req.question.lower() for word in casual_words) and len(req.question.split()) < 8
 
         if is_casual:
             # Kỹ năng 1: Chat xã giao (Không cần RAG)
-            prompt_casual = f"Người dùng chào: '{req.question}'. Hãy phản hồi ngắn gọn, thân thiện với vai trò trợ lý pháp luật Thuế."
-            answer = ask_gemini(prompt_casual, laws=[])
+            prompt_casual = f"Người dùng giao tiếp: '{req.question}'. Hãy phản hồi ngắn gọn, lịch sự với vai trò là Trợ lý AI thuộc dự án: Ứng dụng kỹ thuật RAG xây dựng Chatbot tra cứu văn bản pháp luật Thuế Việt Nam."
+            # Truyền laws=[] và history_context vào để bot biết chào dựa theo lịch sử nếu có
+            answer = ask_gemini(prompt_casual, laws=[], history_context=history_context)
         
         else:
             # --- ĐẦU VIỆC 3: RAG TIÊU CHUẨN KÈM ĐÁNH GIÁ ĐIỂM SỐ TIN CẬY ---
@@ -50,8 +52,8 @@ def chat(req: ChatRequest):
                 )
             else:
                 # Kỹ năng 3: Trả lời dựa trên luật pháp chính xác
-                full_query = f"Ngữ cảnh hội thoại cũ:\n{history_context}\nCâu hỏi hiện tại: {req.question}"
-                answer = ask_gemini(full_query, laws)
+                # Truyền đủ cả 3 tham số: Câu hỏi, Luật tìm được, và Lịch sử chat cũ
+                answer = ask_gemini(req.question, laws, history_context)
 
         # --- ĐẦU VIỆC 4: LƯU LỊCH SỬ THỰC TẾ (Luôn chạy bất kể nhánh nào) ---
         if req.user_id:

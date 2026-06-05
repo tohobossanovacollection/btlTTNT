@@ -8,8 +8,8 @@ from app.api.chat import router as chat_router
 from app.api.sample_api import router as sample_router
 
 app = FastAPI(
-    title="Clean FastAPI Boilerplate",
-    description="Hệ thống Backend đã được refactor, sẵn sàng phát triển RAG",
+    title="Hệ thống Chatbot Tra cứu Luật Thuế Việt Nam",
+    description="Backend cho dự án: Ứng dụng kỹ thuật RAG xây dựng Chatbot tra cứu văn bản pháp luật Thuế Việt Nam",
     version="1.0.0"
 )
 
