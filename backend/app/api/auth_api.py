@@ -22,8 +22,8 @@ class EmailRequest(BaseModel):
 # Thông tin cấu hình Email
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = "nguyenho220704@gmail.com"  # Email của bạn
-SENDER_PASSWORD = "nagr owvs yrfj toia"  # Mã 16 ký tự App Password
+SENDER_EMAIL = "@gmail.com"  # Email của bạn
+SENDER_PASSWORD = ""  # Mã 16 ký tự App Password
 
 def send_email_otp(receiver_email, otp_code):
     try:

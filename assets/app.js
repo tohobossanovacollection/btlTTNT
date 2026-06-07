@@ -1,10 +1,13 @@
 (function () {
   var STORAGE_KEY = "rag-taxbot-conversations";
   var DEFAULT_TITLE = "Cuộc trò chuyện mới";
+  var API_BASE_URL = window.RAG_API_BASE_URL || "http://127.0.0.1:8000";
+  var CHAT_API_URL = API_BASE_URL.replace(/\/$/, "") + "/api/v1/chat/";
 
   var state = {
     activeId: "",
     conversations: [],
+    isSubmitting: false,
   };
 
   function byId(id) {
@@ -290,6 +293,101 @@
     return html;
   }
 
+  function textToHtml(value) {
+    var normalized = String(value || "").trim();
+    if (!normalized) return "<p>Backend không trả về nội dung trả lời.</p>";
+
+    return (
+      "<p>" +
+      escapeHtml(normalized)
+        .replace(/\r\n/g, "\n")
+        .replace(/\n{2,}/g, "</p><p>")
+        .replace(/\n/g, "<br>") +
+      "</p>"
+    );
+  }
+
+  function truncateText(value, maxLength) {
+    var text = String(value || "").replace(/\s+/g, " ").trim();
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength - 3) + "...";
+  }
+
+  function renderBackendAnswer(data) {
+    var answer = data && data.answer ? data.answer : "";
+    var sources = data && Array.isArray(data.sources) ? data.sources : [];
+    var html = "<h2>Trả lời từ RAG + Gemini</h2>" + textToHtml(answer);
+    var i;
+
+    if (sources.length && byId("strictCitation").checked) {
+      html += '<div class="answer-section"><h3>Nguồn truy xuất từ kho luật</h3><ul class="citation-list">';
+      for (i = 0; i < sources.length; i += 1) {
+        html += "<li>" + escapeHtml(truncateText(sources[i], 700)) + "</li>";
+      }
+      html += "</ul></div>";
+    }
+
+    html +=
+      '<div class="answer-section"><h3>Runtime</h3><p>API: <strong>' +
+      escapeHtml(CHAT_API_URL) +
+      "</strong></p></div>";
+
+    return html;
+  }
+
+  function renderLoadingAnswer() {
+    return (
+      "<h2>Đang xử lý bằng RAG + Gemini...</h2>" +
+      "<p>Backend đang truy xuất văn bản luật, tạo embedding cho câu hỏi và gọi Gemini để sinh câu trả lời.</p>"
+    );
+  }
+
+  function renderBackendError(error) {
+    return (
+      "<h2>Không gọi được backend RAG.</h2>" +
+      "<p>" +
+      escapeHtml(error && error.message ? error.message : error) +
+      "</p>" +
+      "<p>Hãy kiểm tra backend đang chạy ở <strong>" +
+      escapeHtml(API_BASE_URL) +
+      "</strong>, file <strong>backend/.env</strong> có <strong>GOOGLE_API_KEY</strong>, rồi thử lại.</p>"
+    );
+  }
+
+  function callChatApi(question) {
+    return fetch(CHAT_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        question: question,
+        user_id: 1,
+        session_id: null,
+      }),
+    }).then(function (response) {
+      return response.text().then(function (raw) {
+        var parsed = {};
+
+        if (raw) {
+          try {
+            parsed = JSON.parse(raw);
+          } catch (error) {
+            parsed = { answer: raw };
+          }
+        }
+
+        if (!response.ok) {
+          throw new Error(
+            parsed.detail || parsed.message || "Backend trả lỗi HTTP " + response.status
+          );
+        }
+
+        return parsed;
+      });
+    });
+  }
+
   function riskText(risk) {
     if (risk === "LOW") return "Thấp";
     if (risk === "MEDIUM") return "Trung bình";
@@ -378,16 +476,19 @@
   function submitQuestion() {
     var question = byId("questionInput").value.trim();
     var active;
-    var answer;
     var audit;
     var userMessage;
     var botMessage;
+    var botIndex;
 
-    if (!question) return;
+    if (!question || state.isSubmitting) return;
 
     byId("questionInput").value = "";
+    byId("submitBtn").disabled = true;
+    byId("submitBtn").textContent = "Đang gửi...";
+    state.isSubmitting = true;
+
     active = getActiveConversation();
-    answer = answerFor(question);
 
     userMessage = {
       role: "user",
@@ -396,12 +497,13 @@
     };
     botMessage = {
       role: "bot",
-      html: renderAnswer(answer),
-      warning: answer.warning,
+      html: renderLoadingAnswer(),
+      warning: false,
     };
 
     active.messages.push(userMessage);
     active.messages.push(botMessage);
+    botIndex = active.messages.length - 1;
 
     if (active.title === DEFAULT_TITLE) {
       active.title = question.length > 42 ? question.slice(0, 42) + "..." : question;
@@ -409,11 +511,10 @@
 
     audit = {
       user_question: question,
-      detected_intent: answer.intent,
-      risk_level: answer.risk,
-      tax_domain: answer.domain,
+      mode: "rag_gemini_backend",
+      status: "calling_backend",
+      api_url: CHAT_API_URL,
       effective_on: byId("effectiveDate").value,
-      used_citations: answer.citations,
       created_at: nowIso(),
     };
 
@@ -426,6 +527,49 @@
     renderAudit();
     byId("currentChatTitle").textContent = active.title;
     scrollChatToBottom();
+
+    callChatApi(question)
+      .then(function (data) {
+        active.messages[botIndex] = {
+          role: "bot",
+          html: renderBackendAnswer(data),
+          warning: false,
+        };
+        active.audit = {
+          user_question: question,
+          mode: "rag_gemini_backend",
+          status: "completed",
+          api_url: CHAT_API_URL,
+          source_count: data && Array.isArray(data.sources) ? data.sources.length : 0,
+          chat_id: data && data.chat_id ? data.chat_id : null,
+          effective_on: byId("effectiveDate").value,
+          created_at: nowIso(),
+        };
+      })
+      .catch(function (error) {
+        active.messages[botIndex] = {
+          role: "bot",
+          html: renderBackendError(error),
+          warning: true,
+        };
+        active.audit = {
+          user_question: question,
+          mode: "rag_gemini_backend",
+          status: "backend_error",
+          api_url: CHAT_API_URL,
+          error: error && error.message ? error.message : String(error),
+          created_at: nowIso(),
+        };
+      })
+      .finally(function () {
+        active.updatedAt = nowIso();
+        state.isSubmitting = false;
+        byId("submitBtn").disabled = false;
+        byId("submitBtn").textContent = "Gửi";
+        safeWriteStorage();
+        renderAll();
+        scrollChatToBottom();
+      });
   }
 
   function deleteConversation(id) {

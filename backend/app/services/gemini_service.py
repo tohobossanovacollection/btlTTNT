@@ -77,7 +77,7 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
         )
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model=settings.MODEL_NAME,
             contents=prompt,
             config=config
         )
@@ -89,7 +89,7 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
 
     except APIError as e:
         err = str(e)
-        if "429" in err or "quota" in err.lower():
+        if "429" in err or "quota" in err.lower() or "503" in err or "unavailable" in err.lower():
             return "⚠️ Hệ thống đang quá tải (đạt giới hạn API). Vui lòng thử lại sau vài phút."
         print(f"❌ Gemini APIError: {e}")
         return "❌ Lỗi kết nối tới hệ thống AI."
