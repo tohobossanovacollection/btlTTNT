@@ -90,6 +90,7 @@ def ask_gemini(
     laws: list,
     reasoning_steps: list[dict] | None = None,
     refined_context: str | None = None,
+    extra_instructions: str | None = None,
 ) -> str:
     if not laws and not refined_context:
         return "Không tìm thấy căn cứ pháp lý phù hợp trong dữ liệu hiện có."
@@ -147,6 +148,9 @@ NGUYÊN TẮC BẮT BUỘC:
 ═══════════════════════════════════════════════════════════════
 {reasoning_text}
 
+YÊU CẦU BỔ SUNG (nếu có):
+{(extra_instructions or "").strip()}
+
 
 CĂN CỨ PHÁP LÝ:
 {context}
@@ -202,3 +206,88 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
     except Exception as exc:
         logger.exception("Gemini exception")
         raise GeminiError("Hệ thống AI gặp sự cố tạm thời.", "LLM_INTERNAL_ERROR") from exc
+
+
+def self_reflect_answer(
+    question: str,
+    answer: str,
+    context: str,
+    max_output_tokens: int = 256,
+) -> dict:
+    try:
+        from google.genai import types
+        from google.genai.errors import APIError
+    except ModuleNotFoundError:
+        raise GeminiError("Thiếu thư viện kết nối hệ thống AI.", "LLM_DEPENDENCY_MISSING")
+
+    client = _get_client()
+    prompt = f"""Bạn là bộ kiểm định chất lượng câu trả lời theo cơ chế Self-RAG (tự phản tư).
+
+Bạn sẽ nhận vào:
+- CÂU HỎI của người dùng
+- CĂN CỨ PHÁP LÝ (context) do hệ thống truy xuất
+- CÂU TRẢ LỜI do mô hình sinh
+
+Nhiệm vụ:
+1) Is_Supported: Câu trả lời có dựa HOÀN TOÀN trên context không? Nếu có phần suy diễn/khẳng định không thấy trong context thì là false.
+2) Is_Useful: Câu trả lời có giải quyết đủ ý câu hỏi không? Nếu thiếu điều kiện/ngoại lệ/đối tượng áp dụng quan trọng thì là false.
+
+CHỈ trả về đúng 1 JSON object, không kèm giải thích ngoài JSON, theo schema:
+{{
+  "is_supported": true/false,
+  "unsupported_claims": ["..."],
+  "is_useful": true/false,
+  "missing_points": ["..."],
+  "improvement_suggestions": "..."
+}}
+
+CÂU HỎI:
+{question}
+
+CĂN CỨ PHÁP LÝ:
+{context}
+
+CÂU TRẢ LỜI:
+{answer}
+"""
+
+    try:
+        response = client.models.generate_content(
+            model=settings.MODEL_NAME,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.0,
+                max_output_tokens=int(max_output_tokens or 256),
+            ),
+        )
+        text = (getattr(response, "text", None) or "").strip()
+        if not text:
+            raise GeminiError("Không thể tự đánh giá câu trả lời từ hệ thống AI.", "LLM_EMPTY_RESPONSE")
+        import json
+
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError:
+            start = text.find("{")
+            end = text.rfind("}")
+            if start >= 0 and end > start:
+                data = json.loads(text[start : end + 1])
+            else:
+                raise
+        if not isinstance(data, dict):
+            raise GeminiError("Kết quả tự đánh giá không hợp lệ.", "LLM_EVALUATOR_INVALID_OUTPUT")
+        return data
+    except GeminiError:
+        raise
+    except APIError as exc:
+        raw = str(exc)
+        lowered = raw.lower()
+        logger.warning("Gemini self-reflection APIError: %s", raw)
+        if "429" in raw or "quota" in lowered:
+            raise GeminiError("Hệ thống AI đang quá tải khi tự đánh giá.", "LLM_QUOTA_EXCEEDED") from exc
+        if "503" in raw or "unavailable" in lowered or "temporarily" in lowered:
+            raise GeminiError("Hệ thống AI tạm thời không sẵn sàng khi tự đánh giá.", "LLM_UNAVAILABLE") from exc
+        raise GeminiError("Không thể kết nối hệ thống AI để tự đánh giá.", "LLM_UPSTREAM_ERROR") from exc
+    except Exception as exc:
+        logger.exception("Gemini self-reflection exception")
+        raise GeminiError("Hệ thống AI gặp sự cố khi tự đánh giá.", "LLM_INTERNAL_ERROR") from exc

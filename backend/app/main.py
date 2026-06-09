@@ -18,7 +18,6 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import settings
 from app.api.chat import router as chat_router
-from app.api.sample_api import router as sample_router
 from app.services import retrieval_service
 from app.utils.logging_setup import configure_logging
 from app.utils.request_context import get_request_id, set_request_id
@@ -113,5 +112,4 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
     return JSONResponse(status_code=500, content=payload, headers={"X-Request-ID": request_id})
 
 # Đăng ký các Router
-app.include_router(sample_router, prefix="/api/v1")
 app.include_router(chat_router, prefix="/api/v1")

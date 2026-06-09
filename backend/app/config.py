@@ -25,9 +25,13 @@ class Settings(BaseSettings):
     RAT_STEP_TOP_K: int = 3
     ROUTER_ENABLED: bool = True
     ROUTER_MAX_OUTPUT_TOKENS: int = 4
-    CRAG_ENABLED: bool = True
-    CRAG_CORRECT_THRESHOLD: float = 0.65
-    CRAG_AMBIGUOUS_THRESHOLD: float = 0.4
+
+    SELF_RAG_ENABLED: bool = True
+    SELF_RAG_RELEVANCE_THRESHOLD: float = 0.14
+    SELF_RAG_SUPPORT_ENABLED: bool = True
+    SELF_RAG_USEFULNESS_ENABLED: bool = True
+    SELF_RAG_MAX_LOOPS: int = 2
+    SELF_RAG_SUPPORT_MAX_RETRIES: int = 1
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
