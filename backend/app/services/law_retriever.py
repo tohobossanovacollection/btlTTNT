@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import logging
 
 BASE_DIR = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "../../../")
@@ -27,6 +28,8 @@ ARTICLE_PATTERN = re.compile(
     re.MULTILINE
 )
 
+logger = logging.getLogger(__name__)
+
 def _split_md_into_articles(content: str, law_name: str, source_file: str) -> list:
     """
     Tách nội dung file .md thành danh sách các điều luật.
@@ -37,8 +40,7 @@ def _split_md_into_articles(content: str, law_name: str, source_file: str) -> li
     matches = list(ARTICLE_PATTERN.finditer(content))
 
     if not matches:
-        # Không tìm thấy điều nào → log cảnh báo, đưa cả file vào 1 chunk
-        print(f"  ⚠️  Không tìm thấy 'Điều X' nào trong {source_file} — đưa toàn bộ làm 1 chunk")
+        logger.warning("Khong tim thay Dieu X trong %s, dua toan bo lam 1 chunk", source_file)
         articles.append({
             "source": source_file,
             "law_name": law_name,
@@ -90,7 +92,7 @@ def load_all_laws() -> list:
     laws = []
 
     # 1. ĐỌC TẤT CẢ FILE .MD (kể cả trong thư mục con)
-    print(f"\n📂 Đang quét thư mục: {PROCESSED_DIR}")
+    logger.info("Dang quet thu muc: %s", PROCESSED_DIR)
     for root, dirs, files in os.walk(PROCESSED_DIR):
         # Bỏ qua thư mục _reports (chứa file báo cáo, không phải luật)
         dirs[:] = [d for d in dirs if not d.startswith('_')]
@@ -107,22 +109,22 @@ def load_all_laws() -> list:
                     .title()
             )
 
-            print(f"  📄 Đang đọc: {file}")
+            logger.debug("Dang doc: %s", file)
 
             try:
                 with open(path, "r", encoding="utf-8") as f:
                     content = f.read()
 
                 if not content.strip():
-                    print(f"  ⚠️  File rỗng, bỏ qua: {file}")
+                    logger.warning("File rong, bo qua: %s", file)
                     continue
 
                 articles = _split_md_into_articles(content, law_name, file)
-                print(f"     → Tìm thấy {len(articles)} điều/chunk")
+                logger.info("Tim thay %s chunk tu %s", len(articles), file)
                 laws.extend(articles)
 
             except Exception as e:
-                print(f"  ❌ Lỗi đọc file {file}: {e}")
+                logger.exception("Loi doc file %s", file)
                 continue
 
     # 2. ĐỌC CÁC FILE JSON TRONG THƯ MỤC CON
@@ -167,8 +169,8 @@ def load_all_laws() -> list:
                     })
 
             except Exception as e:
-                print(f"  ❌ Lỗi đọc JSON {file}: {e}")
+                logger.exception("Loi doc JSON %s", file)
                 continue
 
-    print(f"\n🚀 Tổng cộng nạp thành công: {len(laws)} phân đoạn dữ liệu pháp luật!\n")
+    logger.info("Tong cong nap thanh cong: %s phan doan du lieu phap luat", len(laws))
     return laws

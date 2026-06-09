@@ -1,37 +1,136 @@
-from google import genai
-from google.genai import types
-from google.genai.errors import APIError
+import logging
+import threading
+
 from app.config import settings
 
-if not settings.GOOGLE_API_KEY:
-    raise RuntimeError("❌ GOOGLE_API_KEY chưa được thiết lập trong config")
+logger = logging.getLogger(__name__)
 
-client = genai.Client(api_key=settings.GOOGLE_API_KEY)
+_CLIENT_LOCK = threading.Lock()
+_CLIENT = None
+_CLIENT_KEY = None
 
 
-def ask_gemini(question: str, laws: list) -> str:
-    """
-    Gọi Gemini với các điều luật đã retrieve để trả lời câu hỏi.
-    laws: list[dict] — mỗi dict có 'law_name', 'article', 'title', 'content'
-    """
-    if not laws:
+class GeminiError(RuntimeError):
+    def __init__(self, message: str, code: str):
+        super().__init__(message)
+        self.code = code
+
+
+def _get_client():
+    global _CLIENT, _CLIENT_KEY
+    api_key = (settings.GOOGLE_API_KEY or "").strip()
+    if not api_key:
+        raise GeminiError("Hệ thống AI chưa được cấu hình.", "LLM_NOT_CONFIGURED")
+
+    with _CLIENT_LOCK:
+        if _CLIENT is not None and _CLIENT_KEY == api_key:
+            return _CLIENT
+
+        try:
+            from google import genai
+        except ModuleNotFoundError as exc:
+            raise GeminiError("Thiếu thư viện kết nối hệ thống AI.", "LLM_DEPENDENCY_MISSING") from exc
+
+        _CLIENT = genai.Client(api_key=api_key)
+        _CLIENT_KEY = api_key
+        return _CLIENT
+
+
+def classify_query_intent(question: str, max_output_tokens: int = 4) -> str:
+    try:
+        from google.genai import types
+        from google.genai.errors import APIError
+    except ModuleNotFoundError:
+        raise GeminiError("Thiếu thư viện kết nối hệ thống AI.", "LLM_DEPENDENCY_MISSING")
+
+    client = _get_client()
+    prompt = f"""Phan loai cau hoi phap ly sau thanh dung 1 tu duy nhat.
+
+Quy tac:
+- Tra ve SIMPLE neu cau hoi co the tra loi bang mot lan truy van van ban phap ly.
+- Tra ve COMPLEX neu cau hoi co nhieu dieu kien, ngoai le, so sanh, tinh huong ket hop, hoac can suy luan nhieu buoc.
+- Chi duoc tra ve SIMPLE hoac COMPLEX, khong giai thich.
+
+Cau hoi: {question}
+"""
+
+    try:
+        response = client.models.generate_content(
+            model=settings.MODEL_NAME,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.0,
+                max_output_tokens=max_output_tokens,
+            ),
+        )
+        label = (getattr(response, "text", None) or "").strip().upper()
+        if "COMPLEX" in label:
+            return "COMPLEX"
+        if "SIMPLE" in label:
+            return "SIMPLE"
+        raise GeminiError("Khong the phan loai y dinh cau hoi.", "LLM_ROUTER_INVALID_OUTPUT")
+    except GeminiError:
+        raise
+    except APIError as exc:
+        raw = str(exc)
+        lowered = raw.lower()
+        logger.warning("Gemini router APIError: %s", raw)
+        if "429" in raw or "quota" in lowered:
+            raise GeminiError("He thong AI dang qua tai khi phan loai cau hoi.", "LLM_QUOTA_EXCEEDED") from exc
+        if "503" in raw or "unavailable" in lowered:
+            raise GeminiError("He thong AI tam thoi khong san sang khi phan loai cau hoi.", "LLM_UNAVAILABLE") from exc
+        raise GeminiError("Khong the ket noi he thong AI de phan loai cau hoi.", "LLM_UPSTREAM_ERROR") from exc
+    except Exception as exc:
+        logger.exception("Gemini router exception")
+        raise GeminiError("He thong AI gap su co khi phan loai cau hoi.", "LLM_ROUTER_INTERNAL_ERROR") from exc
+
+
+def ask_gemini(
+    question: str,
+    laws: list,
+    reasoning_steps: list[dict] | None = None,
+    refined_context: str | None = None,
+) -> str:
+    if not laws and not refined_context:
         return "Không tìm thấy căn cứ pháp lý phù hợp trong dữ liệu hiện có."
 
     try:
-        # BUILD CONTEXT 
-        context_blocks = []
-        for law in laws:
-            score_info = f" (độ liên quan: {law.get('_score', '')})" if law.get('_score') else ""
-            block = (
-                f"📌 {law.get('law_name', 'Không rõ tên luật')}{score_info}\n"
-                f"   {law.get('article', '')} — {law.get('title', '')}\n"
-                f"{law.get('content', '').strip()}"
-            )
-            context_blocks.append(block)
+        from google.genai import types
+        from google.genai.errors import APIError
+    except ModuleNotFoundError:
+        raise GeminiError("Thiếu thư viện kết nối hệ thống AI.", "LLM_DEPENDENCY_MISSING")
 
-        context = "\n\n" + "─" * 60 + "\n\n".join(context_blocks)
+    client = _get_client()
 
-        # PROMPT 
+    try:
+        if refined_context:
+            context = refined_context.strip()
+        else:
+            context_blocks = []
+            for law in laws:
+                score_info = ""
+                if law.get("_final_score") is not None:
+                    score_info = f" (độ liên quan: {law.get('_final_score')})"
+                step_info = ""
+                matched_steps = law.get("_matched_step_titles") or []
+                if matched_steps:
+                    step_info = f"\n   Phuc vu buoc suy luan: {', '.join(matched_steps)}"
+                block = (
+                    f"📌 {law.get('law_name', 'Không rõ tên luật')}{score_info}\n"
+                    f"   {law.get('article', '')} — {law.get('title', '')}{step_info}\n"
+                    f"{law.get('content', '').strip()}"
+                )
+                context_blocks.append(block)
+            context = "\n\n" + "─" * 60 + "\n\n".join(context_blocks)
+        reasoning_text = ""
+        if reasoning_steps:
+            reasoning_lines = []
+            for step in reasoning_steps:
+                reasoning_lines.append(
+                    f"- {step.get('step_id')}: {step.get('title')} | truy van: {step.get('query')}"
+                )
+            reasoning_text = "\nKE HOACH SUY LUAN DA DUOC BACKEND KIEM CHUNG:\n" + "\n".join(reasoning_lines) + "\n"
+
         prompt = f"""Bạn là chuyên gia tư vấn pháp luật thuế tại Việt Nam, đặc biệt am hiểu:
 - Luật Thuế thu nhập doanh nghiệp
 - Luật Thuế thu nhập cá nhân
@@ -46,6 +145,8 @@ NGUYÊN TẮC BẮT BUỘC:
 4. Nếu dữ liệu không đủ → nói thẳng: "Dữ liệu hiện tại chưa có thông tin về vấn đề này."
 5. Trả lời bằng tiếng Việt, rõ ràng, có cấu trúc.
 ═══════════════════════════════════════════════════════════════
+{reasoning_text}
+
 
 CĂN CỨ PHÁP LÝ:
 {context}
@@ -57,9 +158,8 @@ CÂU HỎI: {question}
 TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản):
 """
 
-        # CONFIG 
         config = types.GenerateContentConfig(
-            temperature=0.1,  # Rất thấp — AI phải trả lời chính xác, không sáng tạo
+            temperature=0.1,
             safety_settings=[
                 types.SafetySetting(
                     category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
@@ -73,27 +173,32 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
                     category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
                     threshold=types.HarmBlockThreshold.BLOCK_NONE,
                 ),
-            ]
+            ],
         )
 
         response = client.models.generate_content(
             model=settings.MODEL_NAME,
             contents=prompt,
-            config=config
+            config=config,
         )
 
-        if not response.text:
-            return "⚠️ Không thể tạo câu trả lời. Vui lòng thử lại."
+        answer = (getattr(response, "text", None) or "").strip()
+        if not answer:
+            raise GeminiError("Không thể tạo câu trả lời từ hệ thống AI.", "LLM_EMPTY_RESPONSE")
 
-        return response.text.strip()
+        return answer
 
-    except APIError as e:
-        err = str(e)
-        if "429" in err or "quota" in err.lower() or "503" in err or "unavailable" in err.lower():
-            return "⚠️ Hệ thống đang quá tải (đạt giới hạn API). Vui lòng thử lại sau vài phút."
-        print(f"❌ Gemini APIError: {e}")
-        return "❌ Lỗi kết nối tới hệ thống AI."
-
-    except Exception as e:
-        print(f"❌ Gemini exception: {e}")
-        return "❌ Hệ thống AI gặp sự cố tạm thời."
+    except GeminiError:
+        raise
+    except APIError as exc:
+        raw = str(exc)
+        lowered = raw.lower()
+        logger.warning("Gemini APIError: %s", raw)
+        if "429" in raw or "quota" in lowered:
+            raise GeminiError("Hệ thống AI đang quá tải (đạt giới hạn API).", "LLM_QUOTA_EXCEEDED") from exc
+        if "503" in raw or "unavailable" in lowered or "temporarily" in lowered:
+            raise GeminiError("Hệ thống AI tạm thời không sẵn sàng.", "LLM_UNAVAILABLE") from exc
+        raise GeminiError("Không thể kết nối hệ thống AI.", "LLM_UPSTREAM_ERROR") from exc
+    except Exception as exc:
+        logger.exception("Gemini exception")
+        raise GeminiError("Hệ thống AI gặp sự cố tạm thời.", "LLM_INTERNAL_ERROR") from exc

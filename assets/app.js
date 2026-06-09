@@ -362,8 +362,6 @@
       },
       body: JSON.stringify({
         question: question,
-        user_id: 1,
-        session_id: null,
       }),
     }).then(function (response) {
       return response.text().then(function (raw) {
@@ -541,7 +539,6 @@
           status: "completed",
           api_url: CHAT_API_URL,
           source_count: data && Array.isArray(data.sources) ? data.sources.length : 0,
-          chat_id: data && data.chat_id ? data.chat_id : null,
           effective_on: byId("effectiveDate").value,
           created_at: nowIso(),
         };

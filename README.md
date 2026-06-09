@@ -5,14 +5,13 @@ Demo chatbot tu van thue su dung RAG:
 - Frontend tinh: `index.html`, `assets/app.js`, `assets/styles.css`
 - Backend: FastAPI
 - Retrieval: doc/markdown trong `data/processed`
-- Embedding: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
+- Retrieval embedding: local/offline hash TF-IDF (khong goi API ngoai)
 - LLM: Gemini API
 
 ## Yeu cau
 
 - Windows + PowerShell
 - Python 3.10 tro len
-- Internet trong lan chay dau de tai model embedding tu Hugging Face
 - Gemini API key trong Google AI Studio
 
 ## 1. Tao file cau hinh backend
@@ -33,15 +32,15 @@ PORT=8000
 
 GOOGLE_API_KEY="dien_gemini_api_key_cua_ban_vao_day"
 MODEL_NAME="gemini-2.5-flash-lite"
-
-SECRET_KEY="your-super-secret-key"
+LOCAL_EMBEDDING_DIM=2048
+LOCAL_EMBEDDING_MIN_TOKEN_LENGTH=2
 ```
 
 Ghi chu:
 
 - Khong commit file `.env` len Git.
-- Free API key dung duoc cho demo, nhung co quota gioi han.
-- Neu gap loi `429 RESOURCE_EXHAUSTED`, nghia la key/model hien tai da het quota. Co the cho quota reset, doi API key, doi model lite khac, hoac bat billing.
+- Gemini API key chi dung cho buoc tao cau tra loi, khong dung de tao embeddings retrieval.
+- Neu gap loi `429 RESOURCE_EXHAUSTED`, nghia la key/model hien tai da het quota o buoc sinh cau tra loi. Retrieval van chay local/offline.
 
 ## 2. Cai thu vien Python
 

@@ -13,6 +13,10 @@ def _project_venv_python() -> Path:
     return Path(__file__).resolve().parent / ".venv" / scripts_dir / executable
 
 
+def _is_truthy(value: str | None) -> bool:
+    return str(value or "").strip().lower() in {"1", "true", "yes", "on", "debug", "dev", "development"}
+
+
 def _ensure_project_python() -> None:
     if _using_virtualenv():
         return
@@ -43,7 +47,8 @@ def main() -> None:
 
     load_dotenv(dotenv_path=".env")
     port = int(os.getenv("PORT", 8000))
-    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=True)
+    reload_mode = _is_truthy(os.getenv("RELOAD", "false"))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=reload_mode)
 
 
 if __name__ == "__main__":
