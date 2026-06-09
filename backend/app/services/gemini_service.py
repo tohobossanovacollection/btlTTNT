@@ -1,3 +1,4 @@
+import json
 import logging
 import threading
 
@@ -14,6 +15,92 @@ class GeminiError(RuntimeError):
     def __init__(self, message: str, code: str):
         super().__init__(message)
         self.code = code
+
+
+_SELF_REFLECTION_SCHEMA = {
+    "type": "OBJECT",
+    "properties": {
+        "is_supported": {"type": "BOOLEAN"},
+        "unsupported_claims": {"type": "ARRAY", "items": {"type": "STRING"}},
+        "is_useful": {"type": "BOOLEAN"},
+        "missing_points": {"type": "ARRAY", "items": {"type": "STRING"}},
+        "improvement_suggestions": {"type": "STRING"},
+    },
+    "required": [
+        "is_supported",
+        "unsupported_claims",
+        "is_useful",
+        "missing_points",
+        "improvement_suggestions",
+    ],
+}
+
+
+def _strip_json_markdown(text: str) -> str:
+    stripped = (text or "").strip()
+    if not stripped.startswith("```"):
+        return stripped
+
+    lines = stripped.splitlines()
+    if lines and lines[0].strip().startswith("```"):
+        lines = lines[1:]
+    if lines and lines[-1].strip().startswith("```"):
+        lines = lines[:-1]
+    return "\n".join(lines).strip()
+
+
+def _extract_balanced_json_object(text: str) -> str:
+    start = text.find("{")
+    if start < 0:
+        return ""
+
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : index + 1]
+
+    return ""
+
+
+def _parse_json_object(text: str, error_code: str) -> dict:
+    cleaned = _strip_json_markdown(text)
+    candidates = [cleaned]
+    extracted = _extract_balanced_json_object(cleaned)
+    if extracted and extracted != cleaned:
+        candidates.append(extracted)
+
+    for candidate in candidates:
+        if not candidate:
+            continue
+        try:
+            data = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(data, dict):
+            raise GeminiError("Ket qua tu he thong AI khong phai JSON object.", error_code)
+        return data
+
+    preview = cleaned[:300].replace("\n", "\\n")
+    logger.warning("Gemini returned invalid JSON for self-reflection: %s", preview)
+    raise GeminiError("Ket qua tu danh gia khong phai JSON hop le.", error_code) from None
 
 
 def _get_client():
@@ -165,6 +252,7 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
         config = types.GenerateContentConfig(
             temperature=0.1,
             #max_output_tokens=settings.LLM_MAX_OUTPUT_TOKENS,
+            #thinking_config=types.ThinkingConfig(thinking_level="high" ),
             safety_settings=[
                 types.SafetySetting(
                     category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
@@ -213,7 +301,7 @@ def self_reflect_answer(
     question: str,
     answer: str,
     context: str,
-    max_output_tokens: int = 256,
+    max_output_tokens: int = 512,
 ) -> dict:
     try:
         from google.genai import types
@@ -258,23 +346,15 @@ CÂU TRẢ LỜI:
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.0,
-                max_output_tokens=int(max_output_tokens or 256),
+                max_output_tokens=int(max_output_tokens or 512),
+                response_mime_type="application/json",
+                response_schema=_SELF_REFLECTION_SCHEMA,
             ),
         )
         text = (getattr(response, "text", None) or "").strip()
         if not text:
             raise GeminiError("Không thể tự đánh giá câu trả lời từ hệ thống AI.", "LLM_EMPTY_RESPONSE")
-        import json
-
-        try:
-            data = json.loads(text)
-        except json.JSONDecodeError:
-            start = text.find("{")
-            end = text.rfind("}")
-            if start >= 0 and end > start:
-                data = json.loads(text[start : end + 1])
-            else:
-                raise
+        data = _parse_json_object(text, "LLM_EVALUATOR_INVALID_OUTPUT")
         if not isinstance(data, dict):
             raise GeminiError("Kết quả tự đánh giá không hợp lệ.", "LLM_EVALUATOR_INVALID_OUTPUT")
         return data

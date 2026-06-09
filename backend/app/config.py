@@ -1,6 +1,9 @@
+from pathlib import Path
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
+
+BASE_DIR = Path(__file__).resolve().parents[1]
 
 class Settings(BaseSettings):
     APP_NAME: str = "Tax RAG Chatbot"
@@ -35,7 +38,7 @@ class Settings(BaseSettings):
     SELF_RAG_MAX_LOOPS: int = 2
     SELF_RAG_SUPPORT_MAX_RETRIES: int = 1
 
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=BASE_DIR / ".env", extra="ignore")
 
     @field_validator("DEBUG", mode="before")
     @classmethod

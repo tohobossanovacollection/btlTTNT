@@ -11,8 +11,9 @@ from app.services.reasoning_service import run_reasoning_retrieval
 
 def main():
     question = (
-        "Thuế thu nhập cá nhân áp dụng cho lương và thu nhập khác; ví dụ: "
-        "lương 10.000.000 đồng, cách tính thế nào?"
+        #"Thuế thu nhập cá nhân áp dụng cho lương và thu nhập khác; ví dụ: "
+        #"lương 10.000.000 đồng, cách tính thế nào?"
+        "Đối tượng chịu thuế tiêu thụ đặc biệt?"
     )
 
     print("Settings:", "RAG_TOP_K=", settings.RAG_TOP_K, "RAT_STEP_TOP_K=", settings.RAT_STEP_TOP_K)
