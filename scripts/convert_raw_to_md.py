@@ -859,7 +859,8 @@ def output_stem(path: Path) -> str:
 
 def duplicate_choice(paths: list[Path]) -> Path:
     def key(path: Path) -> tuple[int, int, str]:
-        has_copy_suffix = 1 if re.search(r"\(\d+\)", path.stem) else 0
+        normalized_stem = match_key(path.stem).lower()
+        has_copy_suffix = 1 if re.search(r"\(\d+\)", path.stem) or "ban sao" in normalized_stem else 0
         return (has_copy_suffix, len(path.name), path.name.lower())
 
     return sorted(paths, key=key)[0]
@@ -934,8 +935,8 @@ def main() -> int:
         raise SystemExit(f"Raw directory not found: {raw_dir}")
 
     raw_files = sorted(
-        [p for p in raw_dir.iterdir() if p.is_file() and p.suffix.lower() in SUPPORTED_SUFFIXES],
-        key=lambda p: p.name.lower(),
+        [p for p in raw_dir.rglob("*") if p.is_file() and p.suffix.lower() in SUPPORTED_SUFFIXES],
+        key=lambda p: (str(p.relative_to(raw_dir)).lower(), p.name.lower()),
     )
     selected_files, duplicate_report, skipped_by_hash = select_unique_by_hash(raw_files)
 

@@ -257,6 +257,9 @@ btlTTNT/
   data/
     processed/
     raw/
+      luat/
+      nghi_dinh/
+      thong_tu/
   scripts/
     start-live-server.ps1
     stop-live-server.ps1

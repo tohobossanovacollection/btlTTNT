@@ -58,6 +58,8 @@ def _processed_fingerprint() -> str:
     for path in sorted(processed_dir.rglob("*")):
         if path.is_dir():
             continue
+        if any(part.startswith("_") for part in path.relative_to(processed_dir).parts):
+            continue
         rel = str(path.relative_to(processed_dir)).replace("\\", "/")
         stat = path.stat()
         hasher.update(rel.encode("utf-8"))

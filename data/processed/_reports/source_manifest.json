@@ -1,14 +1,14 @@
 {
   "raw_dir": "data\\raw",
   "out_dir": "data\\processed",
-  "raw_file_count": 22,
+  "raw_file_count": 21,
   "processed_markdown_count": 21,
-  "duplicate_hash_group_count": 1,
+  "duplicate_hash_group_count": 0,
   "metadata_duplicate_skipped_count": 0,
   "ocr_correction_count": 0,
   "entries": [
     {
-      "source": "data\\raw\\Luật Phí và lệ phí.docx",
+      "source": "data\\raw\\luat\\Luật Phí và lệ phí.docx",
       "output": "data\\processed\\Luật Phí và lệ phí.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -35,7 +35,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Quản lý thuế.docx",
+      "source": "data\\raw\\luat\\Luật Quản lý thuế.docx",
       "output": "data\\processed\\Luật Quản lý thuế.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -62,14 +62,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật số 09-2026-QH16 sửa đổi luật thuế (bản sao).docx",
-      "status": "skipped_duplicate_hash",
-      "duplicate_of": "data\\raw\\Luật số 09-2026-QH16 sửa đổi luật thuế.docx",
-      "sha256": "D862962F7835C15C45A3F268236E8178789836983585520711888076192E2E7C",
-      "warnings": []
-    },
-    {
-      "source": "data\\raw\\Luật số 09-2026-QH16 sửa đổi luật thuế.docx",
+      "source": "data\\raw\\luat\\Luật số 09-2026-QH16 sửa đổi luật thuế.docx",
       "output": "data\\processed\\Luật số 09-2026-QH16 sửa đổi luật thuế.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -90,7 +83,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế giá trị gia tăng.docx",
+      "source": "data\\raw\\luat\\Luật Thuế giá trị gia tăng.docx",
       "output": "data\\processed\\Luật Thuế giá trị gia tăng.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -117,7 +110,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế thu nhập cá nhân.docx",
+      "source": "data\\raw\\luat\\Luật Thuế thu nhập cá nhân.docx",
       "output": "data\\processed\\Luật Thuế thu nhập cá nhân.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -144,7 +137,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế thu nhập doanh nghiệp hợp nhất.docx",
+      "source": "data\\raw\\luat\\Luật Thuế thu nhập doanh nghiệp hợp nhất.docx",
       "output": "data\\processed\\Luật Thuế thu nhập doanh nghiệp hợp nhất.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -171,7 +164,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế thu nhập doanh nghiệp.docx",
+      "source": "data\\raw\\luat\\Luật Thuế thu nhập doanh nghiệp.docx",
       "output": "data\\processed\\Luật Thuế thu nhập doanh nghiệp.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -198,7 +191,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế tiêu thụ đặc biệt.docx",
+      "source": "data\\raw\\luat\\Luật Thuế tiêu thụ đặc biệt.docx",
       "output": "data\\processed\\Luật Thuế tiêu thụ đặc biệt.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -225,7 +218,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Luật Thuế xuất khẩu, thuế nhập khẩu.docx",
+      "source": "data\\raw\\luat\\Luật Thuế xuất khẩu, thuế nhập khẩu.docx",
       "output": "data\\processed\\Luật Thuế xuất khẩu, thuế nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -252,7 +245,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 123-2020-NĐ-CP về hóa đơn chứng từ.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 123-2020-NĐ-CP về hóa đơn chứng từ.docx",
       "output": "data\\processed\\Nghị định số 123-2020-NĐ-CP về hóa đơn chứng từ.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -279,7 +272,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 125-2020-NĐ-CP xử phạt thuế hóa đơn.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 125-2020-NĐ-CP xử phạt thuế hóa đơn.docx",
       "output": "data\\processed\\Nghị định số 125-2020-NĐ-CP xử phạt thuế hóa đơn.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -306,7 +299,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 134-2016-NĐ-CP về thuế xuất nhập khẩu.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 134-2016-NĐ-CP về thuế xuất nhập khẩu.docx",
       "output": "data\\processed\\Nghị định số 134-2016-NĐ-CP về thuế xuất nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -333,7 +326,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 141-2026-NĐ-CP sửa đổi thuế hộ kinh doanh và TNDN.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 141-2026-NĐ-CP sửa đổi thuế hộ kinh doanh và TNDN.docx",
       "output": "data\\processed\\Nghị định số 141-2026-NĐ-CP sửa đổi thuế hộ kinh doanh và TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -354,7 +347,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 181-2025-NĐ-CP về thuế GTGT.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 181-2025-NĐ-CP về thuế GTGT.docx",
       "output": "data\\processed\\Nghị định số 181-2025-NĐ-CP về thuế GTGT.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -381,7 +374,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 26-2023-NĐ-CP biểu thuế xuất nhập khẩu.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 26-2023-NĐ-CP biểu thuế xuất nhập khẩu.docx",
       "output": "data\\processed\\Nghị định số 26-2023-NĐ-CP biểu thuế xuất nhập khẩu.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -408,7 +401,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Nghị định số 320-2025-NĐ-CP hướng dẫn thuế TNDN.docx",
+      "source": "data\\raw\\nghi_dinh\\Nghị định số 320-2025-NĐ-CP hướng dẫn thuế TNDN.docx",
       "output": "data\\processed\\Nghị định số 320-2025-NĐ-CP hướng dẫn thuế TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -435,7 +428,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Thông tư số 20-2026-TT-BTC hướng dẫn thuế TNDN.docx",
+      "source": "data\\raw\\thong_tu\\Thông tư số 20-2026-TT-BTC hướng dẫn thuế TNDN.docx",
       "output": "data\\processed\\Thông tư số 20-2026-TT-BTC hướng dẫn thuế TNDN.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -461,7 +454,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Thông tư số 45-2013-TT-BTC khấu hao tài sản cố định.pdf",
+      "source": "data\\raw\\thong_tu\\Thông tư số 45-2013-TT-BTC khấu hao tài sản cố định.pdf",
       "output": "data\\processed\\Thông tư số 45-2013-TT-BTC khấu hao tài sản cố định.md",
       "status": "processed",
       "extractor": "pdftotext-layout",
@@ -488,7 +481,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Thông tư số 69-2025-TT-BTC hướng dẫn thuế GTGT.docx",
+      "source": "data\\raw\\thong_tu\\Thông tư số 69-2025-TT-BTC hướng dẫn thuế GTGT.docx",
       "output": "data\\processed\\Thông tư số 69-2025-TT-BTC hướng dẫn thuế GTGT.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -515,7 +508,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Thông tư số 80-2021-TT-BTC.docx",
+      "source": "data\\raw\\thong_tu\\Thông tư số 80-2021-TT-BTC.docx",
       "output": "data\\processed\\Thông tư số 80-2021-TT-BTC.md",
       "status": "processed",
       "extractor": "docx-ooxml",
@@ -542,7 +535,7 @@
       "warnings": []
     },
     {
-      "source": "data\\raw\\Thông tư số 86-2024-TT-BTC về đăng ký thuế.docx",
+      "source": "data\\raw\\thong_tu\\Thông tư số 86-2024-TT-BTC về đăng ký thuế.docx",
       "output": "data\\processed\\Thông tư số 86-2024-TT-BTC về đăng ký thuế.md",
       "status": "processed",
       "extractor": "docx-ooxml",
