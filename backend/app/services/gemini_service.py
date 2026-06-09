@@ -164,6 +164,7 @@ TRẢ LỜI (dựa CHỈ vào căn cứ trên, có trích dẫn điều khoản)
 
         config = types.GenerateContentConfig(
             temperature=0.1,
+            #max_output_tokens=settings.LLM_MAX_OUTPUT_TOKENS,
             safety_settings=[
                 types.SafetySetting(
                     category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,

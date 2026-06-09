@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: str = "http://127.0.0.1:5500,http://localhost:5500,http://127.0.0.1:3000,http://localhost:3000"
     BACKEND_CORS_ALLOW_CREDENTIALS: bool = False
     LOG_LEVEL: str = "INFO"
+    
+    #LLM_MAX_OUTPUT_TOKENS: int = 700
 
     RAG_TOP_K: int = 6
     RAG_SCORE_THRESHOLD: float = 0.12
