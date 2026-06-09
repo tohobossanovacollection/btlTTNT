@@ -22,7 +22,7 @@ Demo chatbot tu van thue su dung RAG bang mot app Streamlit duy nhat:
 Vao thu muc backend:
 
 ```powershell
-cd D:\Vscode\btlTTNT\backend
+cd backend
 Copy-Item .env.example .env
 ```
 
@@ -50,7 +50,7 @@ Ghi chu:
 Tu thu muc goc project:
 
 ```powershell
-cd D:\Vscode\btlTTNT
+cd ..
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -67,7 +67,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 Sau do mo terminal moi va activate lai:
 
 ```powershell
-cd D:\Vscode\btlTTNT
+cd ..
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -108,7 +108,7 @@ Khong can dung buoc nay khi chay app Streamlit duy nhat.
 Mo them mot terminal PowerShell moi, tu thu muc goc project:
 
 ```powershell
-cd D:\Vscode\btlTTNT
+cd ..
 .\scripts\start-live-server.ps1 -Port 5501
 ```
 
