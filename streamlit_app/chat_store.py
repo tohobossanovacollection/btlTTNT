@@ -10,6 +10,12 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = PROJECT_ROOT / "storage" / "chat_history.sqlite3"
+DEFAULT_CONVERSATION_TITLE = "Cuộc trò chuyện mới"
+LEGACY_DEFAULT_TITLES = (
+    "Cuoc tro chuyen moi",
+    "cuoc tro chuyen moi",
+    "Cuộc trò chuyện mới",
+)
 
 
 def _now() -> str:
@@ -59,20 +65,46 @@ def init_db() -> None:
             ON messages(conversation_id, id)
             """
         )
+        conn.execute(
+            """
+            UPDATE conversations
+            SET title = ?
+            WHERE lower(trim(title)) IN (?, ?)
+            """,
+            (DEFAULT_CONVERSATION_TITLE, "cuoc tro chuyen moi", "cuộc trò chuyện mới"),
+        )
+        rows = conn.execute("SELECT id, title FROM conversations").fetchall()
+        for row in rows:
+            normalized_title = normalize_title(row["title"])
+            if normalized_title != row["title"]:
+                conn.execute(
+                    "UPDATE conversations SET title = ? WHERE id = ?",
+                    (normalized_title, row["id"]),
+                )
+
+
+def normalize_title(title: str | None) -> str:
+    normalized = " ".join(str(title or "").split())
+    if not normalized:
+        return DEFAULT_CONVERSATION_TITLE
+    if normalized.lower() in {item.lower() for item in LEGACY_DEFAULT_TITLES}:
+        return DEFAULT_CONVERSATION_TITLE
+    return normalized
 
 
 def make_title(prompt: str, max_length: int = 56) -> str:
-    title = " ".join(str(prompt or "").split())
+    title = normalize_title(prompt)
     if not title:
-        return "Cuoc tro chuyen moi"
+        return DEFAULT_CONVERSATION_TITLE
     if len(title) <= max_length:
         return title
     return title[: max_length - 3].rstrip() + "..."
 
 
-def create_conversation(title: str = "Cuoc tro chuyen moi") -> str:
+def create_conversation(title: str = DEFAULT_CONVERSATION_TITLE) -> str:
     conversation_id = str(uuid.uuid4())
     created_at = _now()
+    title = make_title(title)
     with _connect() as conn:
         conn.execute(
             """
@@ -95,7 +127,12 @@ def list_conversations(limit: int = 30) -> list[dict[str, Any]]:
             """,
             (limit,),
         ).fetchall()
-    return [dict(row) for row in rows]
+    conversations: list[dict[str, Any]] = []
+    for row in rows:
+        item = dict(row)
+        item["title"] = normalize_title(item.get("title"))
+        conversations.append(item)
+    return conversations
 
 
 def message_count(conversation_id: str) -> int:
