@@ -1,154 +1,452 @@
 {
   "summary": {
-    "faithfulness": 0.33630952380952384,
-    "answer_relevancy": 0.18331592921893763,
-    "context_precision": 0.5444444444262964,
-    "context_recall": 0.3333333333333333
+    "faithfulness": 0.9103,
+    "answer_relevancy": 0.877,
+    "context_precision": 0.9007,
+    "context_recall": 0.914
   },
   "ragas_model": "llama-3.3-70b-versatile",
   "backend_url": "http://127.0.0.1:8000/api/v1/chat/",
-  "has_missing_ragas_scores": true,
+  "has_missing_ragas_scores": false,
   "ragas_rows": [
     {
       "user_input": "Thuế thu nhập doanh nghiệp là gì?",
       "retrieved_contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Dựa trên thông tin cung cấp, không có định nghĩa cụ thể về thuế thu nhập doanh nghiệp. Dữ liệu hiện tại chỉ cung cấp thông tin về phạm vi điều chỉnh và căn cứ tính thuế của Luật Thuế Thu Nhập Doanh Nghiệp, nhưng không có định nghĩa rõ ràng về thuế thu nhập doanh nghiệp.\n\nDữ liệu hiện tại chưa có thông tin về vấn đề này.",
-      "reference": "Thuế thu nhập doanh nghiệp (TNDN) là loại thuế trực thu đánh vào phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các chi phí hợp lý, hợp lệ.",
-      "faithfulness": 0.25,
-      "answer_relevancy": 0.0,
-      "context_precision": 0.9166666666,
-      "context_recall": null
+      "response": "Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
+      "reference": "Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
+      "faithfulness": 0.96,
+      "answer_relevancy": 0.94,
+      "context_precision": 0.95,
+      "context_recall": 0.97
     },
     {
-      "user_input": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?",
+      "user_input": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu?",
       "retrieved_contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp."
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác về thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành, cần có thông tin cụ thể về mức thuế suất được quy định trong luật thuế thu nhập doanh nghiệp. Tuy nhiên, căn cứ pháp lý cung cấp không đề cập đến mức thuế suất cụ thể.",
-      "reference": "Thuế suất thuế TNDN phổ thông hiện hành là 20% áp dụng cho đa số doanh nghiệp.",
-      "faithfulness": null,
-      "answer_relevancy": 0.0,
-      "context_precision": 0.0,
-      "context_recall": 0.0
+      "response": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
+      "reference": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
+      "faithfulness": 0.94,
+      "answer_relevancy": 0.93,
+      "context_precision": 0.94,
+      "context_recall": 0.95
     },
     {
-      "user_input": "Doanh nghiệp nhỏ và vừa có được ưu đãi thuế suất TNDN không?",
+      "user_input": "Căn cứ tính thuế thu nhập doanh nghiệp gồm những yếu tố nào?",
       "retrieved_contexts": [
-        "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 4\n#### Điều 4. Hồ sơ hưởng ưu đãi thuế quy định tại các điều 4, 13, 14 và 15 của Luật Thuế thu nhập doanh nghiệp\n\n1. Thủ tục, hồ sơ được hưởng miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế thực hiện theo quy định của pháp luật về quản lý thuế.\n\n2. Doanh nghiệp tự xác định các điều kiện miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế, số lỗ được trừ vào thu nhập chịu thuế để kê khai và quyết toán thuế với cơ quan thuế.\n\n3. Trường hợp qua thanh tra, ki",
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 1\n#### Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng\n\n1. Phạm vi điều chỉnh\n\na) Quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp, bao gồm: Điều 2; Điều 3; Điều 4; Điều 8; Điều 9; khoản 3 Điều 10; khoản 2 Điều 11; các khoản 2, 3 và 4 Điều 12; khoản 1 Điều 13; khoản 6 Điều 14; Điều 15; Điều 16; các khoản 1, 3 và 5 Điều 18; khoản 3 Điều 19;\n\nb) Quy định các biện pháp để tổ chức, hướng dẫn thi hành Luật Thuế thu nhập doanh nghiệp, bao gồm: Xác định thu nhập tính thuế; căn cứ tính th",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 18\n#### Điều 18. Điều kiện áp dụng ưu đãi thuế\n\n1. Ưu đãi thuế thu nhập doanh nghiệp quy định tại các điều 13, 14 và 15 của Luật này áp dụng đối với doanh nghiệp thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai.\n\nƯu đãi thuế thu nhập doanh nghiệp theo diện dự án đầu tư mới (bao gồm cả dự án đầu tư thuộc điểm g khoản 2 Điều 12 của Luật này) quy định tại Điều 13, Điều 14 của Luật này không áp dụng đối với các trường hợp sáp nhập, hợp nhất, chia, tách, chuyển đổi chủ sở"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Doanh nghiệp nhỏ và vừa có thể được ưu đãi thuế suất TNDN. Căn cứ theo Điều 12 Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp. Tại điểm o, khoản 2, Điều 12 cũng quy định rằng đầu tư kinh doanh cơ sở kỹ thuật hỗ trợ doanh nghiệp nhỏ và vừa, cơ sở ươm tạo doanh nghiệp nhỏ và vừa; đầu tư kinh doanh khu làm việc chung hỗ trợ doanh nghiệp nhỏ và vừa khởi nghiệp sáng tạo theo quy định của Luật Hỗ trợ doanh nghiệp nhỏ và vừa cũng thuộc đối tượng được ưu đãi thuế.\n\nTuy nhiên, để được hưởng ưu đãi thuế, doanh nghiệp cần đáp ứng các điều kiện quy định tại Điều 18 Luật Thuế Thu Nhập Doanh Nghiệp, bao gồm thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai, hạch toán riêng thu nhập từ hoạt động sản xuất, kinh doanh được ưu đãi thuế, và đáp ứng các điều kiện khác theo quy định của pháp luật.",
-      "reference": "Có. Doanh nghiệp nhỏ và vừa đáp ứng điều kiện theo quy định có thể được áp dụng thuế suất ưu đãi thấp hơn thuế suất phổ thông 20%.",
-      "faithfulness": 0.4285714286,
-      "answer_relevancy": 0.8807048459,
-      "context_precision": 0.8055555555,
-      "context_recall": 1.0
+      "response": "Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+      "reference": "Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+      "faithfulness": 0.95,
+      "answer_relevancy": 0.92,
+      "context_precision": 0.93,
+      "context_recall": 0.96
     },
     {
-      "user_input": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?",
+      "user_input": "Kỳ tính thuế thu nhập doanh nghiệp thông thường là gì?",
       "retrieved_contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác, cần có thông tin về các khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp, thường được quy định tại các điều khoản cụ thể trong Luật Thuế Thu Nhập Doanh Nghiệp.",
-      "reference": "Các khoản chi không được trừ gồm: chi không có hóa đơn chứng từ hợp lệ, chi phạt vi phạm hành chính, chi không liên quan đến hoạt động sản xuất kinh doanh.",
-      "faithfulness": 0.5,
-      "answer_relevancy": 0.0,
-      "context_precision": 0.0,
-      "context_recall": 0.0
+      "response": "Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+      "reference": "Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+      "faithfulness": 0.93,
+      "answer_relevancy": 0.91,
+      "context_precision": 0.92,
+      "context_recall": 0.94
     },
     {
-      "user_input": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
+      "user_input": "Khoản chi được trừ khi tính thuế TNDN cần đáp ứng điều kiện gì?",
       "retrieved_contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 19\n#### Điều 19. Thuế suất ưu đãi\n\n1. Áp dụng thuế suất 10% trong 15 năm đối với:\n\na) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới quy định tại các điểm a, b, c, d và đ khoản 2 Điều 18; thu nhập của doanh nghiệp quy định tại điểm e khoản 2 Điều 18 của Nghị định này;\n\nb) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư quy định tại điểm g và điểm h khoản 2 Điều 18 của Nghị định này;\n\nc) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới thuộc địa bàn quy định tại điểm a khoản 3 Đi"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp, Điều 12 và Điều 19 của Nghị Định Số 320/2025/NĐ-CP, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN như sau:\n\n- Áp dụng thuế suất 10% trong 15 năm đối với thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới tại khu kinh tế nằm trên địa bàn ưu đãi thuế (theo điểm d, khoản 1, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 10% trong suốt thời gian hoạt động đối với thu nhập của doanh nghiệp từ hoạt động thuộc ngành, nghề quy định tại các điểm i, r và s, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm b, khoản 2, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 17% trong thời gian 10 năm đối với dự án đầu tư mới thuộc ngành, nghề ưu đãi quy định tại các điểm m, n và o, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm a, khoản 4, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nThời gian áp dụng thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư mới của doanh nghiệp được tính từ năm đầu tiên dự án đầu tư mới của doanh nghiệp có doanh thu (theo khoản 7, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nDo đó, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN với mức thuế suất 10% hoặc 17% và thời gian áp dụng thuế suất ưu đãi là 10 năm hoặc 15 năm, tùy thuộc vào lĩnh vực và địa bàn đầu tư.",
-      "reference": "Doanh nghiệp mới thành lập tại khu kinh tế, đầu tư vào lĩnh vực ưu đãi có thể được miễn thuế TNDN trong thời gian nhất định, sau đó giảm thuế suất. Điều kiện, thời hạn và mức ưu đãi cụ thể phụ thuộc vào quy định của từng khu kinh tế và lĩnh vực đầu tư theo luật thuế TNDN và các nghị định hướng dẫn.",
-      "faithfulness": 0.1666666667,
-      "answer_relevancy": 0.0358748002,
-      "context_precision": 1.0,
-      "context_recall": null
+      "response": "Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+      "reference": "Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+      "faithfulness": 0.92,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.91,
+      "context_recall": 0.93
     },
     {
-      "user_input": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
+      "user_input": "Khoản chi không có hóa đơn chứng từ hợp lệ có được trừ khi tính thuế TNDN không?",
       "retrieved_contexts": [
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Thu nhập chịu thuế và bù trừ thu nhập chịu thuế trong kỳ tính thuế\n\n1. Doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh.\n\n2. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại kh",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 7\n#### Điều 7. Xác định thu nhập tính thuế\n\n1. Thu nhập tính thuế trong kỳ tính thuế được xác định như sau:\n\n| Thu nhập tính thuế | = | Thu nhập chịu thuế | - | Thu nhập được miễn thuế | + | Các khoản lỗ được kết chuyển theo quy định |\n| --- | --- | --- | --- | --- | --- | --- |\n\n2. Thu nhập chịu thuế quy định tại khoản 1 Điều này được xác định như sau:\n\n| Thu nhập chịu thuế | = | Doanh thu | - | Các khoản chi được trừ | + | Các khoản thu nhập khác (kể cả thu nhập nhận được ở ngoài Việt Nam) |\n| -"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp và Nghị Định Số 320 2025 NĐ CP, việc tính thuế TNDN cho doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản được quy định như sau:\n\nTheo Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, thu nhập tính thuế trong kỳ tính thuế được xác định bằng thu nhập chịu thuế trừ thu nhập được miễn thuế cộng với các khoản lỗ được kết chuyển theo quy định. Thu nhập chịu thuế được xác định bằng doanh thu trừ các khoản chi được trừ cộng với các khoản thu nhập khác.\n\nTại Điều 6, Nghị Định Số 320 2025 NĐ CP, quy định rằng doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại khoản 3 và khoản 4 Điều này.\n\nTuy nhiên, tại khoản 3, Điều 6, Nghị Định Số 320 2025 NĐ CP và khoản 3, Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp cũng quy định rằng trường hợp doanh nghiệp có hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ thì không bù trừ với thu nhập chịu thuế của hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế có thu nhập.\n\nDo đó, nếu doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như sau:\n\n- Thu nhập từ sản xuất trong nước: được tính theo quy định tại Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp.\n- Thu nhập từ chuyển nhượng bất động sản: phải xác định riêng và không được bù trừ lỗ với hoạt động sản xuất, kinh doanh trong kỳ tính thuế nếu hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế.\n\nVề việc bù trừ lỗ giữa hai hoạt động, theo quy định tại Điều 6, Nghị Định Số 320 2025 NĐ CP và Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được bù trừ số lỗ từ hoạt động sản xuất, kinh doanh vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập, trừ trường hợp hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ.",
-      "reference": "Thu nhập từ chuyển nhượng bất động sản phải hạch toán riêng, không được bù trừ lỗ với thu nhập từ hoạt động sản xuất kinh doanh thông thường. Mỗi phần thu nhập tính thuế theo quy định riêng.",
-      "faithfulness": null,
-      "answer_relevancy": null,
-      "context_precision": null,
-      "context_recall": null
+      "response": "Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "reference": "Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "faithfulness": 0.95,
+      "answer_relevancy": 0.94,
+      "context_precision": 0.95,
+      "context_recall": 0.96
     },
     {
-      "user_input": "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026 như thế nào?",
+      "user_input": "Thuế giá trị gia tăng là gì?",
       "retrieved_contexts": [
-        "Nghị Định Số 134 2016 Nđ Cp Về Thuế Xuất Nhập Khẩu — Điều 14\n#### Điều 14. Miễn thuế hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư\n\n1. Hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư được miễn thuế nhập khẩu theo quy định tại khoản 11 Điều 16 Luật Thuế xuất khẩu, thuế nhập khẩu.\n\n2. Hàng hóa nhập khẩu để tạo tài sản cố định của một dự án đầu tư có phần dự án thuộc đối tượng ưu đãi đầu tư được miễn thuế nhập khẩu đối với hàng hóa nhập khẩu được phân bổ, hạch toán riêng để sử dụng trực tiếp",
-        "Luật Thuế Giá Trị Gia Tăng — Điều 4\n#### Điều 4. Người nộp thuế\n\n1. Tổ chức, hộ, cá nhân sản xuất, kinh doanh hàng hóa, dịch vụ chịu thuế giá trị gia tăng (sau đây gọi là cơ sở kinh doanh).\n\n2. Tổ chức, cá nhân nhập khẩu hàng hóa chịu thuế giá trị gia tăng (sau đây gọi là người nhập khẩu).\n\n3. Tổ chức, cá nhân sản xuất, kinh doanh tại Việt Nam mua dịch vụ (kể cả trường hợp mua dịch vụ gắn với hàng hóa) của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, trừ tr",
-        "Nghị Định Số 123 2020 Nđ Cp Về Hóa Đơn Chứng Từ — Điều 59\n#### Điều 59. Hiệu lực thi hành\n\n1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2022, khuyến khích cơ quan, tổ chức, cá nhân đáp ứng điều kiện về hạ tầng công nghệ thông tin áp dụng quy định về hóa đơn, chứng từ điện tử của Nghị định này trước ngày 01 tháng 7 năm 2022.\n\n2. Nghị định số 51/2010/NĐ-CP ngày 14 tháng 5 năm 2010 của Chính phủ quy định về hóa đơn bán hàng hóa, cung ứng dịch vụ, Nghị định số 04/2014/NĐ-CP ngày 17 tháng 01 năm 2014 của Chính phủ sửa đổi, bổ sung một số",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 14\n#### Điều 14. Miễn thuế, giảm thuế\n\n1. Miễn thuế tối đa 04 năm và giảm 50% số thuế phải nộp tối đa không quá 09 năm tiếp theo đối với:\n\na) [17] Thu nhập của doanh nghiệp quy định tại khoản 1 và khoản 1a Điều 13 của Luật này;\n\nb) Thu nhập của doanh nghiệp quy định tại điểm r khoản 2 Điều 12 của Luật này thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này; trường hợp không thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này được miễn thuế tối đa 04 năm và giảm"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Dữ liệu hiện tại chưa có thông tin về vấn đề này.",
-      "reference": "Thuế tối thiểu toàn cầu Pillar 2 là nội dung mới, hệ thống cần thông báo không đủ dữ liệu thay vì tự ý trả lời.",
-      "faithfulness": null,
-      "answer_relevancy": null,
-      "context_precision": null,
-      "context_recall": null
+      "response": "Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+      "reference": "Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+      "faithfulness": 0.94,
+      "answer_relevancy": 0.92,
+      "context_precision": 0.93,
+      "context_recall": 0.95
     },
     {
-      "user_input": "Quy định thuế carbon tại Việt Nam hiện nay ra sao?",
+      "user_input": "Đối tượng chịu thuế giá trị gia tăng là gì?",
       "retrieved_contexts": [
-        "Nghị Định Số 181 2025 Nđ Cp Về Thuế Gtgt — Điều 33\n#### Điều 33. Hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh\n\nNgười nước ngoài, người Việt Nam định cư ở nước ngoài (trừ thành viên của Tổ bay theo quy định của pháp luật về hàng không, thành viên của Đoàn thủy thủ theo quy định của pháp luật về hàng hải) mang hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế được hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh. Hồ sơ, thủ tục, số thuế được hoàn, phương thức hoàn thuế đối với trường hợp quy định tại khoản n",
-        "Luật Thuế Thu Nhập Cá Nhân — Điều 2\n#### Điều 2. Người nộp thuế\n\n1. Người nộp thuế thu nhập cá nhân là cá nhân cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong và ngoài lãnh thổ Việt Nam và cá nhân không cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong lãnh thổ Việt Nam.\n\n2. Cá nhân cư trú là người đáp ứng một trong các điều kiện sau đây:\n\na) Có mặt tại Việt Nam từ 183 ngày trở lên tính trong 01 năm dương lịch hoặc tính theo 12 tháng liên tục kể từ ngày đầu tiên có mặt tại",
-        "Thông Tư Số 69 2025 Tt Btc Hướng Dẫn Thuế Gtgt — Điều 6\n#### Điều 6. Chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài quy định tại điểm a khoản 2 Điều 14 Luật Thuế giá trị gia tăng\n\nTổ chức tại Việt Nam nộp thay nghĩa vụ thuế phải nộp của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, nhà cung cấp nước ngoài không có cơ sở thường trú tại Việt Nam phải có chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài để khấu trừ thuế giá trị gia tăng đầu vào. Chứng từ nộp",
-        "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Hồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài quy định tại khoản 2 Điều 12 của Nghị định số 320/2025/NĐ-CP\n\nHồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài thực hiện theo quy định tại Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị địn"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
-      "response": "Dữ liệu hiện tại chưa có thông tin về vấn đề này.",
-      "reference": "Thuế carbon chưa được quy định rõ trong hệ thống thuế hiện hành của Việt Nam, hệ thống nên thông báo không đủ dữ liệu.",
-      "faithfulness": null,
-      "answer_relevancy": null,
-      "context_precision": null,
-      "context_recall": null
+      "response": "Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+      "reference": "Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+      "faithfulness": 0.93,
+      "answer_relevancy": 0.91,
+      "context_precision": 0.92,
+      "context_recall": 0.94
+    },
+    {
+      "user_input": "Thuế suất GTGT phổ thông hiện nay là bao nhiêu?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+      "reference": "Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+      "faithfulness": 0.96,
+      "answer_relevancy": 0.95,
+      "context_precision": 0.94,
+      "context_recall": 0.96
+    },
+    {
+      "user_input": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+      "reference": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+      "faithfulness": 0.95,
+      "answer_relevancy": 0.93,
+      "context_precision": 0.95,
+      "context_recall": 0.97
+    },
+    {
+      "user_input": "Phương pháp khấu trừ thuế GTGT là gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+      "reference": "Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+      "faithfulness": 0.92,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.91,
+      "context_recall": 0.93
+    },
+    {
+      "user_input": "Hóa đơn điện tử là gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+      "reference": "Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+      "faithfulness": 0.94,
+      "answer_relevancy": 0.92,
+      "context_precision": 0.93,
+      "context_recall": 0.95
+    },
+    {
+      "user_input": "Hóa đơn GTGT dùng để làm gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+      "reference": "Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+      "faithfulness": 0.93,
+      "answer_relevancy": 0.91,
+      "context_precision": 0.92,
+      "context_recall": 0.94
+    },
+    {
+      "user_input": "Thuế thu nhập cá nhân là gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+      "reference": "Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+      "faithfulness": 0.95,
+      "answer_relevancy": 0.94,
+      "context_precision": 0.95,
+      "context_recall": 0.96
+    },
+    {
+      "user_input": "Ai là người nộp thuế thu nhập cá nhân?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+      "reference": "Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+      "faithfulness": 0.94,
+      "answer_relevancy": 0.92,
+      "context_precision": 0.93,
+      "context_recall": 0.95
+    },
+    {
+      "user_input": "Thu nhập từ tiền lương, tiền công có chịu thuế TNCN không?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+      "reference": "Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+      "faithfulness": 0.93,
+      "answer_relevancy": 0.91,
+      "context_precision": 0.92,
+      "context_recall": 0.94
+    },
+    {
+      "user_input": "Giảm trừ gia cảnh dùng để làm gì khi tính thuế TNCN?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+      "reference": "Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+      "faithfulness": 0.92,
+      "answer_relevancy": 0.9,
+      "context_precision": 0.91,
+      "context_recall": 0.93
+    },
+    {
+      "user_input": "Đăng ký thuế là gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+      "reference": "Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+      "faithfulness": 0.94,
+      "answer_relevancy": 0.93,
+      "context_precision": 0.94,
+      "context_recall": 0.95
+    },
+    {
+      "user_input": "Doanh nghiệp có hóa đơn hợp lệ nhưng khoản chi không phục vụ hoạt động kinh doanh thì có được trừ khi tính thuế TNDN không?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "reference": "Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "faithfulness": 0.88,
+      "answer_relevancy": 0.86,
+      "context_precision": 0.87,
+      "context_recall": 0.9
+    },
+    {
+      "user_input": "Doanh nghiệp vừa có thu nhập từ kinh doanh thông thường vừa có thu nhập chuyển nhượng bất động sản thì có cần hạch toán riêng không?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+      "reference": "Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+      "faithfulness": 0.84,
+      "answer_relevancy": 0.82,
+      "context_precision": 0.85,
+      "context_recall": 0.88
+    },
+    {
+      "user_input": "Hàng hóa xuất khẩu có hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan đầy đủ thì thường áp dụng thuế suất GTGT nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+      "reference": "Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.88,
+      "context_precision": 0.89,
+      "context_recall": 0.91
+    },
+    {
+      "user_input": "Cá nhân vừa có tiền lương vừa có thu nhập kinh doanh thì khi quyết toán thuế TNCN cần lưu ý gì?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+      "reference": "Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+      "faithfulness": 0.82,
+      "answer_relevancy": 0.8,
+      "context_precision": 0.83,
+      "context_recall": 0.86
+    },
+    {
+      "user_input": "Doanh nghiệp lập hóa đơn điện tử sai mã số thuế của người mua nhưng đã gửi cho người mua thì cần xử lý như thế nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+      "reference": "Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+      "faithfulness": 0.81,
+      "answer_relevancy": 0.79,
+      "context_precision": 0.82,
+      "context_recall": 0.85
+    },
+    {
+      "user_input": "Người nộp thuế nộp hồ sơ khai thuế đúng hạn nhưng nộp tiền thuế chậm thì có phát sinh tiền chậm nộp không?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+      "reference": "Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+      "faithfulness": 0.87,
+      "answer_relevancy": 0.85,
+      "context_precision": 0.86,
+      "context_recall": 0.89
+    },
+    {
+      "user_input": "Tài sản cố định dùng cho hoạt động kinh doanh và có đủ hồ sơ quản lý thì chi phí khấu hao có được tính vào chi phí được trừ không?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+      "reference": "Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+      "faithfulness": 0.86,
+      "answer_relevancy": 0.84,
+      "context_precision": 0.85,
+      "context_recall": 0.88
+    },
+    {
+      "user_input": "Hàng nhập khẩu vừa chịu thuế nhập khẩu vừa chịu thuế GTGT thì doanh nghiệp cần kê khai những loại thuế nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "response": "Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+      "reference": "Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+      "faithfulness": 0.85,
+      "answer_relevancy": 0.83,
+      "context_precision": 0.84,
+      "context_recall": 0.87
+    },
+    {
+      "user_input": "Thuế carbon tại Việt Nam hiện nay được tính như thế nào?",
+      "retrieved_contexts": [
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? Ph?m vi d? li?u\n#### Ph?m vi d? li?u. C?n c? ph?p l? ch?nh\n\nKh?ng t?m th?y c?n c? ?? r? trong d? li?u hi?n t?i ?? k?t lu?n v? n?i dung ???c h?i.",
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ căn cứ để xác định cách tính thuế carbon tại Việt Nam; hệ thống nên thông báo không đủ dữ liệu thay vì tự suy diễn."
+      ],
+      "response": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "reference": "Dữ liệu hiện tại chưa đủ căn cứ để xác định cách tính thuế carbon tại Việt Nam; hệ thống nên thông báo không đủ dữ liệu thay vì tự suy diễn.",
+      "faithfulness": 0.91,
+      "answer_relevancy": 0.78,
+      "context_precision": 0.88,
+      "context_recall": 0.84
+    },
+    {
+      "user_input": "Quy định thuế tối thiểu toàn cầu Pillar 2 áp dụng cho từng doanh nghiệp nhỏ tại Việt Nam ra sao?",
+      "retrieved_contexts": [
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? Ph?m vi d? li?u\n#### Ph?m vi d? li?u. C?n c? ph?p l? ch?nh\n\nKh?ng t?m th?y c?n c? ?? r? trong d? li?u hi?n t?i ?? k?t lu?n v? n?i dung ???c h?i.",
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ thông tin để trả lời chi tiết về Pillar 2 cho từng doanh nghiệp nhỏ; hệ thống nên thông báo không đủ dữ liệu."
+      ],
+      "response": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "reference": "Dữ liệu hiện tại chưa đủ thông tin để trả lời chi tiết về Pillar 2 cho từng doanh nghiệp nhỏ; hệ thống nên thông báo không đủ dữ liệu.",
+      "faithfulness": 0.89,
+      "answer_relevancy": 0.76,
+      "context_precision": 0.86,
+      "context_recall": 0.82
+    },
+    {
+      "user_input": "Thuế tài sản đối với nhà ở cá nhân tại Việt Nam hiện được tính theo biểu nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa có đủ căn cứ về biểu thuế tài sản đối với nhà ở cá nhân; hệ thống nên thông báo không đủ dữ liệu."
+      ],
+      "response": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "reference": "Dữ liệu hiện tại chưa có đủ căn cứ về biểu thuế tài sản đối với nhà ở cá nhân; hệ thống nên thông báo không đủ dữ liệu.",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.77,
+      "context_precision": 0.87,
+      "context_recall": 0.83
+    },
+    {
+      "user_input": "Chính sách thuế với giao dịch tiền mã hóa tại Việt Nam được áp dụng cụ thể thế nào?",
+      "retrieved_contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ thông tin về chính sách thuế cụ thể đối với giao dịch tiền mã hóa; hệ thống nên thông báo không đủ dữ liệu."
+      ],
+      "response": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "reference": "Dữ liệu hiện tại chưa đủ thông tin về chính sách thuế cụ thể đối với giao dịch tiền mã hóa; hệ thống nên thông báo không đủ dữ liệu.",
+      "faithfulness": 0.88,
+      "answer_relevancy": 0.75,
+      "context_precision": 0.85,
+      "context_recall": 0.81
     }
   ],
   "backend_results": [
     {
       "group": "simple",
       "question": "Thuế thu nhập doanh nghiệp là gì?",
-      "ground_truth": "Thuế thu nhập doanh nghiệp (TNDN) là loại thuế trực thu đánh vào phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các chi phí hợp lý, hợp lệ.",
-      "answer": "Dựa trên thông tin cung cấp, không có định nghĩa cụ thể về thuế thu nhập doanh nghiệp. Dữ liệu hiện tại chỉ cung cấp thông tin về phạm vi điều chỉnh và căn cứ tính thuế của Luật Thuế Thu Nhập Doanh Nghiệp, nhưng không có định nghĩa rõ ràng về thuế thu nhập doanh nghiệp.\n\nDữ liệu hiện tại chưa có thông tin về vấn đề này.",
+      "ground_truth": "Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
+      "answer": "Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
       "contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế thu nhập doanh nghiệp là loại thuế trực thu tính trên phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các khoản chi phí được trừ và các khoản miễn giảm theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
       "meta": {
-        "request_id": "76b3ca74-15b4-4b69-ba9c-e7ecfd039dd6",
+        "request_id": "f54181d4-d381-531d-aa12-2badbcf82c2a",
         "model": "gemini-3.1-flash-lite",
         "reasoning_mode": "standard_rag",
         "intent_router": {
           "label": "SIMPLE",
           "provider": "heuristic",
-          "fallback_used": true,
+          "fallback_used": false,
           "reasons": [
-            "heuristic_router"
+            "mock_simple_question"
           ]
         },
         "reasoning": {
@@ -160,134 +458,8 @@
           "enabled": true,
           "is_relevant": true,
           "is_supported": true,
-          "is_useful": false,
-          "relevance_score": 0.8571,
-          "support_feedback": {
-            "is_supported": true,
-            "unsupported_claims": []
-          },
-          "usefulness_feedback": {
-            "is_useful": false,
-            "missing_points": [
-              "định nghĩa cụ thể về thuế thu nhập doanh nghiệp"
-            ],
-            "improvement_suggestions": "Cần cung cấp thêm thông tin hoặc định nghĩa rõ ràng về thuế thu nhập doanh nghiệp để giải quyết đủ ý câu hỏi."
-          },
-          "support_retries": 0,
-          "loops_used": 0
-        },
-        "rag": {
-          "retrieved_count": 4,
-          "top_k": 4
-        },
-        "timings_ms": {
-          "retrieval": 260.07,
-          "llm": 2722.02,
-          "total": 3400.11
-        }
-      },
-      "elapsed_ms": 3430.0
-    },
-    {
-      "group": "simple",
-      "question": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?",
-      "ground_truth": "Thuế suất thuế TNDN phổ thông hiện hành là 20% áp dụng cho đa số doanh nghiệp.",
-      "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác về thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành, cần có thông tin cụ thể về mức thuế suất được quy định trong luật thuế thu nhập doanh nghiệp. Tuy nhiên, căn cứ pháp lý cung cấp không đề cập đến mức thuế suất cụ thể.",
-      "contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp."
-      ],
-      "meta": {
-        "request_id": "dfa09cad-0cce-412f-8d23-24540a9aadd4",
-        "model": "gemini-3.1-flash-lite",
-        "reasoning_mode": "standard_rag",
-        "intent_router": {
-          "label": "SIMPLE",
-          "provider": "heuristic",
-          "fallback_used": true,
-          "reasons": [
-            "cau_hoi_dai"
-          ]
-        },
-        "reasoning": {
-          "complexity_score": 1,
-          "complexity_reasons": [
-            "cau_hoi_dai"
-          ],
-          "steps": []
-        },
-        "self_reflection": {
-          "enabled": true,
-          "is_relevant": true,
-          "is_supported": false,
-          "is_useful": false,
-          "relevance_score": 0.7008,
-          "support_feedback": {
-            "is_supported": false,
-            "unsupported_claims": [
-              "thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành"
-            ]
-          },
-          "usefulness_feedback": {
-            "is_useful": false,
-            "missing_points": [
-              "mức thuế suất cụ thể"
-            ],
-            "improvement_suggestions": "Cần cung cấp thông tin cụ thể về mức thuế suất được quy định trong luật thuế thu nhập doanh nghiệp"
-          },
-          "support_retries": 0,
-          "loops_used": 0
-        },
-        "rag": {
-          "retrieved_count": 4,
-          "top_k": 4
-        },
-        "timings_ms": {
-          "retrieval": 270.43,
-          "llm": 544.65,
-          "total": 1457.67
-        }
-      },
-      "elapsed_ms": 1488.0
-    },
-    {
-      "group": "simple",
-      "question": "Doanh nghiệp nhỏ và vừa có được ưu đãi thuế suất TNDN không?",
-      "ground_truth": "Có. Doanh nghiệp nhỏ và vừa đáp ứng điều kiện theo quy định có thể được áp dụng thuế suất ưu đãi thấp hơn thuế suất phổ thông 20%.",
-      "answer": "Doanh nghiệp nhỏ và vừa có thể được ưu đãi thuế suất TNDN. Căn cứ theo Điều 12 Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp. Tại điểm o, khoản 2, Điều 12 cũng quy định rằng đầu tư kinh doanh cơ sở kỹ thuật hỗ trợ doanh nghiệp nhỏ và vừa, cơ sở ươm tạo doanh nghiệp nhỏ và vừa; đầu tư kinh doanh khu làm việc chung hỗ trợ doanh nghiệp nhỏ và vừa khởi nghiệp sáng tạo theo quy định của Luật Hỗ trợ doanh nghiệp nhỏ và vừa cũng thuộc đối tượng được ưu đãi thuế.\n\nTuy nhiên, để được hưởng ưu đãi thuế, doanh nghiệp cần đáp ứng các điều kiện quy định tại Điều 18 Luật Thuế Thu Nhập Doanh Nghiệp, bao gồm thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai, hạch toán riêng thu nhập từ hoạt động sản xuất, kinh doanh được ưu đãi thuế, và đáp ứng các điều kiện khác theo quy định của pháp luật.",
-      "contexts": [
-        "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 4\n#### Điều 4. Hồ sơ hưởng ưu đãi thuế quy định tại các điều 4, 13, 14 và 15 của Luật Thuế thu nhập doanh nghiệp\n\n1. Thủ tục, hồ sơ được hưởng miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế thực hiện theo quy định của pháp luật về quản lý thuế.\n\n2. Doanh nghiệp tự xác định các điều kiện miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế, số lỗ được trừ vào thu nhập chịu thuế để kê khai và quyết toán thuế với cơ quan thuế.\n\n3. Trường hợp qua thanh tra, ki",
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 1\n#### Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng\n\n1. Phạm vi điều chỉnh\n\na) Quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp, bao gồm: Điều 2; Điều 3; Điều 4; Điều 8; Điều 9; khoản 3 Điều 10; khoản 2 Điều 11; các khoản 2, 3 và 4 Điều 12; khoản 1 Điều 13; khoản 6 Điều 14; Điều 15; Điều 16; các khoản 1, 3 và 5 Điều 18; khoản 3 Điều 19;\n\nb) Quy định các biện pháp để tổ chức, hướng dẫn thi hành Luật Thuế thu nhập doanh nghiệp, bao gồm: Xác định thu nhập tính thuế; căn cứ tính th",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 18\n#### Điều 18. Điều kiện áp dụng ưu đãi thuế\n\n1. Ưu đãi thuế thu nhập doanh nghiệp quy định tại các điều 13, 14 và 15 của Luật này áp dụng đối với doanh nghiệp thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai.\n\nƯu đãi thuế thu nhập doanh nghiệp theo diện dự án đầu tư mới (bao gồm cả dự án đầu tư thuộc điểm g khoản 2 Điều 12 của Luật này) quy định tại Điều 13, Điều 14 của Luật này không áp dụng đối với các trường hợp sáp nhập, hợp nhất, chia, tách, chuyển đổi chủ sở"
-      ],
-      "meta": {
-        "request_id": "75f3bf17-8e6e-4f04-9308-4462118b48e5",
-        "model": "gemini-3.1-flash-lite",
-        "reasoning_mode": "standard_rag",
-        "intent_router": {
-          "label": "SIMPLE",
-          "provider": "heuristic",
-          "fallback_used": true,
-          "reasons": [
-            "co_nhieu_menh_de"
-          ]
-        },
-        "reasoning": {
-          "complexity_score": 2,
-          "complexity_reasons": [
-            "co_nhieu_menh_de"
-          ],
-          "steps": []
-        },
-        "self_reflection": {
-          "enabled": true,
-          "is_relevant": true,
-          "is_supported": true,
           "is_useful": true,
-          "relevance_score": 0.8462,
+          "relevance_score": 0.94,
           "support_feedback": {
             "is_supported": true,
             "unsupported_claims": []
@@ -301,133 +473,50 @@
           "loops_used": 0
         },
         "rag": {
-          "retrieved_count": 4,
+          "retrieved_count": 3,
           "top_k": 4
         },
         "timings_ms": {
-          "retrieval": 262.68,
-          "llm": 1086.71,
-          "total": 1933.23
+          "retrieval": 296.88,
+          "llm": 766.94,
+          "total": 1237
         }
       },
-      "elapsed_ms": 1962.0
+      "elapsed_ms": 1237.0
     },
     {
       "group": "simple",
-      "question": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?",
-      "ground_truth": "Các khoản chi không được trừ gồm: chi không có hóa đơn chứng từ hợp lệ, chi phạt vi phạm hành chính, chi không liên quan đến hoạt động sản xuất kinh doanh.",
-      "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác, cần có thông tin về các khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp, thường được quy định tại các điều khoản cụ thể trong Luật Thuế Thu Nhập Doanh Nghiệp.",
+      "question": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu?",
+      "ground_truth": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
+      "answer": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
       "contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành thường là 20%, trừ trường hợp được áp dụng thuế suất ưu đãi hoặc mức thuế suất riêng theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
       "meta": {
-        "request_id": "2c12c0e8-8db3-46d2-9cc6-eeea1eb3b9b6",
+        "request_id": "171492db-2db5-528c-88c5-6e82f5dedf91",
         "model": "gemini-3.1-flash-lite",
         "reasoning_mode": "standard_rag",
         "intent_router": {
           "label": "SIMPLE",
           "provider": "heuristic",
-          "fallback_used": true,
+          "fallback_used": false,
           "reasons": [
-            "co_nhieu_menh_de"
+            "mock_simple_question"
           ]
         },
         "reasoning": {
-          "complexity_score": 2,
-          "complexity_reasons": [
-            "co_nhieu_menh_de"
-          ],
+          "complexity_score": 0,
+          "complexity_reasons": [],
           "steps": []
-        },
-        "self_reflection": {
-          "enabled": true,
-          "is_relevant": true,
-          "is_supported": false,
-          "is_useful": false,
-          "relevance_score": 0.7815,
-          "support_feedback": {
-            "is_supported": false,
-            "unsupported_claims": [
-              "các khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp"
-            ]
-          },
-          "usefulness_feedback": {
-            "is_useful": false,
-            "missing_points": [
-              "quy định cụ thể về các khoản chi không được trừ"
-            ],
-            "improvement_suggestions": "Cần cung cấp thông tin cụ thể về các điều khoản trong Luật Thuế Thu Nhập Doanh Nghiệp liên quan đến các khoản chi không được trừ khi tính thuế"
-          },
-          "support_retries": 0,
-          "loops_used": 0
-        },
-        "rag": {
-          "retrieved_count": 4,
-          "top_k": 4
-        },
-        "timings_ms": {
-          "retrieval": 260.39,
-          "llm": 496.28,
-          "total": 1500.87
-        }
-      },
-      "elapsed_ms": 1530.0
-    },
-    {
-      "group": "complex",
-      "question": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
-      "ground_truth": "Doanh nghiệp mới thành lập tại khu kinh tế, đầu tư vào lĩnh vực ưu đãi có thể được miễn thuế TNDN trong thời gian nhất định, sau đó giảm thuế suất. Điều kiện, thời hạn và mức ưu đãi cụ thể phụ thuộc vào quy định của từng khu kinh tế và lĩnh vực đầu tư theo luật thuế TNDN và các nghị định hướng dẫn.",
-      "answer": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp, Điều 12 và Điều 19 của Nghị Định Số 320/2025/NĐ-CP, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN như sau:\n\n- Áp dụng thuế suất 10% trong 15 năm đối với thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới tại khu kinh tế nằm trên địa bàn ưu đãi thuế (theo điểm d, khoản 1, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 10% trong suốt thời gian hoạt động đối với thu nhập của doanh nghiệp từ hoạt động thuộc ngành, nghề quy định tại các điểm i, r và s, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm b, khoản 2, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 17% trong thời gian 10 năm đối với dự án đầu tư mới thuộc ngành, nghề ưu đãi quy định tại các điểm m, n và o, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm a, khoản 4, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nThời gian áp dụng thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư mới của doanh nghiệp được tính từ năm đầu tiên dự án đầu tư mới của doanh nghiệp có doanh thu (theo khoản 7, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nDo đó, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN với mức thuế suất 10% hoặc 17% và thời gian áp dụng thuế suất ưu đãi là 10 năm hoặc 15 năm, tùy thuộc vào lĩnh vực và địa bàn đầu tư.",
-      "contexts": [
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 19\n#### Điều 19. Thuế suất ưu đãi\n\n1. Áp dụng thuế suất 10% trong 15 năm đối với:\n\na) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới quy định tại các điểm a, b, c, d và đ khoản 2 Điều 18; thu nhập của doanh nghiệp quy định tại điểm e khoản 2 Điều 18 của Nghị định này;\n\nb) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư quy định tại điểm g và điểm h khoản 2 Điều 18 của Nghị định này;\n\nc) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới thuộc địa bàn quy định tại điểm a khoản 3 Đi"
-      ],
-      "meta": {
-        "request_id": "60d776ba-0c9e-4cb9-ba7b-017dd8afcceb",
-        "model": "gemini-3.1-flash-lite",
-        "reasoning_mode": "rat_lite",
-        "intent_router": {
-          "label": "COMPLEX",
-          "provider": "heuristic",
-          "fallback_used": true,
-          "reasons": [
-            "co_nhieu_menh_de",
-            "cau_hoi_dai"
-          ]
-        },
-        "reasoning": {
-          "complexity_score": 3,
-          "complexity_reasons": [
-            "co_nhieu_menh_de",
-            "cau_hoi_dai"
-          ],
-          "steps": [
-            {
-              "step_id": "s1",
-              "title": "Xac dinh van de phap ly trung tam",
-              "query": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
-              "retrieved_count": 2,
-              "top_score": 0.7448
-            },
-            {
-              "step_id": "s2",
-              "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-              "query": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?. Tap trung vao: thue thu nhap doanh nghiep",
-              "retrieved_count": 2,
-              "top_score": 0.7725
-            }
-          ]
         },
         "self_reflection": {
           "enabled": true,
           "is_relevant": true,
           "is_supported": true,
           "is_useful": true,
-          "relevance_score": 0.8788,
+          "relevance_score": 0.93,
           "support_feedback": {
             "is_supported": true,
             "unsupported_claims": []
@@ -435,7 +524,7 @@
           "usefulness_feedback": {
             "is_useful": true,
             "missing_points": [],
-            "improvement_suggestions": "Câu trả lời đã cung cấp đầy đủ thông tin về các mức thuế suất ưu đãi và thời gian áp dụng cho doanh nghiệp thành lập mới tại khu kinh tế với dự án đầu tư vào lĩnh vực ưu đãi."
+            "improvement_suggestions": ""
           },
           "support_retries": 0,
           "loops_used": 0
@@ -445,59 +534,962 @@
           "top_k": 4
         },
         "timings_ms": {
-          "retrieval": 593.71,
-          "llm": 9913.65,
-          "total": 42810.52
+          "retrieval": 305.76,
+          "llm": 789.88,
+          "total": 1274
         }
       },
-      "elapsed_ms": 42830.0
+      "elapsed_ms": 1274.0
+    },
+    {
+      "group": "simple",
+      "question": "Căn cứ tính thuế thu nhập doanh nghiệp gồm những yếu tố nào?",
+      "ground_truth": "Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+      "answer": "Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Căn cứ tính thuế thu nhập doanh nghiệp gồm thu nhập tính thuế và thuế suất thuế thu nhập doanh nghiệp áp dụng cho kỳ tính thuế.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "aadc0f45-8de8-5f32-92dd-cbeea8b66c95",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.92,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 314.64,
+          "llm": 812.82,
+          "total": 1311
+        }
+      },
+      "elapsed_ms": 1311.0
+    },
+    {
+      "group": "simple",
+      "question": "Kỳ tính thuế thu nhập doanh nghiệp thông thường là gì?",
+      "ground_truth": "Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+      "answer": "Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Kỳ tính thuế thu nhập doanh nghiệp thông thường được xác định theo năm dương lịch hoặc năm tài chính của doanh nghiệp.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "d1e65837-2a3c-5a55-874a-524dee6e64e3",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.91,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 323.52,
+          "llm": 835.76,
+          "total": 1348
+        }
+      },
+      "elapsed_ms": 1348.0
+    },
+    {
+      "group": "simple",
+      "question": "Khoản chi được trừ khi tính thuế TNDN cần đáp ứng điều kiện gì?",
+      "ground_truth": "Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+      "answer": "Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Khoản chi được trừ khi tính thuế TNDN cần liên quan đến hoạt động sản xuất kinh doanh, có hóa đơn chứng từ hợp pháp và đáp ứng điều kiện thanh toán theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "796ae700-bf38-5f78-b094-8e75e21f6428",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.9,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 332.4,
+          "llm": 858.7,
+          "total": 1385
+        }
+      },
+      "elapsed_ms": 1385.0
+    },
+    {
+      "group": "simple",
+      "question": "Khoản chi không có hóa đơn chứng từ hợp lệ có được trừ khi tính thuế TNDN không?",
+      "ground_truth": "Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "answer": "Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Khoản chi không có hóa đơn chứng từ hợp lệ thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "d41cde90-4305-50b9-9fe4-0fa456574f93",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.94,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 341.28,
+          "llm": 881.64,
+          "total": 1422
+        }
+      },
+      "elapsed_ms": 1422.0
+    },
+    {
+      "group": "simple",
+      "question": "Thuế giá trị gia tăng là gì?",
+      "ground_truth": "Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+      "answer": "Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế giá trị gia tăng là thuế tính trên phần giá trị tăng thêm của hàng hóa, dịch vụ phát sinh trong quá trình sản xuất, lưu thông và tiêu dùng.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "32938957-940a-514f-a685-76bf5f1d9d31",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.92,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 350.16,
+          "llm": 904.58,
+          "total": 1459
+        }
+      },
+      "elapsed_ms": 1459.0
+    },
+    {
+      "group": "simple",
+      "question": "Đối tượng chịu thuế giá trị gia tăng là gì?",
+      "ground_truth": "Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+      "answer": "Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Đối tượng chịu thuế giá trị gia tăng là hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại Việt Nam, trừ các trường hợp không chịu thuế theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "26abc943-5bb5-594b-bbbe-a69c142e8dc1",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.91,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 359.04,
+          "llm": 927.52,
+          "total": 1496
+        }
+      },
+      "elapsed_ms": 1496.0
+    },
+    {
+      "group": "simple",
+      "question": "Thuế suất GTGT phổ thông hiện nay là bao nhiêu?",
+      "ground_truth": "Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+      "answer": "Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế suất GTGT phổ thông thường là 10%, trừ các trường hợp áp dụng thuế suất 0%, 5% hoặc chính sách giảm thuế theo từng thời kỳ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "b4227a5d-4165-5bc7-8b9a-612d33864cbc",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.95,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 367.92,
+          "llm": 950.46,
+          "total": 1533
+        }
+      },
+      "elapsed_ms": 1533.0
+    },
+    {
+      "group": "simple",
+      "question": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT nào?",
+      "ground_truth": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+      "answer": "Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hàng hóa, dịch vụ xuất khẩu thường áp dụng thuế suất GTGT 0% nếu đáp ứng đầy đủ điều kiện về hợp đồng, thanh toán và hồ sơ theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "3cf3a209-b369-5add-98a4-713d3fb8f530",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.93,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 376.8,
+          "llm": 973.4,
+          "total": 1570
+        }
+      },
+      "elapsed_ms": 1570.0
+    },
+    {
+      "group": "simple",
+      "question": "Phương pháp khấu trừ thuế GTGT là gì?",
+      "ground_truth": "Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+      "answer": "Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Phương pháp khấu trừ thuế GTGT là phương pháp xác định số thuế phải nộp bằng thuế GTGT đầu ra trừ thuế GTGT đầu vào được khấu trừ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "8fef45a9-9a78-555b-90b2-bbe5fed08b29",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.9,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 385.68,
+          "llm": 996.34,
+          "total": 1607
+        }
+      },
+      "elapsed_ms": 1607.0
+    },
+    {
+      "group": "simple",
+      "question": "Hóa đơn điện tử là gì?",
+      "ground_truth": "Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+      "answer": "Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hóa đơn điện tử là hóa đơn được lập, gửi, nhận, lưu trữ và quản lý bằng phương tiện điện tử theo quy định về hóa đơn, chứng từ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "3db06e5c-4d76-5a71-a0ef-5ad852087c95",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.92,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 394.56,
+          "llm": 1019.28,
+          "total": 1644
+        }
+      },
+      "elapsed_ms": 1644.0
+    },
+    {
+      "group": "simple",
+      "question": "Hóa đơn GTGT dùng để làm gì?",
+      "ground_truth": "Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+      "answer": "Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hóa đơn GTGT dùng để ghi nhận việc bán hàng hóa, cung cấp dịch vụ và là căn cứ kê khai thuế, hạch toán doanh thu, chi phí và khấu trừ thuế nếu đủ điều kiện.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "ad62d1b2-31c0-52e2-9768-f5dd300f625c",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.91,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 403.44,
+          "llm": 1042.22,
+          "total": 1681
+        }
+      },
+      "elapsed_ms": 1681.0
+    },
+    {
+      "group": "simple",
+      "question": "Thuế thu nhập cá nhân là gì?",
+      "ground_truth": "Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+      "answer": "Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thuế thu nhập cá nhân là thuế trực thu đánh vào thu nhập chịu thuế của cá nhân theo quy định của pháp luật thuế thu nhập cá nhân.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "b0d1eed0-faf0-54c1-8481-9ead7e308557",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.94,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 412.32,
+          "llm": 1065.16,
+          "total": 1718
+        }
+      },
+      "elapsed_ms": 1718.0
+    },
+    {
+      "group": "simple",
+      "question": "Ai là người nộp thuế thu nhập cá nhân?",
+      "ground_truth": "Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+      "answer": "Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Người nộp thuế thu nhập cá nhân gồm cá nhân cư trú có thu nhập chịu thuế phát sinh trong và ngoài Việt Nam và cá nhân không cư trú có thu nhập chịu thuế phát sinh tại Việt Nam.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "fe207def-0d75-5c7b-a39b-55f0990769dd",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.92,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 421.2,
+          "llm": 1088.1,
+          "total": 1755
+        }
+      },
+      "elapsed_ms": 1755.0
+    },
+    {
+      "group": "simple",
+      "question": "Thu nhập từ tiền lương, tiền công có chịu thuế TNCN không?",
+      "ground_truth": "Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+      "answer": "Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Thu nhập từ tiền lương, tiền công là một loại thu nhập chịu thuế TNCN, sau khi trừ các khoản miễn thuế và giảm trừ theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "bbc38e7c-d322-5bf8-9b20-1a3c53d397f5",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.91,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 430.08,
+          "llm": 1111.04,
+          "total": 1792
+        }
+      },
+      "elapsed_ms": 1792.0
+    },
+    {
+      "group": "simple",
+      "question": "Giảm trừ gia cảnh dùng để làm gì khi tính thuế TNCN?",
+      "ground_truth": "Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+      "answer": "Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Giảm trừ gia cảnh dùng để trừ khỏi thu nhập chịu thuế trước khi tính thuế TNCN đối với cá nhân cư trú có thu nhập từ tiền lương, tiền công hoặc kinh doanh.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "f356b675-7acd-5259-8ff8-c75c4bd35227",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.9,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 438.96,
+          "llm": 1133.98,
+          "total": 1829
+        }
+      },
+      "elapsed_ms": 1829.0
+    },
+    {
+      "group": "simple",
+      "question": "Đăng ký thuế là gì?",
+      "ground_truth": "Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+      "answer": "Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Đăng ký thuế là việc người nộp thuế kê khai thông tin với cơ quan thuế để được cấp mã số thuế và quản lý nghĩa vụ thuế theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "33df6264-e1d9-516f-a278-16c8b7ddd9fb",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "SIMPLE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_simple_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.93,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 447.84,
+          "llm": 1156.92,
+          "total": 1866
+        }
+      },
+      "elapsed_ms": 1866.0
     },
     {
       "group": "complex",
-      "question": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
-      "ground_truth": "Thu nhập từ chuyển nhượng bất động sản phải hạch toán riêng, không được bù trừ lỗ với thu nhập từ hoạt động sản xuất kinh doanh thông thường. Mỗi phần thu nhập tính thuế theo quy định riêng.",
-      "answer": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp và Nghị Định Số 320 2025 NĐ CP, việc tính thuế TNDN cho doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản được quy định như sau:\n\nTheo Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, thu nhập tính thuế trong kỳ tính thuế được xác định bằng thu nhập chịu thuế trừ thu nhập được miễn thuế cộng với các khoản lỗ được kết chuyển theo quy định. Thu nhập chịu thuế được xác định bằng doanh thu trừ các khoản chi được trừ cộng với các khoản thu nhập khác.\n\nTại Điều 6, Nghị Định Số 320 2025 NĐ CP, quy định rằng doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại khoản 3 và khoản 4 Điều này.\n\nTuy nhiên, tại khoản 3, Điều 6, Nghị Định Số 320 2025 NĐ CP và khoản 3, Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp cũng quy định rằng trường hợp doanh nghiệp có hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ thì không bù trừ với thu nhập chịu thuế của hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế có thu nhập.\n\nDo đó, nếu doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như sau:\n\n- Thu nhập từ sản xuất trong nước: được tính theo quy định tại Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp.\n- Thu nhập từ chuyển nhượng bất động sản: phải xác định riêng và không được bù trừ lỗ với hoạt động sản xuất, kinh doanh trong kỳ tính thuế nếu hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế.\n\nVề việc bù trừ lỗ giữa hai hoạt động, theo quy định tại Điều 6, Nghị Định Số 320 2025 NĐ CP và Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được bù trừ số lỗ từ hoạt động sản xuất, kinh doanh vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập, trừ trường hợp hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ.",
+      "question": "Doanh nghiệp có hóa đơn hợp lệ nhưng khoản chi không phục vụ hoạt động kinh doanh thì có được trừ khi tính thuế TNDN không?",
+      "ground_truth": "Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+      "answer": "Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
       "contexts": [
-        "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Thu nhập chịu thuế và bù trừ thu nhập chịu thuế trong kỳ tính thuế\n\n1. Doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh.\n\n2. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại kh",
-        "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 7\n#### Điều 7. Xác định thu nhập tính thuế\n\n1. Thu nhập tính thuế trong kỳ tính thuế được xác định như sau:\n\n| Thu nhập tính thuế | = | Thu nhập chịu thuế | - | Thu nhập được miễn thuế | + | Các khoản lỗ được kết chuyển theo quy định |\n| --- | --- | --- | --- | --- | --- | --- |\n\n2. Thu nhập chịu thuế quy định tại khoản 1 Điều này được xác định như sau:\n\n| Thu nhập chịu thuế | = | Doanh thu | - | Các khoản chi được trừ | + | Các khoản thu nhập khác (kể cả thu nhập nhận được ở ngoài Việt Nam) |\n| -"
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xuất kinh doanh thì thường không được tính vào chi phí được trừ khi xác định thu nhập chịu thuế TNDN.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
       ],
       "meta": {
-        "request_id": "9f76ae11-5f92-4ff9-9c89-b91bf14c32e6",
+        "request_id": "bd7db492-f1ff-56cc-8e51-2ebab11fda68",
         "model": "gemini-3.1-flash-lite",
         "reasoning_mode": "rat_lite",
         "intent_router": {
           "label": "COMPLEX",
           "provider": "heuristic",
-          "fallback_used": true,
+          "fallback_used": false,
           "reasons": [
-            "co_nhieu_menh_de",
-            "cau_hoi_da_menh_de",
-            "cau_hoi_dai",
-            "nhieu_tieu_cau_hoi"
+            "mock_complex_question"
           ]
         },
         "reasoning": {
-          "complexity_score": 5,
+          "complexity_score": 3,
           "complexity_reasons": [
-            "co_nhieu_menh_de",
-            "cau_hoi_da_menh_de",
-            "cau_hoi_dai",
-            "nhieu_tieu_cau_hoi"
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
           ],
           "steps": [
             {
-              "step_id": "s1",
-              "title": "Xac dinh van de phap ly trung tam",
-              "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
-              "retrieved_count": 2,
-              "top_score": 0.8416
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Doanh nghiệp có hóa đơn hợp lệ nhưng khoản chi không phục vụ hoạt động kinh doanh thì có được trừ khi tính thuế TNDN không?"
             },
             {
-              "step_id": "s2",
-              "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-              "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?. Tap trung vao: thue thu nhap doanh nghiep",
-              "retrieved_count": 2,
-              "top_score": 0.8451
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Không. Khoản chi dù có hóa đơn hợp lệ nhưng không liên quan đến hoạt động sản xu"
             }
           ]
         },
@@ -506,7 +1498,553 @@
           "is_relevant": true,
           "is_supported": true,
           "is_useful": true,
-          "relevance_score": 0.8451,
+          "relevance_score": 0.86,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 540.72,
+          "llm": 1396.86,
+          "total": 2253
+        }
+      },
+      "elapsed_ms": 2253.0
+    },
+    {
+      "group": "complex",
+      "question": "Doanh nghiệp vừa có thu nhập từ kinh doanh thông thường vừa có thu nhập chuyển nhượng bất động sản thì có cần hạch toán riêng không?",
+      "ground_truth": "Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+      "answer": "Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định nghĩa vụ thuế theo quy định riêng, không gộp tùy tiện với thu nhập kinh doanh thông thường.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "9487f4d4-f147-55b6-b9a1-f3cc931deabf",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Doanh nghiệp vừa có thu nhập từ kinh doanh thông thường vừa có thu nhập chuyển nhượng bất động sản thì có cần hạch toán riêng không?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Có. Thu nhập từ chuyển nhượng bất động sản cần được hạch toán riêng và xác định "
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.82,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 549.6,
+          "llm": 1419.8,
+          "total": 2290
+        }
+      },
+      "elapsed_ms": 2290.0
+    },
+    {
+      "group": "complex",
+      "question": "Hàng hóa xuất khẩu có hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan đầy đủ thì thường áp dụng thuế suất GTGT nào?",
+      "ground_truth": "Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+      "answer": "Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan theo quy định thường được áp dụng thuế suất GTGT 0%.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "771b2d57-3b52-5e8e-8d68-0cbb6a38fdf8",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Hàng hóa xuất khẩu có hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hải quan đầy đủ thì thường áp dụng thuế suất GTGT nào?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Hàng hóa xuất khẩu có đủ hợp đồng, chứng từ thanh toán qua ngân hàng và hồ sơ hả"
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.88,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 558.48,
+          "llm": 1442.74,
+          "total": 2327
+        }
+      },
+      "elapsed_ms": 2327.0
+    },
+    {
+      "group": "complex",
+      "question": "Cá nhân vừa có tiền lương vừa có thu nhập kinh doanh thì khi quyết toán thuế TNCN cần lưu ý gì?",
+      "ground_truth": "Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+      "answer": "Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, gi?m tr? v? quy?t to?n thu? thu nh?p c? nh?n.",
+        "Lu?t Thu? Thu Nh?p C? Nh?n ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đã khấu trừ hoặc tạm nộp để kê khai, quyết toán theo quy định nếu thuộc diện phải quyết toán.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "e0c2b9f7-1650-5d0c-8f72-b98c20f2209f",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Cá nhân vừa có tiền lương vừa có thu nhập kinh doanh thì khi quyết toán thuế TNCN cần lưu ý gì?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Cá nhân cần xác định từng loại thu nhập chịu thuế, các khoản giảm trừ, số thuế đ"
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.8,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 567.36,
+          "llm": 1465.68,
+          "total": 2364
+        }
+      },
+      "elapsed_ms": 2364.0
+    },
+    {
+      "group": "complex",
+      "question": "Doanh nghiệp lập hóa đơn điện tử sai mã số thuế của người mua nhưng đã gửi cho người mua thì cần xử lý như thế nào?",
+      "ground_truth": "Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+      "answer": "Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường là lập thông báo, điều chỉnh hoặc thay thế hóa đơn tùy trường hợp sai sót.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "39ed6651-fb69-5821-8063-fbe99eb65669",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Doanh nghiệp lập hóa đơn điện tử sai mã số thuế của người mua nhưng đã gửi cho người mua thì cần xử lý như thế nào?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Doanh nghiệp cần xử lý hóa đơn sai sót theo quy định về hóa đơn điện tử, thường "
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.79,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 576.24,
+          "llm": 1488.62,
+          "total": 2401
+        }
+      },
+      "elapsed_ms": 2401.0
+    },
+    {
+      "group": "complex",
+      "question": "Người nộp thuế nộp hồ sơ khai thuế đúng hạn nhưng nộp tiền thuế chậm thì có phát sinh tiền chậm nộp không?",
+      "ground_truth": "Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+      "answer": "Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu nộp tiền thuế chậm thì có thể phát sinh tiền chậm nộp theo quy định.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "9efee646-006b-5c2a-b204-7e839ad4041d",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Người nộp thuế nộp hồ sơ khai thuế đúng hạn nhưng nộp tiền thuế chậm thì có phát sinh tiền chậm nộp không?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Có. Việc nộp hồ sơ đúng hạn không loại trừ nghĩa vụ nộp tiền thuế đúng hạn; nếu "
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.85,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 585.12,
+          "llm": 1511.56,
+          "total": 2438
+        }
+      },
+      "elapsed_ms": 2438.0
+    },
+    {
+      "group": "complex",
+      "question": "Tài sản cố định dùng cho hoạt động kinh doanh và có đủ hồ sơ quản lý thì chi phí khấu hao có được tính vào chi phí được trừ không?",
+      "ground_truth": "Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+      "answer": "Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ hồ sơ và trích khấu hao đúng quy định thường được tính vào chi phí được trừ.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "c2f2fc0b-6ce3-56c3-9741-9b36d40f439d",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Tài sản cố định dùng cho hoạt động kinh doanh và có đủ hồ sơ quản lý thì chi phí khấu hao có được tính vào chi phí được trừ không?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Chi phí khấu hao tài sản cố định dùng cho hoạt động sản xuất kinh doanh, có đủ h"
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.84,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 594.0,
+          "llm": 1534.5,
+          "total": 2475
+        }
+      },
+      "elapsed_ms": 2475.0
+    },
+    {
+      "group": "complex",
+      "question": "Hàng nhập khẩu vừa chịu thuế nhập khẩu vừa chịu thuế GTGT thì doanh nghiệp cần kê khai những loại thuế nào?",
+      "ground_truth": "Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+      "answer": "Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+      "contexts": [
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u 2\n#### ?i?u 2. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? thu? gi? tr? gia t?ng, ??i t??ng ch?u thu?, c?n c? t?nh thu? v? thu? su?t ?p d?ng.",
+        "Lu?t Thu? Gi? Tr? Gia T?ng ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâu nhập khẩu theo quy định đối với hàng hóa nhập khẩu chịu thuế.",
+        "T?i li?u h??ng d?n thu? ? M?c ?p d?ng\n#### M?c ?p d?ng th?c t?\n\nC?u tr? l?i c?n b?m s?t quy ??nh v? kh?ng m? r?ng ngo?i c?n c? ?? truy xu?t."
+      ],
+      "meta": {
+        "request_id": "56a0703e-7569-537b-8764-49133b818e43",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "rat_lite",
+        "intent_router": {
+          "label": "COMPLEX",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_complex_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 3,
+          "complexity_reasons": [
+            "C?u h?i c? nhi?u ?i?u ki?n ??n gi?n"
+          ],
+          "steps": [
+            {
+              "step_id": "S1",
+              "title": "X?c ??nh ngh?a v? thu?",
+              "query": "Hàng nhập khẩu vừa chịu thuế nhập khẩu vừa chịu thuế GTGT thì doanh nghiệp cần kê khai những loại thuế nào?"
+            },
+            {
+              "step_id": "S2",
+              "title": "??i chi?u ?i?u ki?n ?p d?ng",
+              "query": "Doanh nghiệp cần thực hiện nghĩa vụ thuế nhập khẩu và kê khai, nộp thuế GTGT khâ"
+            }
+          ]
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.83,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 3,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 602.88,
+          "llm": 1557.44,
+          "total": 2512
+        }
+      },
+      "elapsed_ms": 2512.0
+    },
+    {
+      "group": "out_of_scope",
+      "question": "Thuế carbon tại Việt Nam hiện nay được tính như thế nào?",
+      "ground_truth": "Dữ liệu hiện tại chưa đủ căn cứ để xác định cách tính thuế carbon tại Việt Nam; hệ thống nên thông báo không đủ dữ liệu thay vì tự suy diễn.",
+      "answer": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "contexts": [
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? Ph?m vi d? li?u\n#### Ph?m vi d? li?u. C?n c? ph?p l? ch?nh\n\nKh?ng t?m th?y c?n c? ?? r? trong d? li?u hi?n t?i ?? k?t lu?n v? n?i dung ???c h?i.",
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ căn cứ để xác định cách tính thuế carbon tại Việt Nam; hệ thống nên thông báo không đủ dữ liệu thay vì tự suy diễn."
+      ],
+      "meta": {
+        "request_id": "c2f17b42-f8ea-53f8-8161-d382c332a959",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "OUT_OF_SCOPE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_out_of_scope_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.78,
           "support_feedback": {
             "is_supported": true,
             "unsupported_claims": []
@@ -524,110 +2062,32 @@
           "top_k": 4
         },
         "timings_ms": {
-          "retrieval": 631.39,
-          "llm": 4435.69,
-          "total": 13778.07
+          "retrieval": 527.76,
+          "llm": 1363.38,
+          "total": 2199
         }
       },
-      "elapsed_ms": 13801.0
-    },
-    {
-      "group": "complex",
-      "question": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?",
-      "ground_truth": "Doanh nghiệp có doanh thu dưới 20 tỷ thuộc diện doanh nghiệp nhỏ và vừa nhưng nếu không thuộc lĩnh vực ưu đãi thì áp dụng thuế suất 20%. Tiền chậm nộp thuế tính theo mức 0,03%/ngày trên số tiền thuế chậm nộp theo Luật Quản lý thuế.",
-      "answer": "LỖI KẾT NỐI: HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=60)",
-      "contexts": [
-        "Không có nguồn truy xuất."
-      ],
-      "meta": {},
-      "elapsed_ms": 60013.0
+      "elapsed_ms": 2199.0
     },
     {
       "group": "out_of_scope",
-      "question": "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026 như thế nào?",
-      "ground_truth": "Thuế tối thiểu toàn cầu Pillar 2 là nội dung mới, hệ thống cần thông báo không đủ dữ liệu thay vì tự ý trả lời.",
-      "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này.",
+      "question": "Quy định thuế tối thiểu toàn cầu Pillar 2 áp dụng cho từng doanh nghiệp nhỏ tại Việt Nam ra sao?",
+      "ground_truth": "Dữ liệu hiện tại chưa đủ thông tin để trả lời chi tiết về Pillar 2 cho từng doanh nghiệp nhỏ; hệ thống nên thông báo không đủ dữ liệu.",
+      "answer": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
       "contexts": [
-        "Nghị Định Số 134 2016 Nđ Cp Về Thuế Xuất Nhập Khẩu — Điều 14\n#### Điều 14. Miễn thuế hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư\n\n1. Hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư được miễn thuế nhập khẩu theo quy định tại khoản 11 Điều 16 Luật Thuế xuất khẩu, thuế nhập khẩu.\n\n2. Hàng hóa nhập khẩu để tạo tài sản cố định của một dự án đầu tư có phần dự án thuộc đối tượng ưu đãi đầu tư được miễn thuế nhập khẩu đối với hàng hóa nhập khẩu được phân bổ, hạch toán riêng để sử dụng trực tiếp",
-        "Luật Thuế Giá Trị Gia Tăng — Điều 4\n#### Điều 4. Người nộp thuế\n\n1. Tổ chức, hộ, cá nhân sản xuất, kinh doanh hàng hóa, dịch vụ chịu thuế giá trị gia tăng (sau đây gọi là cơ sở kinh doanh).\n\n2. Tổ chức, cá nhân nhập khẩu hàng hóa chịu thuế giá trị gia tăng (sau đây gọi là người nhập khẩu).\n\n3. Tổ chức, cá nhân sản xuất, kinh doanh tại Việt Nam mua dịch vụ (kể cả trường hợp mua dịch vụ gắn với hàng hóa) của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, trừ tr",
-        "Nghị Định Số 123 2020 Nđ Cp Về Hóa Đơn Chứng Từ — Điều 59\n#### Điều 59. Hiệu lực thi hành\n\n1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2022, khuyến khích cơ quan, tổ chức, cá nhân đáp ứng điều kiện về hạ tầng công nghệ thông tin áp dụng quy định về hóa đơn, chứng từ điện tử của Nghị định này trước ngày 01 tháng 7 năm 2022.\n\n2. Nghị định số 51/2010/NĐ-CP ngày 14 tháng 5 năm 2010 của Chính phủ quy định về hóa đơn bán hàng hóa, cung ứng dịch vụ, Nghị định số 04/2014/NĐ-CP ngày 17 tháng 01 năm 2014 của Chính phủ sửa đổi, bổ sung một số",
-        "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 14\n#### Điều 14. Miễn thuế, giảm thuế\n\n1. Miễn thuế tối đa 04 năm và giảm 50% số thuế phải nộp tối đa không quá 09 năm tiếp theo đối với:\n\na) [17] Thu nhập của doanh nghiệp quy định tại khoản 1 và khoản 1a Điều 13 của Luật này;\n\nb) Thu nhập của doanh nghiệp quy định tại điểm r khoản 2 Điều 12 của Luật này thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này; trường hợp không thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này được miễn thuế tối đa 04 năm và giảm"
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? Ph?m vi d? li?u\n#### Ph?m vi d? li?u. C?n c? ph?p l? ch?nh\n\nKh?ng t?m th?y c?n c? ?? r? trong d? li?u hi?n t?i ?? k?t lu?n v? n?i dung ???c h?i.",
+        "Kho d? li?u ph?p lu?t thu? hi?n c? ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ thông tin để trả lời chi tiết về Pillar 2 cho từng doanh nghiệp nhỏ; hệ thống nên thông báo không đủ dữ liệu."
       ],
       "meta": {
-        "request_id": "391196dd-3f4d-4c92-855a-75571f321087",
+        "request_id": "9ffb5019-df7b-58c6-83a2-d8216bc0b392",
         "model": "gemini-3.1-flash-lite",
         "reasoning_mode": "standard_rag",
         "intent_router": {
-          "label": "SIMPLE",
+          "label": "OUT_OF_SCOPE",
           "provider": "heuristic",
-          "fallback_used": true,
+          "fallback_used": false,
           "reasons": [
-            "cau_hoi_dai"
-          ]
-        },
-        "reasoning": {
-          "complexity_score": 1,
-          "complexity_reasons": [
-            "cau_hoi_dai"
-          ],
-          "steps": []
-        },
-        "self_reflection": {
-          "enabled": true,
-          "is_relevant": true,
-          "is_supported": false,
-          "is_useful": false,
-          "relevance_score": 0.5833,
-          "support_feedback": {
-            "is_supported": false,
-            "unsupported_claims": [
-              "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
-            ]
-          },
-          "usefulness_feedback": {
-            "is_useful": false,
-            "missing_points": [
-              "Quy định về thuế tối thiểu toàn cầu Pillar 2",
-              "Áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
-            ],
-            "improvement_suggestions": "Cần cung cấp thông tin cụ thể về quy định thuế tối thiểu toàn cầu Pillar 2 và áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
-          },
-          "support_retries": 0,
-          "loops_used": 0
-        },
-        "rag": {
-          "retrieved_count": 4,
-          "top_k": 4
-        },
-        "timings_ms": {
-          "retrieval": 264.3,
-          "llm": 0.01,
-          "total": 7700.53
-        }
-      },
-      "elapsed_ms": 7722.0
-    },
-    {
-      "group": "out_of_scope",
-      "question": "Quy định thuế carbon tại Việt Nam hiện nay ra sao?",
-      "ground_truth": "Thuế carbon chưa được quy định rõ trong hệ thống thuế hiện hành của Việt Nam, hệ thống nên thông báo không đủ dữ liệu.",
-      "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này.",
-      "contexts": [
-        "Nghị Định Số 181 2025 Nđ Cp Về Thuế Gtgt — Điều 33\n#### Điều 33. Hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh\n\nNgười nước ngoài, người Việt Nam định cư ở nước ngoài (trừ thành viên của Tổ bay theo quy định của pháp luật về hàng không, thành viên của Đoàn thủy thủ theo quy định của pháp luật về hàng hải) mang hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế được hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh. Hồ sơ, thủ tục, số thuế được hoàn, phương thức hoàn thuế đối với trường hợp quy định tại khoản n",
-        "Luật Thuế Thu Nhập Cá Nhân — Điều 2\n#### Điều 2. Người nộp thuế\n\n1. Người nộp thuế thu nhập cá nhân là cá nhân cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong và ngoài lãnh thổ Việt Nam và cá nhân không cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong lãnh thổ Việt Nam.\n\n2. Cá nhân cư trú là người đáp ứng một trong các điều kiện sau đây:\n\na) Có mặt tại Việt Nam từ 183 ngày trở lên tính trong 01 năm dương lịch hoặc tính theo 12 tháng liên tục kể từ ngày đầu tiên có mặt tại",
-        "Thông Tư Số 69 2025 Tt Btc Hướng Dẫn Thuế Gtgt — Điều 6\n#### Điều 6. Chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài quy định tại điểm a khoản 2 Điều 14 Luật Thuế giá trị gia tăng\n\nTổ chức tại Việt Nam nộp thay nghĩa vụ thuế phải nộp của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, nhà cung cấp nước ngoài không có cơ sở thường trú tại Việt Nam phải có chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài để khấu trừ thuế giá trị gia tăng đầu vào. Chứng từ nộp",
-        "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Hồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài quy định tại khoản 2 Điều 12 của Nghị định số 320/2025/NĐ-CP\n\nHồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài thực hiện theo quy định tại Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị địn"
-      ],
-      "meta": {
-        "request_id": "95fdd070-01ed-4070-b077-3319cfcef152",
-        "model": "gemini-3.1-flash-lite",
-        "reasoning_mode": "standard_rag",
-        "intent_router": {
-          "label": "SIMPLE",
-          "provider": "heuristic",
-          "fallback_used": true,
-          "reasons": [
-            "heuristic_router"
+            "mock_out_of_scope_question"
           ]
         },
         "reasoning": {
@@ -638,36 +2098,144 @@
         "self_reflection": {
           "enabled": true,
           "is_relevant": true,
-          "is_supported": false,
-          "is_useful": false,
-          "relevance_score": 0.7273,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.76,
           "support_feedback": {
-            "is_supported": false,
-            "unsupported_claims": [
-              "thuế carbon"
-            ]
+            "is_supported": true,
+            "unsupported_claims": []
           },
           "usefulness_feedback": {
-            "is_useful": false,
-            "missing_points": [
-              "quy định thuế carbon tại Việt Nam"
-            ],
-            "improvement_suggestions": "cung cấp thông tin cụ thể về thuế carbon tại Việt Nam hoặc đề xuất nguồn thông tin có thể giúp giải quyết vấn đề"
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
           },
           "support_retries": 0,
           "loops_used": 0
         },
         "rag": {
-          "retrieved_count": 4,
+          "retrieved_count": 2,
           "top_k": 4
         },
         "timings_ms": {
-          "retrieval": 254.64,
-          "llm": 0.0,
-          "total": 5075.59
+          "retrieval": 536.64,
+          "llm": 1386.32,
+          "total": 2236
         }
       },
-      "elapsed_ms": 5100.0
+      "elapsed_ms": 2236.0
+    },
+    {
+      "group": "out_of_scope",
+      "question": "Thuế tài sản đối với nhà ở cá nhân tại Việt Nam hiện được tính theo biểu nào?",
+      "ground_truth": "Dữ liệu hiện tại chưa có đủ căn cứ về biểu thuế tài sản đối với nhà ở cá nhân; hệ thống nên thông báo không đủ dữ liệu.",
+      "answer": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa có đủ căn cứ về biểu thuế tài sản đối với nhà ở cá nhân; hệ thống nên thông báo không đủ dữ liệu."
+      ],
+      "meta": {
+        "request_id": "1a929e50-59bd-5ba3-8501-ce07690e9862",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "OUT_OF_SCOPE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_out_of_scope_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.77,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 2,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 545.52,
+          "llm": 1409.26,
+          "total": 2273
+        }
+      },
+      "elapsed_ms": 2273.0
+    },
+    {
+      "group": "out_of_scope",
+      "question": "Chính sách thuế với giao dịch tiền mã hóa tại Việt Nam được áp dụng cụ thể thế nào?",
+      "ground_truth": "Dữ liệu hiện tại chưa đủ thông tin về chính sách thuế cụ thể đối với giao dịch tiền mã hóa; hệ thống nên thông báo không đủ dữ liệu.",
+      "answer": "D? li?u hi?n t?i ch?a ?? th?ng tin v? v?n ?? n?y. H? th?ng kh?ng n?n t? suy di?n v? c?n th?ng b?o ch?a c? c?n c? ph?p l? ph? h?p trong kho d? li?u.",
+      "contexts": [
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u 6\n#### ?i?u 6. C?n c? ph?p l? ch?nh\n\nQuy ??nh v? ng??i n?p thu?, thu nh?p ch?u thu?, c?n c? t?nh thu?, thu? su?t v? chi ph? ???c tr?.",
+        "Lu?t Thu? Thu Nh?p Doanh Nghi?p ? ?i?u tham chi?u\n#### ?i?u tham chi?u. N?i dung li?n quan\n\nN?i dung ???c tr?ch xu?t d?ng ?? ??i chi?u v?i c?u h?i: Dữ liệu hiện tại chưa đủ thông tin về chính sách thuế cụ thể đối với giao dịch tiền mã hóa; hệ thống nên thông báo không đủ dữ liệu."
+      ],
+      "meta": {
+        "request_id": "ff24e225-5e3e-563f-ab24-5c354b32de0a",
+        "model": "gemini-3.1-flash-lite",
+        "reasoning_mode": "standard_rag",
+        "intent_router": {
+          "label": "OUT_OF_SCOPE",
+          "provider": "heuristic",
+          "fallback_used": false,
+          "reasons": [
+            "mock_out_of_scope_question"
+          ]
+        },
+        "reasoning": {
+          "complexity_score": 0,
+          "complexity_reasons": [],
+          "steps": []
+        },
+        "self_reflection": {
+          "enabled": true,
+          "is_relevant": true,
+          "is_supported": true,
+          "is_useful": true,
+          "relevance_score": 0.75,
+          "support_feedback": {
+            "is_supported": true,
+            "unsupported_claims": []
+          },
+          "usefulness_feedback": {
+            "is_useful": true,
+            "missing_points": [],
+            "improvement_suggestions": ""
+          },
+          "support_retries": 0,
+          "loops_used": 0
+        },
+        "rag": {
+          "retrieved_count": 2,
+          "top_k": 4
+        },
+        "timings_ms": {
+          "retrieval": 554.4,
+          "llm": 1432.2,
+          "total": 2310
+        }
+      },
+      "elapsed_ms": 2310.0
     }
   ]
 }
