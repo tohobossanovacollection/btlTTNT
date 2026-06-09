@@ -1,12 +1,15 @@
 # RAG TaxBot
 
-Demo chatbot tu van thue su dung RAG:
+Demo chatbot tu van thue su dung RAG bang mot app Streamlit duy nhat:
 
-- Frontend tinh: `index.html`, `assets/app.js`, `assets/styles.css`
-- Backend: FastAPI
+- App Streamlit: `streamlit_app/app.py`
+- Pipeline RAG noi bo: `backend/app/services`
+- FastAPI backend: `backend/main.py` (tuy chon, chi dung de debug API)
+- Frontend tinh cu: `index.html`, `assets/app.js`, `assets/styles.css` (legacy)
 - Retrieval: doc/markdown trong `data/processed`
 - Retrieval embedding: local/offline hash TF-IDF (khong goi API ngoai)
 - LLM: Gemini API
+- Lich su tro chuyen: SQLite local trong `storage/chat_history.sqlite3`
 
 ## Yeu cau
 
@@ -14,7 +17,7 @@ Demo chatbot tu van thue su dung RAG:
 - Python 3.10 tro len
 - Gemini API key trong Google AI Studio
 
-## 1. Tao file cau hinh backend
+## 1. Tao file cau hinh Gemini
 
 Vao thu muc backend:
 
@@ -44,13 +47,15 @@ Ghi chu:
 
 ## 2. Cai thu vien Python
 
-Tu thu muc `backend`:
+Tu thu muc goc project:
 
 ```powershell
-py -m venv .venv
+cd D:\Vscode\btlTTNT
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r backend\requirements.txt
+pip install -r streamlit_app\requirements.txt
 ```
 
 Neu PowerShell chan activate script, chay:
@@ -62,33 +67,43 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 Sau do mo terminal moi va activate lai:
 
 ```powershell
-cd D:\Vscode\btlTTNT\backend
+cd D:\Vscode\btlTTNT
 .\.venv\Scripts\Activate.ps1
 ```
 
-## 3. Chay backend FastAPI
+## 3. Chay app Streamlit duy nhat
 
-Tu thu muc `backend`:
+Tu terminal da activate `.venv`:
 
 ```powershell
-python main.py
+python -m streamlit run streamlit_app\app.py
 ```
 
-Backend se chay o:
+Mo trinh duyet:
 
 ```text
-http://127.0.0.1:8000
+http://localhost:8501
 ```
 
-Swagger UI de test API:
+Streamlit se goi truc tiep pipeline Python trong `backend/app/services`, khong can mo backend rieng o cong `8000`.
+Lich su tro chuyen duoc luu local vao `storage/chat_history.sqlite3`; file nay da duoc ignore khoi Git.
+
+## 4. Chay FastAPI de debug (tuy chon)
+
+Chi can buoc nay neu muon test API bang Swagger hoac frontend tinh cu.
+
+```powershell
+cd backend
+python main.py
+```
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-Lan goi chat dau tien co the lau vi backend can tao embedding cho cac van ban luat. Cac lan sau se nhanh hon.
+## 4b. Chay frontend tinh cu (legacy, tuy chon)
 
-## 4. Chay frontend
+Khong can dung buoc nay khi chay app Streamlit duy nhat.
 
 Mo them mot terminal PowerShell moi, tu thu muc goc project:
 
@@ -115,7 +130,9 @@ va mo:
 http://127.0.0.1:5500
 ```
 
-## 5. Test API bang Swagger
+## 5. Test API bang Swagger (tuy chon)
+
+Khong can buoc nay khi dung app Streamlit duy nhat.
 
 Mo:
 
@@ -133,7 +150,7 @@ Bam `Try it out`, nhap body:
 
 ```json
 {
-  "question": "Lương 10 triệu một tháng có phải nộp thuế TNCN không?",
+  "question": "Luong 10 trieu mot thang co phai nop thue TNCN khong?",
   "user_id": 1,
   "session_id": 1
 }
@@ -153,24 +170,27 @@ Ket qua dung se co dang:
 
 ## 6. Luong chay cua ung dung
 
-1. Frontend gui cau hoi den `http://127.0.0.1:8000/api/v1/chat/`.
-2. Backend doc cac file `.md` trong `data/processed`.
-3. Backend tao embedding va tim cac doan luat lien quan.
-4. Backend gui cau hoi + can cu phap ly sang Gemini.
-5. Gemini tra loi dua tren context RAG.
-6. Frontend hien thi cau tra loi va nguon truy xuat.
+1. Streamlit nhan cau hoi tu nguoi dung.
+2. Streamlit goi truc tiep `handle_chat()` trong pipeline Python.
+3. Pipeline doc cac file `.md` trong `data/processed`.
+4. Pipeline tao/tai embedding local va tim cac doan luat lien quan.
+5. Intent router chon `standard_rag` hoac `rat_lite`.
+6. CRAG danh gia do tin cay cua nguon.
+7. He thong tong hop cau tra loi bang Gemini.
+8. Streamlit hien thi cau tra loi, nguon, score va runtime meta.
+9. Streamlit luu cau hoi va cau tra loi vao lich su tro chuyen local.
 
 ## 7. Cac loi thuong gap
 
-### Khong mo duoc frontend o cong 5500
+### Khong mo duoc Streamlit o cong 8501
 
-Chay frontend voi cong khac:
+Chay Streamlit voi cong khac:
 
 ```powershell
-.\scripts\start-live-server.ps1 -Port 5501
+python -m streamlit run streamlit_app\app.py --server.port 8502
 ```
 
-### Backend bao thieu `GOOGLE_API_KEY`
+### Gemini chua cau hinh
 
 Kiem tra `backend/.env` co dong:
 
@@ -178,7 +198,7 @@ Kiem tra `backend/.env` co dong:
 GOOGLE_API_KEY="api_key_cua_ban"
 ```
 
-Sau khi sua `.env`, restart backend.
+Sau khi sua `.env`, restart Streamlit.
 
 ### Loi `429 RESOURCE_EXHAUSTED`
 
@@ -200,13 +220,13 @@ MODEL_NAME="gemini-2.5-flash-lite"
 
 ### Lan dau hoi bi cham
 
-Lan dau backend se tai/load model embedding va tao vector cho kho luat. Cho vai chuc giay den vai phut tuy may va mang.
+Lan dau pipeline se tai cache embedding va tao vector cho kho luat neu can. Cho vai chuc giay den vai phut tuy may.
 
-## 8. Dung server
+## 8. Dung app
 
-Dung backend: bam `Ctrl+C` trong terminal dang chay backend.
+Dung Streamlit: bam `Ctrl+C` trong terminal dang chay Streamlit.
 
-Dung frontend:
+Neu co chay frontend tinh cu:
 
 ```powershell
 .\scripts\stop-live-server.ps1
@@ -219,6 +239,10 @@ Neu chay frontend o cong khac va script khong dung duoc, dong terminal PowerShel
 ```text
 btlTTNT/
   index.html
+  streamlit_app/
+    app.py
+    chat_store.py
+    requirements.txt
   assets/
     app.js
     styles.css
