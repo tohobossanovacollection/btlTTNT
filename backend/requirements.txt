@@ -6,3 +6,9 @@ google-genai
 numpy
 streamlit
 requests
+groq
+langchain-groq
+langchain-community==0.3.31
+datasets
+ragas
+litellm

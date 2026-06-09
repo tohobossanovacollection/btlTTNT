@@ -3,25 +3,23 @@
     "group": "simple",
     "question": "Thuế thu nhập doanh nghiệp là gì?",
     "ground_truth": "Thuế thu nhập doanh nghiệp (TNDN) là loại thuế trực thu đánh vào phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các chi phí hợp lý, hợp lệ.",
-    "answer": "Theo Luật Thuế Thu Nhập Doanh Nghiệp (Điều 1), thuế thu nhập doanh nghiệp là loại thuế trực thu, thu đối với thu nhập của doanh nghiệp. Luật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.\n\nCụ thể, căn cứ tính thuế là thu nhập tính thuế và thuế suất (Điều 6, Luật Thuế Thu Nhập Doanh Nghiệp). Số thuế thu nhập doanh nghiệp phải nộp trong kỳ tính thuế được tính bằng thu nhập tính thuế nhân với thuế suất (Điều 11, Luật Thuế Thu Nhập Doanh Nghiệp).\n\nDo đó, thuế thu nhập doanh nghiệp là loại thuế áp dụng đối với thu nhập của doanh nghiệp, với căn cứ tính thuế là thu nhập tính thuế và thuế suất.",
+    "answer": "Dựa trên thông tin cung cấp, không có định nghĩa cụ thể về thuế thu nhập doanh nghiệp. Dữ liệu hiện tại chỉ cung cấp thông tin về phạm vi điều chỉnh và căn cứ tính thuế của Luật Thuế Thu Nhập Doanh Nghiệp, nhưng không có định nghĩa rõ ràng về thuế thu nhập doanh nghiệp.\n\nDữ liệu hiện tại chưa có thông tin về vấn đề này.",
     "contexts": [
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
       "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 11\n#### Điều 11. Phương pháp tính thuế\n\n1. Số thuế thu nhập doanh nghiệp phải nộp trong kỳ tính thuế được tính bằng thu nhập tính thuế nhân với thuế suất, trừ trường hợp quy định tại khoản 2 Điều này.\n\n2. Chính phủ quy định số thuế thu nhập doanh nghiệp phải nộp tính theo tỷ lệ % trên doanh thu đối với các trường hợp sau đây:\n\na) Doanh nghiệp quy định tại điểm c, điểm d khoản 2 Điều 2 của Luật này; đối tượng thực hiện nghĩa vụ kê khai, nộp thuế, thời điểm và cách xác định doanh thu tính thu nhập ch",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 11\n#### Điều 11. Phương pháp tính thuế\n\n1. Số thuế thu nhập doanh nghiệp phải nộp trong kỳ tính thuế được tính bằng thu nhập tính thuế nhân với thuế suất, trừ trường hợp quy định tại khoản 2 Điều này.\n\n2. Chính phủ quy định số thuế thu nhập doanh nghiệp phải nộp tính theo tỷ lệ % trên doanh thu đối với các trường hợp sau đây:\n\na) Doanh nghiệp quy định tại điểm c, điểm d khoản 2 Điều 2 của Luật này; đối tượng thực hiện nghĩa vụ kê khai, nộp thuế, thời điểm và cách xác định doanh thu tính thu nhập ch"
+      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
     ],
     "meta": {
-      "request_id": "299d64c4-fbe9-4362-b2e7-e37080d87dc5",
-      "model": "gemini-2.0-flash",
+      "request_id": "76b3ca74-15b4-4b69-ba9c-e7ecfd039dd6",
+      "model": "gemini-3.1-flash-lite",
       "reasoning_mode": "standard_rag",
       "intent_router": {
         "label": "SIMPLE",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "heuristic_router"
         ]
       },
       "reasoning": {
@@ -33,53 +31,55 @@
         "enabled": true,
         "is_relevant": true,
         "is_supported": true,
-        "is_useful": true,
+        "is_useful": false,
         "relevance_score": 0.8571,
         "support_feedback": {
           "is_supported": true,
           "unsupported_claims": []
         },
         "usefulness_feedback": {
-          "is_useful": true,
-          "missing_points": [],
-          "improvement_suggestions": ""
+          "is_useful": false,
+          "missing_points": [
+            "định nghĩa cụ thể về thuế thu nhập doanh nghiệp"
+          ],
+          "improvement_suggestions": "Cần cung cấp thêm thông tin hoặc định nghĩa rõ ràng về thuế thu nhập doanh nghiệp để giải quyết đủ ý câu hỏi."
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 6,
-        "top_k": 6
+        "retrieved_count": 4,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 90.51,
-        "llm": 1027.27,
-        "total": 5437.93
+        "retrieval": 260.07,
+        "llm": 2722.02,
+        "total": 3400.11
       }
     },
-    "elapsed_ms": 5563.0
+    "elapsed_ms": 3430.0
   },
   {
     "group": "simple",
     "question": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?",
     "ground_truth": "Thuế suất thuế TNDN phổ thông hiện hành là 20% áp dụng cho đa số doanh nghiệp.",
-    "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời câu hỏi về thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành, cần có thông tin cụ thể về mức thuế suất được quy định trong Luật Thuế Thu Nhập Doanh Nghiệp hoặc các văn bản pháp luật liên quan khác. Tuy nhiên, căn cứ pháp lý cung cấp không đề cập đến mức thuế suất cụ thể.",
+    "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác về thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành, cần có thông tin cụ thể về mức thuế suất được quy định trong luật thuế thu nhập doanh nghiệp. Tuy nhiên, căn cứ pháp lý cung cấp không đề cập đến mức thuế suất cụ thể.",
     "contexts": [
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
+      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
+      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp."
     ],
     "meta": {
-      "request_id": "e0c9a0d1-05ee-4ddc-9ab2-eff0220bfbeb",
-      "model": "gemini-2.0-flash",
-      "reasoning_mode": "rat_lite",
+      "request_id": "dfa09cad-0cce-412f-8d23-24540a9aadd4",
+      "model": "gemini-3.1-flash-lite",
+      "reasoning_mode": "standard_rag",
       "intent_router": {
         "label": "SIMPLE",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "cau_hoi_dai"
         ]
       },
       "reasoning": {
@@ -87,29 +87,14 @@
         "complexity_reasons": [
           "cau_hoi_dai"
         ],
-        "steps": [
-          {
-            "step_id": "s1",
-            "title": "Xac dinh van de phap ly trung tam",
-            "query": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?",
-            "retrieved_count": 3,
-            "top_score": 0.7008
-          },
-          {
-            "step_id": "s2",
-            "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-            "query": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?. Tap trung vao: thue thu nhap doanh nghiep",
-            "retrieved_count": 3,
-            "top_score": 0.7375
-          }
-        ]
+        "steps": []
       },
       "self_reflection": {
         "enabled": true,
         "is_relevant": true,
         "is_supported": false,
         "is_useful": false,
-        "relevance_score": 0.7375,
+        "relevance_score": 0.7008,
         "support_feedback": {
           "is_supported": false,
           "unsupported_claims": [
@@ -121,46 +106,44 @@
           "missing_points": [
             "mức thuế suất cụ thể"
           ],
-          "improvement_suggestions": "Cung cấp thông tin cụ thể về mức thuế suất được quy định trong Luật Thuế Thu Nhập Doanh Nghiệp hoặc các văn bản pháp luật liên quan khác."
+          "improvement_suggestions": "Cần cung cấp thông tin cụ thể về mức thuế suất được quy định trong luật thuế thu nhập doanh nghiệp"
         },
-        "support_retries": 1,
-        "loops_used": 1
+        "support_retries": 0,
+        "loops_used": 0
       },
       "rag": {
         "retrieved_count": 4,
-        "top_k": 6
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 299.44,
-        "llm": 2397.68,
-        "total": 6486.54
+        "retrieval": 270.43,
+        "llm": 544.65,
+        "total": 1457.67
       }
     },
-    "elapsed_ms": 6502.0
+    "elapsed_ms": 1488.0
   },
   {
     "group": "simple",
     "question": "Doanh nghiệp nhỏ và vừa có được ưu đãi thuế suất TNDN không?",
     "ground_truth": "Có. Doanh nghiệp nhỏ và vừa đáp ứng điều kiện theo quy định có thể được áp dụng thuế suất ưu đãi thấp hơn thuế suất phổ thông 20%.",
-    "answer": "Theo Điều 12 của Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp. Tại điểm o, khoản 2, Điều 12 của Luật Thuế Thu Nhập Doanh Nghiệp cũng quy định về việc đầu tư kinh doanh cơ sở kỹ thuật hỗ trợ doanh nghiệp nhỏ và vừa, cơ sở ươm tạo doanh nghiệp nhỏ và vừa; đầu tư kinh doanh khu làm việc chung hỗ trợ doanh nghiệp nhỏ và vừa khởi nghiệp sáng tạo theo quy định của Luật Hỗ trợ doanh nghiệp nhỏ và vừa là một trong những ngành, nghề được ưu đãi thuế.\n\nTuy nhiên, để được hưởng ưu đãi thuế, doanh nghiệp nhỏ và vừa cần đáp ứng các điều kiện theo quy định của pháp luật, bao gồm cả việc thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai (theo khoản 1, Điều 18 của Luật Thuế Thu Nhập Doanh Nghiệp).\n\nDo đó, doanh nghiệp nhỏ và vừa có thể được ưu đãi thuế suất TNDN nếu đáp ứng các điều kiện và thuộc các ngành, nghề được ưu đãi thuế theo quy định của Luật Thuế Thu Nhập Doanh Nghiệp.",
+    "answer": "Doanh nghiệp nhỏ và vừa có thể được ưu đãi thuế suất TNDN. Căn cứ theo Điều 12 Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp. Tại điểm o, khoản 2, Điều 12 cũng quy định rằng đầu tư kinh doanh cơ sở kỹ thuật hỗ trợ doanh nghiệp nhỏ và vừa, cơ sở ươm tạo doanh nghiệp nhỏ và vừa; đầu tư kinh doanh khu làm việc chung hỗ trợ doanh nghiệp nhỏ và vừa khởi nghiệp sáng tạo theo quy định của Luật Hỗ trợ doanh nghiệp nhỏ và vừa cũng thuộc đối tượng được ưu đãi thuế.\n\nTuy nhiên, để được hưởng ưu đãi thuế, doanh nghiệp cần đáp ứng các điều kiện quy định tại Điều 18 Luật Thuế Thu Nhập Doanh Nghiệp, bao gồm thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai, hạch toán riêng thu nhập từ hoạt động sản xuất, kinh doanh được ưu đãi thuế, và đáp ứng các điều kiện khác theo quy định của pháp luật.",
     "contexts": [
       "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 4\n#### Điều 4. Hồ sơ hưởng ưu đãi thuế quy định tại các điều 4, 13, 14 và 15 của Luật Thuế thu nhập doanh nghiệp\n\n1. Thủ tục, hồ sơ được hưởng miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế thực hiện theo quy định của pháp luật về quản lý thuế.\n\n2. Doanh nghiệp tự xác định các điều kiện miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế, số lỗ được trừ vào thu nhập chịu thuế để kê khai và quyết toán thuế với cơ quan thuế.\n\n3. Trường hợp qua thanh tra, ki",
       "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 1\n#### Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng\n\n1. Phạm vi điều chỉnh\n\na) Quy định chi tiết một số điều của Luật Thuế thu nhập doanh nghiệp, bao gồm: Điều 2; Điều 3; Điều 4; Điều 8; Điều 9; khoản 3 Điều 10; khoản 2 Điều 11; các khoản 2, 3 và 4 Điều 12; khoản 1 Điều 13; khoản 6 Điều 14; Điều 15; Điều 16; các khoản 1, 3 và 5 Điều 18; khoản 3 Điều 19;\n\nb) Quy định các biện pháp để tổ chức, hướng dẫn thi hành Luật Thuế thu nhập doanh nghiệp, bao gồm: Xác định thu nhập tính thuế; căn cứ tính th",
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 18\n#### Điều 18. Điều kiện áp dụng ưu đãi thuế\n\n1. Ưu đãi thuế thu nhập doanh nghiệp quy định tại các điều 13, 14 và 15 của Luật này áp dụng đối với doanh nghiệp thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai.\n\nƯu đãi thuế thu nhập doanh nghiệp theo diện dự án đầu tư mới (bao gồm cả dự án đầu tư thuộc điểm g khoản 2 Điều 12 của Luật này) quy định tại Điều 13, Điều 14 của Luật này không áp dụng đối với các trường hợp sáp nhập, hợp nhất, chia, tách, chuyển đổi chủ sở",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 18\n#### Điều 18. Điều kiện áp dụng ưu đãi thuế\n\n1. Ưu đãi thuế thu nhập doanh nghiệp quy định tại các điều 13, 14 và 15 của Luật này áp dụng đối với doanh nghiệp thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai.\n\nƯu đãi thuế thu nhập doanh nghiệp theo diện dự án đầu tư mới (bao gồm cả dự án đầu tư thuộc điểm g khoản 2 Điều 12 của Luật này) quy định tại Điều 13, Điều 14 của Luật này không áp dụng đối với các trường hợp sáp nhập, hợp nhất, chia, tách, chuyển đổi chủ sở",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr"
+      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 18\n#### Điều 18. Điều kiện áp dụng ưu đãi thuế\n\n1. Ưu đãi thuế thu nhập doanh nghiệp quy định tại các điều 13, 14 và 15 của Luật này áp dụng đối với doanh nghiệp thực hiện chế độ kế toán, hóa đơn, chứng từ và nộp thuế theo phương pháp kê khai.\n\nƯu đãi thuế thu nhập doanh nghiệp theo diện dự án đầu tư mới (bao gồm cả dự án đầu tư thuộc điểm g khoản 2 Điều 12 của Luật này) quy định tại Điều 13, Điều 14 của Luật này không áp dụng đối với các trường hợp sáp nhập, hợp nhất, chia, tách, chuyển đổi chủ sở"
     ],
     "meta": {
-      "request_id": "96bf1fef-bb30-46df-9026-cef867dbbdc9",
-      "model": "gemini-2.0-flash",
+      "request_id": "75f3bf17-8e6e-4f04-9308-4462118b48e5",
+      "model": "gemini-3.1-flash-lite",
       "reasoning_mode": "standard_rag",
       "intent_router": {
         "label": "SIMPLE",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "co_nhieu_menh_de"
         ]
       },
       "reasoning": {
@@ -189,37 +172,38 @@
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 6,
-        "top_k": 6
+        "retrieved_count": 4,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 95.92,
-        "llm": 15400.01,
-        "total": 47219.69
+        "retrieval": 262.68,
+        "llm": 1086.71,
+        "total": 1933.23
       }
     },
-    "elapsed_ms": 47226.0
+    "elapsed_ms": 1962.0
   },
   {
     "group": "simple",
     "question": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?",
     "ground_truth": "Các khoản chi không được trừ gồm: chi không có hóa đơn chứng từ hợp lệ, chi phạt vi phạm hành chính, chi không liên quan đến hoạt động sản xuất kinh doanh.",
-    "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời câu hỏi về những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp, cần có thông tin cụ thể từ Luật Thuế Thu Nhập Doanh Nghiệp, đặc biệt là các điều khoản liên quan đến chi phí được trừ và không được trừ khi tính thuế.\n\nTuy nhiên, dựa trên thông tin chung về Luật Thuế Thu Nhập Doanh Nghiệp, chúng ta biết rằng để xác định thu nhập chịu thuế, doanh nghiệp phải tính toán thu nhập tính thuế bằng cách lấy thu nhập trước thuế trừ đi các khoản chi phí hợp lý và hợp lệ. Nhưng để biết cụ thể những khoản chi nào không được trừ, cần tham khảo các điều khoản cụ thể trong luật, đặc biệt là những điều khoản quy định về chi phí không được trừ khi tính thuế thu nhập doanh nghiệp.\n\nVì vậy, với dữ liệu hiện tại, không thể đưa ra một danh sách cụ thể về những khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp.",
+    "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này. Để trả lời chính xác, cần có thông tin về các khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp, thường được quy định tại các điều khoản cụ thể trong Luật Thuế Thu Nhập Doanh Nghiệp.",
     "contexts": [
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
+      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất.",
       "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 1\n#### Điều 1. Phạm vi điều chỉnh\n\nLuật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu nhập doanh nghiệp.",
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
+      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 6\n#### Điều 6. Căn cứ tính thuế\n\nCăn cứ tính thuế là thu nhập tính thuế và thuế suất."
     ],
     "meta": {
-      "request_id": "edaef529-ad35-4176-af2a-12b085112342",
-      "model": "gemini-2.0-flash",
-      "reasoning_mode": "rat_lite",
+      "request_id": "2c12c0e8-8db3-46d2-9cc6-eeea1eb3b9b6",
+      "model": "gemini-3.1-flash-lite",
+      "reasoning_mode": "standard_rag",
       "intent_router": {
-        "label": "COMPLEX",
-        "provider": "gemini",
-        "fallback_used": false,
+        "label": "SIMPLE",
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "co_nhieu_menh_de"
         ]
       },
       "reasoning": {
@@ -227,155 +211,63 @@
         "complexity_reasons": [
           "co_nhieu_menh_de"
         ],
-        "steps": [
-          {
-            "step_id": "s1",
-            "title": "Xac dinh van de phap ly trung tam",
-            "query": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?",
-            "retrieved_count": 3,
-            "top_score": 0.7815
-          },
-          {
-            "step_id": "s2",
-            "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-            "query": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?. Tap trung vao: thue thu nhap doanh nghiep",
-            "retrieved_count": 3,
-            "top_score": 0.8195
-          }
-        ]
+        "steps": []
       },
       "self_reflection": {
         "enabled": true,
         "is_relevant": true,
         "is_supported": false,
         "is_useful": false,
-        "relevance_score": 0.8195,
+        "relevance_score": 0.7815,
         "support_feedback": {
           "is_supported": false,
           "unsupported_claims": [
-            "không có thông tin cụ thể về các khoản chi không được trừ"
+            "các khoản chi không được trừ khi tính thuế thu nhập doanh nghiệp"
           ]
         },
         "usefulness_feedback": {
           "is_useful": false,
           "missing_points": [
-            "danh sách cụ thể về các khoản chi không được trừ"
+            "quy định cụ thể về các khoản chi không được trừ"
           ],
-          "improvement_suggestions": "cần tham khảo các điều khoản cụ thể trong Luật Thuế Thu Nhập Doanh Nghiệp liên quan đến chi phí không được trừ khi tính thuế thu nhập doanh nghiệp"
-        },
-        "support_retries": 1,
-        "loops_used": 1
-      },
-      "rag": {
-        "retrieved_count": 3,
-        "top_k": 6
-      },
-      "timings_ms": {
-        "retrieval": 381.68,
-        "llm": 11596.45,
-        "total": 22702.88
-      }
-    },
-    "elapsed_ms": 22707.0
-  },
-  {
-    "group": "complex",
-    "question": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
-    "ground_truth": "Thu nhập từ chuyển nhượng bất động sản phải hạch toán riêng, không được bù trừ lỗ với thu nhập từ hoạt động sản xuất kinh doanh thông thường. Mỗi phần thu nhập tính thuế theo quy định riêng.",
-    "answer": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp, Điều 7 và Nghị Định Số 320 2025 NĐ CP, Điều 6, cách tính thuế TNDN cho từng phần thu nhập như sau:\n\n- Thu nhập từ sản xuất trong nước và thu nhập từ chuyển nhượng bất động sản được tính riêng biệt.\n- Đối với thu nhập từ sản xuất trong nước, doanh nghiệp được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn.\n- Đối với thu nhập từ chuyển nhượng bất động sản, không được bù trừ lỗ với thu nhập của hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế.\n\nVề việc bù trừ lỗ giữa hai hoạt động, theo Điều 6, khoản 3 của Nghị Định Số 320 2025 NĐ CP và Điều 7, khoản 3 của Luật Thuế Thu Nhập Doanh Nghiệp, trường hợp doanh nghiệp có hoạt động chuyển nhượng bất động sản bị lỗ thì không được bù trừ với thu nhập chịu thuế của hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế có thu nhập.\n\nDo đó, doanh nghiệp không được bù trừ lỗ giữa hoạt động sản xuất trong nước và hoạt động chuyển nhượng bất động sản nếu hoạt động sản xuất trong nước đang được hưởng ưu đãi thuế. Tuy nhiên, nếu hoạt động sản xuất trong nước không được hưởng ưu đãi thuế, doanh nghiệp có thể bù trừ lỗ giữa hai hoạt động theo quy định của pháp luật.",
-    "contexts": [
-      "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Thu nhập chịu thuế và bù trừ thu nhập chịu thuế trong kỳ tính thuế\n\n1. Doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh.\n\n2. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại kh",
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 7\n#### Điều 7. Xác định thu nhập tính thuế\n\n1. Thu nhập tính thuế trong kỳ tính thuế được xác định như sau:\n\n| Thu nhập tính thuế | = | Thu nhập chịu thuế | - | Thu nhập được miễn thuế | + | Các khoản lỗ được kết chuyển theo quy định |\n| --- | --- | --- | --- | --- | --- | --- |\n\n2. Thu nhập chịu thuế quy định tại khoản 1 Điều này được xác định như sau:\n\n| Thu nhập chịu thuế | = | Doanh thu | - | Các khoản chi được trừ | + | Các khoản thu nhập khác (kể cả thu nhập nhận được ở ngoài Việt Nam) |\n| -",
-      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 7\n#### Điều 7. Xác định thu nhập tính thuế\n\n1. Thu nhập tính thuế trong kỳ tính thuế được xác định như sau:\n\n| Thu nhập tính thuế | = | Thu nhập chịu thuế | - | Thu nhập được miễn thuế | + | Các khoản lỗ được kết chuyển theo quy định |\n| --- | --- | --- | --- | --- | --- | --- |\n\n2. Thu nhập chịu thuế quy định tại khoản 1 Điều này được xác định như sau:\n\n| Thu nhập chịu thuế | = | Doanh thu | - | Các khoản chi được trừ | + | Các khoản thu nhập khác + (kể cả thu nhập nhận được ở ngoài Việt Nam) |\n|"
-    ],
-    "meta": {
-      "request_id": "26f523ca-4cdb-4364-8ea7-a2b26ce20a8d",
-      "model": "gemini-2.0-flash",
-      "reasoning_mode": "rat_lite",
-      "intent_router": {
-        "label": "COMPLEX",
-        "provider": "gemini",
-        "fallback_used": false,
-        "reasons": [
-          "llm_router"
-        ]
-      },
-      "reasoning": {
-        "complexity_score": 5,
-        "complexity_reasons": [
-          "co_nhieu_menh_de",
-          "cau_hoi_da_menh_de",
-          "cau_hoi_dai",
-          "nhieu_tieu_cau_hoi"
-        ],
-        "steps": [
-          {
-            "step_id": "s1",
-            "title": "Xac dinh van de phap ly trung tam",
-            "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
-            "retrieved_count": 3,
-            "top_score": 0.8416
-          },
-          {
-            "step_id": "s2",
-            "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-            "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?. Tap trung vao: thue thu nhap doanh nghiep",
-            "retrieved_count": 3,
-            "top_score": 0.8451
-          }
-        ]
-      },
-      "self_reflection": {
-        "enabled": true,
-        "is_relevant": true,
-        "is_supported": true,
-        "is_useful": true,
-        "relevance_score": 0.8451,
-        "support_feedback": {
-          "is_supported": true,
-          "unsupported_claims": []
-        },
-        "usefulness_feedback": {
-          "is_useful": true,
-          "missing_points": [],
-          "improvement_suggestions": "Câu trả lời đã cung cấp đầy đủ thông tin về cách tính thuế TNDN cho từng phần thu nhập và việc bù trừ lỗ giữa hai hoạt động."
+          "improvement_suggestions": "Cần cung cấp thông tin cụ thể về các điều khoản trong Luật Thuế Thu Nhập Doanh Nghiệp liên quan đến các khoản chi không được trừ khi tính thuế"
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 3,
-        "top_k": 6
+        "retrieved_count": 4,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 218.02,
-        "llm": 1504.27,
-        "total": 3162.43
+        "retrieval": 260.39,
+        "llm": 496.28,
+        "total": 1500.87
       }
     },
-    "elapsed_ms": 3183.0
+    "elapsed_ms": 1530.0
   },
   {
     "group": "complex",
     "question": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
     "ground_truth": "Doanh nghiệp mới thành lập tại khu kinh tế, đầu tư vào lĩnh vực ưu đãi có thể được miễn thuế TNDN trong thời gian nhất định, sau đó giảm thuế suất. Điều kiện, thời hạn và mức ưu đãi cụ thể phụ thuộc vào quy định của từng khu kinh tế và lĩnh vực đầu tư theo luật thuế TNDN và các nghị định hướng dẫn.",
-    "answer": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN theo quy định tại **Điều 12 Luật Thuế Thu Nhập Doanh Nghiệp** và **Điều 19 Nghị Định Số 320 2025 NĐ CP**.\n\nCụ thể, doanh nghiệp sẽ được áp dụng thuế suất ưu đãi 10% trong 15 năm đối với thu nhập từ dự án đầu tư mới tại khu kinh tế, khu công nghệ cao, khu nông nghiệp ứng dụng công nghệ cao, khu công nghệ số tập trung. Thời gian áp dụng thuế suất ưu đãi được tính từ năm đầu tiên dự án đầu tư mới của doanh nghiệp có doanh thu.\n\nNgoài ra, doanh nghiệp cũng có thể được áp dụng thuế suất ưu đãi 17% trong thời gian 10 năm đối với dự án đầu tư mới thuộc ngành, nghề ưu đãi tại khu kinh tế không nằm trên địa bàn ưu đãi thuế.\n\nDo đó, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi sẽ được hưởng ưu đãi thuế TNDN với thuế suất 10% trong 15 năm hoặc 17% trong 10 năm, tùy thuộc vào loại dự án và địa bàn đầu tư.",
+    "answer": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp, Điều 12 và Điều 19 của Nghị Định Số 320/2025/NĐ-CP, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN như sau:\n\n- Áp dụng thuế suất 10% trong 15 năm đối với thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới tại khu kinh tế nằm trên địa bàn ưu đãi thuế (theo điểm d, khoản 1, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 10% trong suốt thời gian hoạt động đối với thu nhập của doanh nghiệp từ hoạt động thuộc ngành, nghề quy định tại các điểm i, r và s, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm b, khoản 2, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n- Áp dụng thuế suất 17% trong thời gian 10 năm đối với dự án đầu tư mới thuộc ngành, nghề ưu đãi quy định tại các điểm m, n và o, khoản 2, Điều 18 của Nghị Định Số 320/2025/NĐ-CP (theo điểm a, khoản 4, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nThời gian áp dụng thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư mới của doanh nghiệp được tính từ năm đầu tiên dự án đầu tư mới của doanh nghiệp có doanh thu (theo khoản 7, Điều 19 của Nghị Định Số 320/2025/NĐ-CP).\n\nDo đó, doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN với mức thuế suất 10% hoặc 17% và thời gian áp dụng thuế suất ưu đãi là 10 năm hoặc 15 năm, tùy thuộc vào lĩnh vực và địa bàn đầu tư.",
     "contexts": [
       "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
       "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 12\n#### Điều 12. Nguyên tắc, đối tượng áp dụng ưu đãi thuế thu nhập doanh nghiệp\n\n1. Doanh nghiệp được hưởng ưu đãi thuế thu nhập doanh nghiệp theo ngành, nghề ưu đãi thuế thu nhập doanh nghiệp, địa bàn ưu đãi thuế thu nhập doanh nghiệp quy định tại Điều này. Mức ưu đãi thuế thu nhập doanh nghiệp thực hiện theo quy định tại Điều 13, Điều 14 của Luật này.\n\nTrường hợp luật khác có quy định về ưu đãi thuế thu nhập doanh nghiệp khác với quy định của Luật này thì thực hiện theo quy định của Luật này, tr",
-      "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 19\n#### Điều 19. Thuế suất ưu đãi\n\n1. Áp dụng thuế suất 10% trong 15 năm đối với:\n\na) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới quy định tại các điểm a, b, c, d và đ khoản 2 Điều 18; thu nhập của doanh nghiệp quy định tại điểm e khoản 2 Điều 18 của Nghị định này;\n\nb) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư quy định tại điểm g và điểm h khoản 2 Điều 18 của Nghị định này;\n\nc) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới thuộc địa bàn quy định tại điểm a khoản 3 Đi",
-      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 13\n#### Điều 13. Thuế suất ưu đãi\n\n1. Áp dụng thuế suất 10% trong 15 năm đối với:\n\na) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới quy định tại các điểm a, b, c, d và đ khoản 2 Điều 12 của Luật này; thu nhập của doanh nghiệp quy định tại điểm e khoản 2 Điều 12 của Luật này;\n\nb) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư quy định tại điểm g, điểm h khoản 2 Điều 12 của Luật này;\n\nc) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới thuộc địa bàn quy định tại điểm a khoản 3 Đ"
+      "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 19\n#### Điều 19. Thuế suất ưu đãi\n\n1. Áp dụng thuế suất 10% trong 15 năm đối với:\n\na) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới quy định tại các điểm a, b, c, d và đ khoản 2 Điều 18; thu nhập của doanh nghiệp quy định tại điểm e khoản 2 Điều 18 của Nghị định này;\n\nb) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư quy định tại điểm g và điểm h khoản 2 Điều 18 của Nghị định này;\n\nc) Thu nhập của doanh nghiệp từ thực hiện dự án đầu tư mới thuộc địa bàn quy định tại điểm a khoản 3 Đi"
     ],
     "meta": {
-      "request_id": "4c7e4ebd-35ce-47b7-9456-ad07cec1eba8",
-      "model": "gemini-2.0-flash",
+      "request_id": "60d776ba-0c9e-4cb9-ba7b-017dd8afcceb",
+      "model": "gemini-3.1-flash-lite",
       "reasoning_mode": "rat_lite",
       "intent_router": {
         "label": "COMPLEX",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "co_nhieu_menh_de",
+          "cau_hoi_dai"
         ]
       },
       "reasoning": {
@@ -389,14 +281,14 @@
             "step_id": "s1",
             "title": "Xac dinh van de phap ly trung tam",
             "query": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
-            "retrieved_count": 3,
+            "retrieved_count": 2,
             "top_score": 0.7448
           },
           {
             "step_id": "s2",
             "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
             "query": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?. Tap trung vao: thue thu nhap doanh nghiep",
-            "retrieved_count": 3,
+            "retrieved_count": 2,
             "top_score": 0.7725
           }
         ]
@@ -414,68 +306,69 @@
         "usefulness_feedback": {
           "is_useful": true,
           "missing_points": [],
-          "improvement_suggestions": "Câu trả lời đã cung cấp đầy đủ thông tin về ưu đãi thuế TNDN cho doanh nghiệp thành lập mới tại khu kinh tế với dự án đầu tư vào lĩnh vực ưu đãi."
+          "improvement_suggestions": "Câu trả lời đã cung cấp đầy đủ thông tin về các mức thuế suất ưu đãi và thời gian áp dụng cho doanh nghiệp thành lập mới tại khu kinh tế với dự án đầu tư vào lĩnh vực ưu đãi."
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 4,
-        "top_k": 6
+        "retrieved_count": 3,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 210.9,
-        "llm": 2175.59,
-        "total": 19345.88
+        "retrieval": 593.71,
+        "llm": 9913.65,
+        "total": 42810.52
       }
     },
-    "elapsed_ms": 19470.0
+    "elapsed_ms": 42830.0
   },
   {
     "group": "complex",
-    "question": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?",
-    "ground_truth": "Doanh nghiệp có doanh thu dưới 20 tỷ thuộc diện doanh nghiệp nhỏ và vừa nhưng nếu không thuộc lĩnh vực ưu đãi thì áp dụng thuế suất 20%. Tiền chậm nộp thuế tính theo mức 0,03%/ngày trên số tiền thuế chậm nộp theo Luật Quản lý thuế.",
-    "answer": "Để trả lời câu hỏi này, chúng ta cần dựa vào các quy định của pháp luật về thuế thu nhập doanh nghiệp và quản lý thuế.\n\nTheo Luật Thuế thu nhập doanh nghiệp, thuế suất áp dụng cho doanh nghiệp hoạt động trong lĩnh vực không được ưu đãi là 20% (theo Điều 11 của Luật Thuế thu nhập doanh nghiệp).\n\nVề mức phạt chậm nộp thuế, theo Luật Quản lý thuế, nếu doanh nghiệp nộp chậm thuế sẽ phải nộp thêm tiền chậm nộp. Mức phạt chậm nộp được tính như sau:\n\n- Mức phạt chậm nộp = Số tiền thuế chậm nộp x Lãi suất chậm nộp\n\nLãi suất chậm nộp được quy định tại Điều 34 của Nghị Định Số 125 2020 NĐ CP Xử Phạt Thuế Hóa Đơn, là 0,03%/ngày.\n\nDo đó, để tính mức phạt chậm nộp, chúng ta cần biết số tiền thuế chậm nộp và số ngày chậm nộp. Trong trường hợp này, doanh nghiệp nộp chậm thuế 3 tháng, nhưng không cung cấp thông tin về số tiền thuế chậm nộp.\n\nDựa vào thông tin có sẵn, chúng ta có thể kết luận như sau:\n\n- Thuế suất áp dụng cho doanh nghiệp là 20%.\n- Mức phạt chậm nộp sẽ được tính dựa trên số tiền thuế chậm nộp và lãi suất chậm nộp 0,03%/ngày.\n\nDữ liệu hiện tại chưa có thông tin về số tiền thuế chậm nộp, do đó không thể tính được mức phạt chậm nộp cụ thể.",
+    "question": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
+    "ground_truth": "Thu nhập từ chuyển nhượng bất động sản phải hạch toán riêng, không được bù trừ lỗ với thu nhập từ hoạt động sản xuất kinh doanh thông thường. Mỗi phần thu nhập tính thuế theo quy định riêng.",
+    "answer": "Căn cứ vào Luật Thuế Thu Nhập Doanh Nghiệp và Nghị Định Số 320 2025 NĐ CP, việc tính thuế TNDN cho doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản được quy định như sau:\n\nTheo Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, thu nhập tính thuế trong kỳ tính thuế được xác định bằng thu nhập chịu thuế trừ thu nhập được miễn thuế cộng với các khoản lỗ được kết chuyển theo quy định. Thu nhập chịu thuế được xác định bằng doanh thu trừ các khoản chi được trừ cộng với các khoản thu nhập khác.\n\nTại Điều 6, Nghị Định Số 320 2025 NĐ CP, quy định rằng doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại khoản 3 và khoản 4 Điều này.\n\nTuy nhiên, tại khoản 3, Điều 6, Nghị Định Số 320 2025 NĐ CP và khoản 3, Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp cũng quy định rằng trường hợp doanh nghiệp có hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ thì không bù trừ với thu nhập chịu thuế của hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế có thu nhập.\n\nDo đó, nếu doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như sau:\n\n- Thu nhập từ sản xuất trong nước: được tính theo quy định tại Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp.\n- Thu nhập từ chuyển nhượng bất động sản: phải xác định riêng và không được bù trừ lỗ với hoạt động sản xuất, kinh doanh trong kỳ tính thuế nếu hoạt động sản xuất, kinh doanh đang được hưởng ưu đãi thuế.\n\nVề việc bù trừ lỗ giữa hai hoạt động, theo quy định tại Điều 6, Nghị Định Số 320 2025 NĐ CP và Điều 7, Luật Thuế Thu Nhập Doanh Nghiệp, doanh nghiệp được bù trừ số lỗ từ hoạt động sản xuất, kinh doanh vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập, trừ trường hợp hoạt động chuyển nhượng bất động sản, chuyển nhượng dự án đầu tư, chuyển nhượng quyền tham gia dự án đầu tư bị lỗ.",
     "contexts": [
-      "Nghị Định Số 125 2020 Nđ Cp Xử Phạt Thuế Hóa Đơn — Điều 1\n#### Điều 1. Xử phạt vi phạm hành chính đối với<ông (bà)/tổ chức> có tên sau đây:\n\n<1. Họ và tên cá nhân vi phạm>:.................................... Giới tính:.....................\n\nNgày, tháng, năm sinh:...../............../............... Quốc tịch:....................................\n\nNghề nghiệp:.........................................................................................................\n\nNơi ở hiện tại:...........................................................................",
-      "Luật Quản Lý Thuế — Điều 45\n#### Điều 45. Hành vi vi phạm trong lĩnh vực quản lý thuế\n\n1. Hành vi vi phạm thủ tục thuế, hóa đơn, chứng từ điện tử.\n\n2. Hành vi khai sai căn cứ tính thuế hoặc xác định sai trường hợp được miễn, giảm, hoàn thuế hoặc sử dụng hóa đơn, chứng từ không hợp pháp không thuộc lỗi của người mua dẫn đến thiếu số tiền thuế phải nộp hoặc làm tăng số thuế được miễn, giảm, hoàn nhưng các nghiệp vụ kinh tế này đã được ghi nhận, phản ánh đầy đủ trên hệ thống sổ kế toán.\n\n3. Người nộp thuế khai sai dẫn đến thi",
-      "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 10\n#### Điều 10. Các khoản chi không được trừ khi xác định thu nhập chịu thuế\n\nCác khoản chi không được trừ khi xác định thu nhập chịu thuế thực hiện theo quy định tại khoản 2 Điều 9 Luật Thuế thu nhập doanh nghiệp, cụ thể như sau:\n\n1. Các khoản chi không đáp ứng đủ các điều kiện quy định tại khoản 1 Điều 9 của Nghị định này.\n\n2. Các khoản tiền phạt về vi phạm hành chính bao gồm: Vi phạm luật giao thông, vi phạm quy định đăng ký kinh doanh, vi phạm quy định kế toán, vi phạm pháp luật về thuế bao gồ",
-      "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 4\n#### Điều 4. Hồ sơ hưởng ưu đãi thuế quy định tại các điều 4, 13, 14 và 15 của Luật Thuế thu nhập doanh nghiệp\n\n1. Thủ tục, hồ sơ được hưởng miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế thực hiện theo quy định của pháp luật về quản lý thuế.\n\n2. Doanh nghiệp tự xác định các điều kiện miễn thuế, giảm thuế, thuế suất ưu đãi, thời gian miễn thuế, giảm thuế, số lỗ được trừ vào thu nhập chịu thuế để kê khai và quyết toán thuế với cơ quan thuế.\n\n3. Trường hợp qua thanh tra, ki"
+      "Nghị Định Số 320 2025 Nđ Cp Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Thu nhập chịu thuế và bù trừ thu nhập chịu thuế trong kỳ tính thuế\n\n1. Doanh nghiệp có nhiều hoạt động sản xuất, kinh doanh trong kỳ tính thuế thì thu nhập chịu thuế từ hoạt động sản xuất, kinh doanh là tổng thu nhập của tất cả các hoạt động sản xuất, kinh doanh.\n\n2. Trường hợp doanh nghiệp có hoạt động sản xuất, kinh doanh bị lỗ thì được bù trừ số lỗ vào thu nhập chịu thuế của các hoạt động sản xuất, kinh doanh có thu nhập do doanh nghiệp tự lựa chọn, trừ trường hợp quy định tại kh",
+      "Luật Thuế Thu Nhập Doanh Nghiệp — Điều 7\n#### Điều 7. Xác định thu nhập tính thuế\n\n1. Thu nhập tính thuế trong kỳ tính thuế được xác định như sau:\n\n| Thu nhập tính thuế | = | Thu nhập chịu thuế | - | Thu nhập được miễn thuế | + | Các khoản lỗ được kết chuyển theo quy định |\n| --- | --- | --- | --- | --- | --- | --- |\n\n2. Thu nhập chịu thuế quy định tại khoản 1 Điều này được xác định như sau:\n\n| Thu nhập chịu thuế | = | Doanh thu | - | Các khoản chi được trừ | + | Các khoản thu nhập khác (kể cả thu nhập nhận được ở ngoài Việt Nam) |\n| -"
     ],
     "meta": {
-      "request_id": "1b2fceb0-340c-4c82-9b1d-a41f18b3fa64",
-      "model": "gemini-2.0-flash",
+      "request_id": "9f76ae11-5f92-4ff9-9c89-b91bf14c32e6",
+      "model": "gemini-3.1-flash-lite",
       "reasoning_mode": "rat_lite",
       "intent_router": {
         "label": "COMPLEX",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "co_nhieu_menh_de",
+          "cau_hoi_da_menh_de",
+          "cau_hoi_dai",
+          "nhieu_tieu_cau_hoi"
         ]
       },
       "reasoning": {
         "complexity_score": 5,
         "complexity_reasons": [
           "co_nhieu_menh_de",
-          "co_nhieu_dieu_kien_phap_ly",
           "cau_hoi_da_menh_de",
-          "cau_hoi_dai"
+          "cau_hoi_dai",
+          "nhieu_tieu_cau_hoi"
         ],
         "steps": [
           {
             "step_id": "s1",
             "title": "Xac dinh van de phap ly trung tam",
-            "query": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?",
-            "retrieved_count": 3,
-            "top_score": 0.6493
+            "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
+            "retrieved_count": 2,
+            "top_score": 0.8416
           },
           {
             "step_id": "s2",
             "title": "Tim can cu theo sac thue hoac nhom nghiep vu",
-            "query": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?. Tap trung vao: xu phat va quan ly thue",
-            "retrieved_count": 3,
-            "top_score": 0.6845
+            "query": "If doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?. Tap trung vao: thue thu nhap doanh nghiep",
+            "retrieved_count": 2,
+            "top_score": 0.8451
           }
         ]
       },
@@ -484,7 +377,7 @@
         "is_relevant": true,
         "is_supported": true,
         "is_useful": true,
-        "relevance_score": 0.8824,
+        "relevance_score": 0.8451,
         "support_feedback": {
           "is_supported": true,
           "unsupported_claims": []
@@ -492,22 +385,33 @@
         "usefulness_feedback": {
           "is_useful": true,
           "missing_points": [],
-          "improvement_suggestions": "Bypass qua bộ lọc lỗi."
+          "improvement_suggestions": ""
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 4,
-        "top_k": 6
+        "retrieved_count": 2,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 215.05,
-        "llm": 54110.52,
-        "total": 55874.14
+        "retrieval": 631.39,
+        "llm": 4435.69,
+        "total": 13778.07
       }
     },
-    "elapsed_ms": 55896.0
+    "elapsed_ms": 13801.0
+  },
+  {
+    "group": "complex",
+    "question": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?",
+    "ground_truth": "Doanh nghiệp có doanh thu dưới 20 tỷ thuộc diện doanh nghiệp nhỏ và vừa nhưng nếu không thuộc lĩnh vực ưu đãi thì áp dụng thuế suất 20%. Tiền chậm nộp thuế tính theo mức 0,03%/ngày trên số tiền thuế chậm nộp theo Luật Quản lý thuế.",
+    "answer": "LỖI KẾT NỐI: HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=60)",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 60013.0
   },
   {
     "group": "out_of_scope",
@@ -516,21 +420,20 @@
     "answer": "Dữ liệu hiện tại chưa có thông tin về vấn đề này.",
     "contexts": [
       "Nghị Định Số 134 2016 Nđ Cp Về Thuế Xuất Nhập Khẩu — Điều 14\n#### Điều 14. Miễn thuế hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư\n\n1. Hàng hóa nhập khẩu để tạo tài sản cố định của đối tượng được hưởng ưu đãi đầu tư được miễn thuế nhập khẩu theo quy định tại khoản 11 Điều 16 Luật Thuế xuất khẩu, thuế nhập khẩu.\n\n2. Hàng hóa nhập khẩu để tạo tài sản cố định của một dự án đầu tư có phần dự án thuộc đối tượng ưu đãi đầu tư được miễn thuế nhập khẩu đối với hàng hóa nhập khẩu được phân bổ, hạch toán riêng để sử dụng trực tiếp",
-      "Nghị Định Số 123 2020 Nđ Cp Về Hóa Đơn Chứng Từ — Điều 9\n#### Điều 9. Thời điểm lập hóa đơn\n\n1. Thời điểm lập hóa đơn đối với bán hàng hóa (bao gồm cả bán tài sản nhà nước, tài sản tịch thu, sung quỹ nhà nước và bán hàng dự trữ quốc gia) là thời điểm chuyển giao quyền sở hữu hoặc quyền sử dụng hàng hóa cho người mua, không phân biệt đã thu được tiền hay chưa thu được tiền.\n\n2. Thời điểm lập hóa đơn đối với cung cấp dịch vụ là thời điểm hoàn thành việc cung cấp dịch vụ không phân biệt đã thu được tiền hay chưa thu được tiền. Trường hợp người cung cấp d",
-      "Thông Tư Số 80 2021 Tt Btc — Điều 62\n#### Điều 62. Thủ tục hồ sơ miễn thuế, giảm thuế theo Hiệp định tránh đánh thuế hai lần (Hiệp định thuế)\n\n1. Đối với nhà thầu nước ngoài:\n\nNgoài hồ sơ khai thuế, nhà thầu nước ngoài thực hiện thêm hồ sơ đề nghị miễn, giảm thuế theo Hiệp định thuế.\n\na) Đối với phương pháp khấu trừ, kê khai:\n\na.1) Khi tạm tính thuế thu nhập doanh nghiệp, người nộp thuế gửi hồ sơ đề nghị miễn, giảm thuế theo Hiệp định thuế cho cơ quan thuế cùng thời điểm tạm nộp thuế thu nhập doanh nghiệp quý. Hồ sơ gồm:\n\na.1.1) Vă",
       "Luật Thuế Giá Trị Gia Tăng — Điều 4\n#### Điều 4. Người nộp thuế\n\n1. Tổ chức, hộ, cá nhân sản xuất, kinh doanh hàng hóa, dịch vụ chịu thuế giá trị gia tăng (sau đây gọi là cơ sở kinh doanh).\n\n2. Tổ chức, cá nhân nhập khẩu hàng hóa chịu thuế giá trị gia tăng (sau đây gọi là người nhập khẩu).\n\n3. Tổ chức, cá nhân sản xuất, kinh doanh tại Việt Nam mua dịch vụ (kể cả trường hợp mua dịch vụ gắn với hàng hóa) của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, trừ tr",
-      "Nghị Định Số 123 2020 Nđ Cp Về Hóa Đơn Chứng Từ — Điều 59\n#### Điều 59. Hiệu lực thi hành\n\n1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2022, khuyến khích cơ quan, tổ chức, cá nhân đáp ứng điều kiện về hạ tầng công nghệ thông tin áp dụng quy định về hóa đơn, chứng từ điện tử của Nghị định này trước ngày 01 tháng 7 năm 2022.\n\n2. Nghị định số 51/2010/NĐ-CP ngày 14 tháng 5 năm 2010 của Chính phủ quy định về hóa đơn bán hàng hóa, cung ứng dịch vụ, Nghị định số 04/2014/NĐ-CP ngày 17 tháng 01 năm 2014 của Chính phủ sửa đổi, bổ sung một số"
+      "Nghị Định Số 123 2020 Nđ Cp Về Hóa Đơn Chứng Từ — Điều 59\n#### Điều 59. Hiệu lực thi hành\n\n1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2022, khuyến khích cơ quan, tổ chức, cá nhân đáp ứng điều kiện về hạ tầng công nghệ thông tin áp dụng quy định về hóa đơn, chứng từ điện tử của Nghị định này trước ngày 01 tháng 7 năm 2022.\n\n2. Nghị định số 51/2010/NĐ-CP ngày 14 tháng 5 năm 2010 của Chính phủ quy định về hóa đơn bán hàng hóa, cung ứng dịch vụ, Nghị định số 04/2014/NĐ-CP ngày 17 tháng 01 năm 2014 của Chính phủ sửa đổi, bổ sung một số",
+      "Luật Thuế Thu Nhập Doanh Nghiệp Hợp Nhất — Điều 14\n#### Điều 14. Miễn thuế, giảm thuế\n\n1. Miễn thuế tối đa 04 năm và giảm 50% số thuế phải nộp tối đa không quá 09 năm tiếp theo đối với:\n\na) [17] Thu nhập của doanh nghiệp quy định tại khoản 1 và khoản 1a Điều 13 của Luật này;\n\nb) Thu nhập của doanh nghiệp quy định tại điểm r khoản 2 Điều 12 của Luật này thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này; trường hợp không thuộc địa bàn quy định tại điểm a, điểm b khoản 3 Điều 12 của Luật này được miễn thuế tối đa 04 năm và giảm"
     ],
     "meta": {
-      "request_id": "acb33186-d25e-43bf-8d26-54fbed158102",
-      "model": "gemini-2.0-flash",
-      "reasoning_mode": "rat_lite",
+      "request_id": "391196dd-3f4d-4c92-855a-75571f321087",
+      "model": "gemini-3.1-flash-lite",
+      "reasoning_mode": "standard_rag",
       "intent_router": {
-        "label": "COMPLEX",
-        "provider": "gemini",
-        "fallback_used": false,
+        "label": "SIMPLE",
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "cau_hoi_dai"
         ]
       },
       "reasoning": {
@@ -538,52 +441,42 @@
         "complexity_reasons": [
           "cau_hoi_dai"
         ],
-        "steps": [
-          {
-            "step_id": "s1",
-            "title": "Xac dinh van de phap ly trung tam",
-            "query": "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026 như thế nào?",
-            "retrieved_count": 3,
-            "top_score": 0.1675
-          },
-          {
-            "step_id": "s2",
-            "title": "Tim can cu de ket luan",
-            "query": "can cu ket luan truc tiep cho cau hoi: Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026 như thế nào?",
-            "retrieved_count": 3,
-            "top_score": 0.1939
-          }
-        ]
+        "steps": []
       },
       "self_reflection": {
         "enabled": true,
         "is_relevant": true,
-        "is_supported": true,
-        "is_useful": true,
-        "relevance_score": 0.75,
+        "is_supported": false,
+        "is_useful": false,
+        "relevance_score": 0.5833,
         "support_feedback": {
-          "is_supported": true,
-          "unsupported_claims": []
+          "is_supported": false,
+          "unsupported_claims": [
+            "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
+          ]
         },
         "usefulness_feedback": {
-          "is_useful": true,
-          "missing_points": [],
-          "improvement_suggestions": "Bypass qua bộ lọc lỗi."
+          "is_useful": false,
+          "missing_points": [
+            "Quy định về thuế tối thiểu toàn cầu Pillar 2",
+            "Áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
+          ],
+          "improvement_suggestions": "Cần cung cấp thông tin cụ thể về quy định thuế tối thiểu toàn cầu Pillar 2 và áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026"
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 5,
-        "top_k": 6
+        "retrieved_count": 4,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 190.8,
-        "llm": 0.0,
-        "total": 5750.16
+        "retrieval": 264.3,
+        "llm": 0.01,
+        "total": 7700.53
       }
     },
-    "elapsed_ms": 5876.0
+    "elapsed_ms": 7722.0
   },
   {
     "group": "out_of_scope",
@@ -594,20 +487,18 @@
       "Nghị Định Số 181 2025 Nđ Cp Về Thuế Gtgt — Điều 33\n#### Điều 33. Hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh\n\nNgười nước ngoài, người Việt Nam định cư ở nước ngoài (trừ thành viên của Tổ bay theo quy định của pháp luật về hàng không, thành viên của Đoàn thủy thủ theo quy định của pháp luật về hàng hải) mang hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế được hoàn thuế đối với hàng hóa mua tại Việt Nam mang theo khi xuất cảnh. Hồ sơ, thủ tục, số thuế được hoàn, phương thức hoàn thuế đối với trường hợp quy định tại khoản n",
       "Luật Thuế Thu Nhập Cá Nhân — Điều 2\n#### Điều 2. Người nộp thuế\n\n1. Người nộp thuế thu nhập cá nhân là cá nhân cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong và ngoài lãnh thổ Việt Nam và cá nhân không cư trú có thu nhập chịu thuế quy định tại Điều 3 của Luật này phát sinh trong lãnh thổ Việt Nam.\n\n2. Cá nhân cư trú là người đáp ứng một trong các điều kiện sau đây:\n\na) Có mặt tại Việt Nam từ 183 ngày trở lên tính trong 01 năm dương lịch hoặc tính theo 12 tháng liên tục kể từ ngày đầu tiên có mặt tại",
       "Thông Tư Số 69 2025 Tt Btc Hướng Dẫn Thuế Gtgt — Điều 6\n#### Điều 6. Chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài quy định tại điểm a khoản 2 Điều 14 Luật Thuế giá trị gia tăng\n\nTổ chức tại Việt Nam nộp thay nghĩa vụ thuế phải nộp của tổ chức nước ngoài không có cơ sở thường trú tại Việt Nam, cá nhân ở nước ngoài là đối tượng không cư trú tại Việt Nam, nhà cung cấp nước ngoài không có cơ sở thường trú tại Việt Nam phải có chứng từ nộp thuế giá trị gia tăng thay cho phía nước ngoài để khấu trừ thuế giá trị gia tăng đầu vào. Chứng từ nộp",
-      "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Hồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài quy định tại khoản 2 Điều 12 của Nghị định số 320/2025/NĐ-CP\n\nHồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài thực hiện theo quy định tại Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị địn",
-      "Nghị Định Số 181 2025 Nđ Cp Về Thuế Gtgt — Điều 35\n#### Điều 35. Hoàn thuế đối với hàng hóa, dịch vụ mua tại Việt Nam của đối tượng được hưởng quyền ưu đãi miễn trừ ngoại giao\n\nĐối tượng được hưởng quyền ưu đãi miễn trừ ngoại giao theo quy định của pháp luật về ngoại giao mua hàng hóa, dịch vụ tại Việt Nam để sử dụng được hoàn số thuế giá trị gia tăng đã trả ghi trên hóa đơn giá trị gia tăng hoặc trên chứng từ thanh toán ghi giá thanh toán đã có thuế giá trị gia tăng.",
-      "Luật Thuế Thu Nhập Cá Nhân — Điều 23\n#### Điều 23. Thuế thu nhập cá nhân đối với thu nhập từ chuyển nhượng vốn\n\n1. Thuế thu nhập cá nhân đối với thu nhập từ chuyển nhượng vốn của cá nhân không cư trú được xác định bằng thu nhập tính thuế nhân (x) với thuế suất 20% theo từng lần phát sinh, không phân biệt việc chuyển nhượng được thực hiện tại Việt Nam hay tại nước ngoài. Trong đó, thu nhập tính thuế từ chuyển nhượng vốn được xác định bằng giá chuyển nhượng trừ (-) đi giá mua và các khoản chi phí hợp lý liên quan đến việc tạo ra thu"
+      "Thông Tư Số 20 2026 Tt Btc Hướng Dẫn Thuế Tndn — Điều 6\n#### Điều 6. Hồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài quy định tại khoản 2 Điều 12 của Nghị định số 320/2025/NĐ-CP\n\nHồ sơ kê khai và nộp thuế của doanh nghiệp Việt Nam đầu tư ra nước ngoài đối với khoản thu nhập từ dự án đầu tư tại nước ngoài thực hiện theo quy định tại Thông tư số 80/2021/TT-BTC ngày 29 tháng 9 năm 2021 của Bộ trưởng Bộ Tài chính hướng dẫn thi hành một số điều của Luật Quản lý thuế và Nghị địn"
     ],
     "meta": {
-      "request_id": "b801a587-4ed8-4e15-b868-dbb964ddcde0",
-      "model": "gemini-2.0-flash",
+      "request_id": "95fdd070-01ed-4070-b077-3319cfcef152",
+      "model": "gemini-3.1-flash-lite",
       "reasoning_mode": "standard_rag",
       "intent_router": {
         "label": "SIMPLE",
-        "provider": "gemini",
-        "fallback_used": false,
+        "provider": "heuristic",
+        "fallback_used": true,
         "reasons": [
-          "llm_router"
+          "heuristic_router"
         ]
       },
       "reasoning": {
@@ -618,31 +509,35 @@
       "self_reflection": {
         "enabled": true,
         "is_relevant": true,
-        "is_supported": true,
-        "is_useful": true,
-        "relevance_score": 0.8182,
+        "is_supported": false,
+        "is_useful": false,
+        "relevance_score": 0.7273,
         "support_feedback": {
-          "is_supported": true,
-          "unsupported_claims": []
+          "is_supported": false,
+          "unsupported_claims": [
+            "thuế carbon"
+          ]
         },
         "usefulness_feedback": {
-          "is_useful": true,
-          "missing_points": [],
-          "improvement_suggestions": "Bypass qua bộ lọc lỗi."
+          "is_useful": false,
+          "missing_points": [
+            "quy định thuế carbon tại Việt Nam"
+          ],
+          "improvement_suggestions": "cung cấp thông tin cụ thể về thuế carbon tại Việt Nam hoặc đề xuất nguồn thông tin có thể giúp giải quyết vấn đề"
         },
         "support_retries": 0,
         "loops_used": 0
       },
       "rag": {
-        "retrieved_count": 6,
-        "top_k": 6
+        "retrieved_count": 4,
+        "top_k": 4
       },
       "timings_ms": {
-        "retrieval": 92.82,
+        "retrieval": 254.64,
         "llm": 0.0,
-        "total": 737.61
+        "total": 5075.59
       }
     },
-    "elapsed_ms": 767.0
+    "elapsed_ms": 5100.0
   }
 ]

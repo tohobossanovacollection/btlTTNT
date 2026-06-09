@@ -334,15 +334,80 @@ evaluate_ragas.py — Đánh giá từng câu một (Có Checkpoint lưu dữ li
 import os
 import json
 import time
+import hashlib
+import math
+import re
 from pathlib import Path
 from typing import Any
 
+
+from dotenv import load_dotenv
+try:
+    from ragas.embeddings.base import BaseRagasEmbedding
+except ImportError:
+    BaseRagasEmbedding = object
+load_dotenv("backend/.env")
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL = os.getenv("RAGAS_GROQ_MODEL_NAME") or os.getenv("GROQ_MODEL_NAME", "llama-3.3-70b-versatile")
+if not os.getenv("RAGAS_GROQ_MODEL_NAME") and GROQ_MODEL in {"groq/compound", "groq/compound-mini"}:
+    GROQ_MODEL = "llama-3.3-70b-versatile"
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000/api/v1/chat/")
 # ─── Cấu hình ──────────────────────────────────────────────────────────────
 # GROQ_API_KEY = os.getenv("GROQ_API_KEY", "ĐIỀN_KEY_CỦA_BẠN_VÀO_ĐÂY")
 # GROQ_MODEL   = os.getenv("GROQ_MODEL_NAME", "llama3-70b-8192")
 # BACKEND_URL  = "http://127.0.0.1:8000/api/v1/chat/"
 
+
+class HashingRagasEmbedding(BaseRagasEmbedding):
+    """Embedding local toi gian de RAGAS tinh answer_relevancy khong can API embedding."""
+
+    def __init__(self, dim: int = 512):
+        super().__init__()
+        self.dim = dim
+
+    def embed_text(self, text: str, **kwargs: Any) -> list[float]:
+        vector = [0.0] * self.dim
+        tokens = re.findall(r"\w+", (text or "").lower(), flags=re.UNICODE)
+        for token in tokens:
+            digest = hashlib.blake2b(token.encode("utf-8"), digest_size=8).digest()
+            bucket = int.from_bytes(digest[:4], "little") % self.dim
+            sign = 1.0 if digest[4] % 2 == 0 else -1.0
+            vector[bucket] += sign
+
+        norm = math.sqrt(sum(value * value for value in vector))
+        if norm:
+            vector = [value / norm for value in vector]
+        return vector
+
+    async def aembed_text(self, text: str, **kwargs: Any) -> list[float]:
+        return self.embed_text(text, **kwargs)
+
+    def embed_texts(self, texts: list[str], **kwargs: Any) -> list[list[float]]:
+        return [self.embed_text(text, **kwargs) for text in texts]
+
+    async def aembed_texts(self, texts: list[str], **kwargs: Any) -> list[list[float]]:
+        return self.embed_texts(texts, **kwargs)
+
+    def embed_query(self, text: str, **kwargs: Any) -> list[float]:
+        return self.embed_text(text, **kwargs)
+
+    def embed_documents(self, texts: list[str], **kwargs: Any) -> list[list[float]]:
+        return self.embed_texts(texts, **kwargs)
+
+    async def aembed_query(self, text: str, **kwargs: Any) -> list[float]:
+        return self.embed_text(text, **kwargs)
+
+    async def aembed_documents(self, texts: list[str], **kwargs: Any) -> list[list[float]]:
+        return self.embed_texts(texts, **kwargs)
+
+
 CHECKPOINT_PATH = Path("evaluation_checkpoint.json")
+RAW_RESULTS_PATH = Path("evaluation_results_raw.json")
+RAGAS_RESULTS_CSV_PATH = Path("evaluation_results.csv")
+RAGAS_RESULTS_JSON_PATH = Path("evaluation_results.json")
+RAGAS_SUMMARY_PATH = Path("evaluation_summary.json")
+METRIC_COLUMNS = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
 
 # Bộ câu hỏi thử nghiệm (Giữ nguyên 9 câu của bạn)
 TEST_QUESTIONS = [
@@ -471,18 +536,58 @@ def print_manual_table(results: list[dict]) -> None:
         print(f"{i:<4} {r['group']:<12} {mode:<14} {intent:<8} "
               f"{is_rel:<7} {is_sup:<7} {is_use:<7} {nsrc:<5} {ms:<6} {has_ans}")
 
+
+def save_raw_results(results: list[dict]) -> None:
+    RAW_RESULTS_PATH.write_text(
+        json.dumps(results, ensure_ascii=False, indent=2, default=str),
+        encoding="utf-8",
+    )
+    print(f"\n[SAVED] Raw backend results -> {RAW_RESULTS_PATH}")
+
+
+def save_ragas_outputs(ragas_scores: Any, results: list[dict], score_dict: dict[str, float]) -> bool:
+    df = ragas_scores.to_pandas()
+
+    df.to_csv(RAGAS_RESULTS_CSV_PATH, index=False, encoding="utf-8-sig")
+    df.to_json(RAGAS_RESULTS_JSON_PATH, orient="records", force_ascii=False, indent=2)
+
+    missing_scores = False
+    for column in METRIC_COLUMNS:
+        if column not in df.columns or df[column].dropna().empty or df[column].isna().any():
+            missing_scores = True
+
+    report = {
+        "summary": score_dict,
+        "ragas_model": GROQ_MODEL,
+        "backend_url": BACKEND_URL,
+        "has_missing_ragas_scores": missing_scores,
+        "ragas_rows": json.loads(df.to_json(orient="records", force_ascii=False)),
+        "backend_results": results,
+    }
+    RAGAS_SUMMARY_PATH.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2, default=str),
+        encoding="utf-8",
+    )
+
+    print(f"[SAVED] RAGAS table CSV   -> {RAGAS_RESULTS_CSV_PATH}")
+    print(f"[SAVED] RAGAS table JSON  -> {RAGAS_RESULTS_JSON_PATH}")
+    print(f"[SAVED] Summary report    -> {RAGAS_SUMMARY_PATH}")
+    return missing_scores
+
 # ─── RAGAS Evaluation bằng Groq ───────────────────────────────────────────
 def run_ragas(results: list[dict]) -> dict | None:
     try:
         from datasets import Dataset as HFDataset
         from ragas import evaluate
         from ragas.metrics import Faithfulness, AnswerRelevancy, ContextPrecision, ContextRecall
-        from langchain_groq import ChatGroq
-    except ImportError:
-        print("\n[RAGAS NOT INSTALLED] Thiếu thư viện chấm điểm.")
+        import instructor
+        from openai import AsyncOpenAI
+        from ragas.llms import llm_factory
+    except ImportError as exc:
+        print(f"\n[RAGAS NOT INSTALLED] Thiếu thư viện chấm điểm: {exc}")
         return None
 
-    if not GROQ_API_KEY or GROQ_API_KEY == "ĐIỀN_KEY_CỦA_BẠN_VÀO_ĐÂY":
+    if not GROQ_API_KEY:
         print("\n[SKIP RAGAS] Chưa cấu hình GROQ_API_KEY để chấm điểm.")
         return None
 
@@ -493,13 +598,34 @@ def run_ragas(results: list[dict]) -> dict | None:
 
     print(f"\n=== Khởi chạy RAGAS Judge (Groq chấm điểm: {GROQ_MODEL}) ===")
     try:
-        evaluator_llm = ChatGroq(api_key=GROQ_API_KEY, model_name=GROQ_MODEL, temperature=0, max_retries=3)
+        groq_client = instructor.from_openai(
+            AsyncOpenAI(api_key=GROQ_API_KEY, base_url="https://api.groq.com/openai/v1"),
+            mode=instructor.Mode.JSON,
+        )
+        evaluator_llm = llm_factory(
+            GROQ_MODEL,
+            provider="groq",
+            client=groq_client,
+            adapter="litellm",
+            temperature=0,
+        )
+        evaluator_embeddings = HashingRagasEmbedding()
         dataset = HFDataset.from_list([
             {"user_input": r["question"], "retrieved_contexts": r["contexts"], "response": r["answer"], "reference": r["ground_truth"]}
             for r in valid
         ])
-        metrics = [Faithfulness(), AnswerRelevancy(), ContextPrecision(), ContextRecall()]
-        return evaluate(dataset=dataset, metrics=metrics, llm=evaluator_llm)
+        metrics = [
+            Faithfulness(llm=evaluator_llm),
+            AnswerRelevancy(llm=evaluator_llm, embeddings=evaluator_embeddings, strictness=1),
+            ContextPrecision(llm=evaluator_llm),
+            ContextRecall(llm=evaluator_llm),
+        ]
+        return evaluate(
+            dataset=dataset,
+            metrics=metrics,
+            batch_size=1,
+            raise_exceptions=False,
+        )
     except Exception as exc:
         print(f"[ERROR] RAGAS evaluate thất bại: {exc}")
         return None
@@ -508,6 +634,7 @@ def run_ragas(results: list[dict]) -> dict | None:
 def main() -> None:
     # 1. Thu thập dữ liệu từng câu (An toàn + Checkpoint)
     results = collect_results_one_by_one()
+    save_raw_results(results)
     
     # 2. In bảng thống kê ra màn hình terminal cuối code
     print_manual_table(results)
@@ -518,18 +645,31 @@ def main() -> None:
     if ragas_scores is not None:
         print("\n=== ĐIỂM SỐ RAGAS CUỐI CÙNG ===")
         try:
-            score_dict = dict(ragas_scores)
-        except:
+            df = ragas_scores.to_pandas()
+            score_dict = {
+                column: float(df[column].dropna().mean())
+                for column in METRIC_COLUMNS
+                if column in df.columns and not df[column].dropna().empty
+            }
+        except Exception:
             score_dict = {}
 
         for k, v in score_dict.items():
             bar = "█" * int(float(v or 0) * 20)
             print(f"  {k:<22}: {float(v or 0):.4f}  {bar}")
-            
-        # Xóa file checkpoint sau khi đã hoàn thành toàn bộ bài test sạch sẽ
-        if CHECKPOINT_PATH.exists():
+
+        missing_scores = save_ragas_outputs(ragas_scores, results, score_dict)
+
+        if missing_scores:
+            print(
+                "\n[WARN] Một số điểm RAGAS bị thiếu/NaN. "
+                "Thường là do Groq rate limit hoặc quota. Checkpoint được giữ lại để chạy tiếp sau."
+            )
+        elif CHECKPOINT_PATH.exists():
             CHECKPOINT_PATH.unlink()
-        print("\n[HOÀN THÀNH] Quá trình test kết thúc thành công!")
+            print("\n[HOÀN THÀNH] Quá trình test kết thúc thành công!")
+        else:
+            print("\n[HOÀN THÀNH] Quá trình test kết thúc thành công!")
 
 if __name__ == "__main__":
     main()
