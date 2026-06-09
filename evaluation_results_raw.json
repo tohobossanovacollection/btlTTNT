@@ -1,0 +1,101 @@
+[
+  {
+    "group": "simple",
+    "question": "Thuế thu nhập doanh nghiệp là gì?",
+    "ground_truth": "Thuế thu nhập doanh nghiệp (TNDN) là loại thuế trực thu đánh vào phần thu nhập chịu thuế của doanh nghiệp sau khi trừ các chi phí hợp lý, hợp lệ.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 1745.0
+  },
+  {
+    "group": "simple",
+    "question": "Thuế suất thuế thu nhập doanh nghiệp phổ thông hiện hành là bao nhiêu phần trăm?",
+    "ground_truth": "Thuế suất thuế TNDN phổ thông hiện hành là 20% áp dụng cho đa số doanh nghiệp.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 529.0
+  },
+  {
+    "group": "simple",
+    "question": "Doanh nghiệp nhỏ và vừa có được ưu đãi thuế suất TNDN không?",
+    "ground_truth": "Có. Doanh nghiệp nhỏ và vừa đáp ứng điều kiện theo quy định có thể được áp dụng thuế suất ưu đãi thấp hơn thuế suất phổ thông 20%.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 500.0
+  },
+  {
+    "group": "simple",
+    "question": "Những khoản chi nào không được trừ khi tính thuế thu nhập doanh nghiệp?",
+    "ground_truth": "Các khoản chi không được trừ gồm: chi không có hóa đơn chứng từ hợp lệ, chi phạt vi phạm hành chính, chi không liên quan đến hoạt động sản xuất kinh doanh.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 437.0
+  },
+  {
+    "group": "complex",
+    "question": "Doanh nghiệp thành lập mới tại khu kinh tế nếu đồng thời có dự án đầu tư vào lĩnh vực ưu đãi thì được hưởng những ưu đãi thuế TNDN nào và trong bao lâu?",
+    "ground_truth": "Doanh nghiệp mới thành lập tại khu kinh tế, đầu tư vào lĩnh vực ưu đãi có thể được miễn thuế TNDN trong thời gian nhất định, sau đó giảm thuế suất. Điều kiện, thời hạn và mức ưu đãi cụ thể phụ thuộc vào quy định của từng khu kinh tế và lĩnh vực đầu tư theo luật thuế TNDN và các nghị định hướng dẫn.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 868.0
+  },
+  {
+    "group": "complex",
+    "question": "Nếu doanh nghiệp vừa có thu nhập từ sản xuất trong nước, vừa có thu nhập từ chuyển nhượng bất động sản, thì cách tính thuế TNDN cho từng phần thu nhập như thế nào? Có được bù trừ lỗ giữa hai hoạt động không?",
+    "ground_truth": "Thu nhập từ chuyển nhượng bất động sản phải hạch toán riêng, không được bù trừ lỗ với thu nhập từ hoạt động sản xuất kinh doanh thông thường. Mỗi phần thu nhập tính thuế theo quy định riêng.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 835.0
+  },
+  {
+    "group": "complex",
+    "question": "Doanh nghiệp có doanh thu dưới 20 tỷ nhưng hoạt động trong lĩnh vực không được ưu đãi, đồng thời nộp chậm thuế 3 tháng. Thuế suất áp dụng là bao nhiêu và mức phạt chậm nộp tính thế nào?",
+    "ground_truth": "Doanh nghiệp có doanh thu dưới 20 tỷ thuộc diện doanh nghiệp nhỏ và vừa nhưng nếu không thuộc lĩnh vực ưu đãi thì áp dụng thuế suất 20%. Tiền chậm nộp thuế tính theo mức 0,03%/ngày trên số tiền thuế chậm nộp theo Luật Quản lý thuế.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 903.0
+  },
+  {
+    "group": "out_of_scope",
+    "question": "Quy định về thuế tối thiểu toàn cầu Pillar 2 áp dụng cho tập đoàn đa quốc gia tại Việt Nam năm 2026 như thế nào?",
+    "ground_truth": "Thuế tối thiểu toàn cầu Pillar 2 là nội dung mới, hệ thống cần thông báo không đủ dữ liệu thay vì tự ý trả lời.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 553.0
+  },
+  {
+    "group": "out_of_scope",
+    "question": "Quy định thuế carbon tại Việt Nam hiện nay ra sao?",
+    "ground_truth": "Thuế carbon chưa được quy định rõ trong hệ thống thuế hiện hành của Việt Nam, hệ thống nên thông báo không đủ dữ liệu.",
+    "answer": "",
+    "contexts": [
+      "Không có nguồn truy xuất."
+    ],
+    "meta": {},
+    "elapsed_ms": 528.0
+  }
+]
