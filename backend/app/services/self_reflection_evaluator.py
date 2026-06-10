@@ -3,7 +3,7 @@ import unicodedata
 from dataclasses import dataclass
 
 from app.config import settings
-from app.services.gemini_service import GeminiError, self_reflect_answer
+from app.services.groq_service import GroqServiceError, self_reflect_answer
 
 
 @dataclass
@@ -79,7 +79,7 @@ class SelfReflectionEvaluator:
                 }
                 is_supported = bool(data.get("is_supported", True))
                 is_useful = bool(data.get("is_useful", True))
-            except GeminiError:
+            except GroqServiceError:
                 support_feedback = {"skipped": True, "reason": "llm_unavailable"}
                 usefulness_feedback = {"skipped": True, "reason": "llm_unavailable"}
 

@@ -7,16 +7,16 @@ Demo chatbot tu van thue su dung Streamlit va pipeline RAG noi bo.
 - FastAPI backend: `backend/main.py` (tuy chon, chi dung de debug API)
 - Du lieu truy xuat: cac file Markdown trong `data/processed`
 - Embedding retrieval: local/offline hash TF-IDF, khong goi API ngoai
-- LLM: Gemini API
+- LLM: Groq API
 - Lich su tro chuyen: SQLite local trong `storage/chat_history.sqlite3`
 
 ## Yeu Cau
 
 - Windows + PowerShell
 - Python 3.10 tro len
-- Gemini API key trong Google AI Studio
+- Groq API key
 
-## 1. Cau Hinh Gemini
+## 1. Cau Hinh Groq
 
 Vao thu muc `backend` va tao file `.env`:
 
@@ -32,8 +32,9 @@ APP_NAME="FastAPI Tax Chatbot"
 DEBUG=True
 PORT=8000
 
-GOOGLE_API_KEY="dien_gemini_api_key_cua_ban_vao_day"
-MODEL_NAME="gemini-2.5-flash-lite"
+GROQ_API_KEY="dien_groq_api_key_cua_ban_vao_day"
+GROQ_MODEL_NAME="llama-3.3-70b-versatile"
+RAGAS_GROQ_MODEL_NAME="llama-3.3-70b-versatile"
 LOCAL_EMBEDDING_DIM=2048
 LOCAL_EMBEDDING_MIN_TOKEN_LENGTH=2
 ```
@@ -44,10 +45,10 @@ Tu thu muc goc project:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+./.venv/Scripts/Activate.ps1
 python -m pip install --upgrade pip
-pip install -r backend\requirements.txt
-pip install -r streamlit_app\requirements.txt
+pip install -r backend/requirements.txt
+pip install -r streamlit_app/requirements.txt
 ```
 
 Neu PowerShell chan activate script:
@@ -61,7 +62,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 Tu terminal da activate `.venv`:
 
 ```powershell
-python -m streamlit run streamlit_app\app.py
+python -m streamlit run streamlit_app/app.py
 ```
 
 Mo:
@@ -95,47 +96,25 @@ http://127.0.0.1:8000/docs
 4. He thong tao/tai embedding local va tim cac doan luat lien quan.
 5. Intent router chon `standard_rag` hoac `rat_lite`.
 6. Self-RAG danh gia do lien quan, do ho tro va do huu ich cua cau tra loi.
-7. Gemini tong hop cau tra loi.
+7. Groq tong hop cau tra loi.
 8. Streamlit hien thi cau tra loi, can cu phap ly ngan gon, do tin cay va runtime debug.
 9. Streamlit tu dong luu lich su vao SQLite local.
 
 ## Loi Thuong Gap
 
-### Khong mo duoc Streamlit o cong 8501
-
-Chay voi cong khac:
-
-```powershell
-python -m streamlit run streamlit_app\app.py --server.port 8502
-```
-
-### Gemini chua cau hinh
+### Groq chua cau hinh
 
 Kiem tra `backend/.env` co:
 
 ```env
-GOOGLE_API_KEY="api_key_cua_ban"
+GROQ_API_KEY="api_key_cua_ban"
 ```
 
 Sau khi sua `.env`, restart Streamlit.
 
-### Loi `429 RESOURCE_EXHAUSTED`
+### Loi `429` hoac rate limit
 
-Gemini API key da het quota hoac model khong con quota free. Thu:
-
-```env
-MODEL_NAME="gemini-2.5-flash-lite"
-```
-
-Hoac doi API key/bat billing.
-
-### Loi `models/gemini-1.5-flash is not found`
-
-Dung model moi hon trong `backend/.env`:
-
-```env
-MODEL_NAME="gemini-2.5-flash-lite"
-```
+Groq API key co the da het quota hoac gui qua nhieu request trong thoi gian ngan. Thu giam tan suat goi, doi model hoac doi API key.
 
 ### Lan dau hoi bi cham
 

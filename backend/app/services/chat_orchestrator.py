@@ -2,7 +2,7 @@ import logging
 import time
 
 from app.config import settings
-from app.services.gemini_service import ask_gemini
+from app.services.groq_service import ask_groq
 from app.services.reasoning_service import run_rat_lite_retrieval, run_standard_retrieval
 from app.services.router import IntentRouter
 from app.services.self_reflection_evaluator import SelfReflectionEvaluator
@@ -75,7 +75,7 @@ def handle_chat(question: str, request_id: str) -> dict:
                 "sources": [],
                 "meta": {
                     "request_id": request_id,
-                    "model": settings.MODEL_NAME,
+                    "model": settings.GROQ_MODEL_NAME,
                     "reasoning_mode": reasoning["mode"],
                     "intent_router": {
                         "label": intent.label,
@@ -108,7 +108,7 @@ def handle_chat(question: str, request_id: str) -> dict:
 
         extra_instructions = ""
         llm_start = time.perf_counter()
-        answer = ask_gemini(
+        answer = ask_groq(
             question,
             evidence,
             reasoning_steps=reasoning["plan"],
@@ -133,7 +133,7 @@ def handle_chat(question: str, request_id: str) -> dict:
                 "sources": [_build_source(law) for law in evidence],
                 "meta": {
                     "request_id": request_id,
-                    "model": settings.MODEL_NAME,
+                    "model": settings.GROQ_MODEL_NAME,
                     "reasoning_mode": reasoning["mode"],
                     "intent_router": {
                         "label": intent.label,
@@ -182,7 +182,7 @@ def handle_chat(question: str, request_id: str) -> dict:
                 f"\nCác khẳng định cần tránh:{unsupported_text}"
             )
             llm_start = time.perf_counter()
-            answer = ask_gemini(
+            answer = ask_groq(
                 question,
                 evidence,
                 reasoning_steps=reasoning["plan"],
@@ -214,7 +214,7 @@ def handle_chat(question: str, request_id: str) -> dict:
         "sources": [_build_source(law) for law in final_evidence],
         "meta": {
             "request_id": request_id,
-            "model": settings.MODEL_NAME,
+            "model": settings.GROQ_MODEL_NAME,
             "reasoning_mode": final_reasoning["mode"],
             "intent_router": {
                 "label": intent.label,

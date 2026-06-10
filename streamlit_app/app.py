@@ -492,7 +492,7 @@ def render_hero() -> None:
           <div class="hero-stats">
             <span><strong>{doc_count}</strong> văn bản</span>
             <span><strong>{conversation_count}</strong> cuộc trò chuyện</span>
-            <span><strong>{settings.MODEL_NAME}</strong> model</span>
+            <span><strong>{settings.GROQ_MODEL_NAME}</strong> model</span>
             <span><strong>{max_sources}</strong> nguồn hiển thị</span>
           </div>
         </section>
@@ -1003,7 +1003,7 @@ with st.sidebar:
         <div class="sidebar-note">
           <strong>Trạng thái</strong><br>
           {processed_document_count()} văn bản đã xử lý · Retrieval local TF-IDF<br>
-          Model: {settings.MODEL_NAME}<br>
+          Model: {settings.GROQ_MODEL_NAME}<br>
           Lưu lịch sử: SQLite local
         </div>
         """,

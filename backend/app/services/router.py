@@ -2,7 +2,7 @@ import logging
 from dataclasses import dataclass
 
 from app.config import settings
-from app.services.gemini_service import GeminiError, classify_query_intent
+from app.services.groq_service import GroqServiceError, classify_query_intent
 from app.services.reasoning_service import assess_question_complexity
 
 logger = logging.getLogger(__name__)
@@ -36,12 +36,12 @@ class IntentRouter:
                 if label in {"SIMPLE", "COMPLEX"}:
                     return IntentRouteResult(
                         label=label,
-                        provider="gemini",
+                        provider="groq",
                         fallback_used=False,
                         reasons=["llm_router"],
                     )
-            except GeminiError as exc:
-                logger.warning("IntentRouter fallback because Gemini classification failed: %s", str(exc))
+            except GroqServiceError as exc:
+                logger.warning("IntentRouter fallback because Groq classification failed: %s", str(exc))
 
         assessment = assess_question_complexity(normalized)
         label = "COMPLEX" if assessment.is_complex else "SIMPLE"
